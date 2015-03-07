@@ -1,0 +1,44 @@
+body {
+	background-color: #2c3e50;
+}
+
+/* @font-face {
+	font-family: "Quicksand";
+	src: url("/fonts/Quicksand-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "QuicksandBold";
+	src: url("/fonts/Quicksand-Bold.otf") format("opentype");
+} */
+
+#header {
+	left: 0;
+	right: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 10px;
+	position: absolute;
+	top: 0;
+	width: 80%;
+	height: 8%;
+	background-color: #2ecc71;
+	border: 1px solid #2ecc71;
+	text-align: center;
+	color: white;
+	font-size: 31px;
+	font-family: "QuicksandBold";
+}
+
+table {
+	left: 0;
+	right: 0;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	width: 80%;
+	min-height: 400px;
+	background-color: white;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+}

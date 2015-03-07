@@ -1,0 +1,1023 @@
+/* CSS Document */
+/*
+*
+* The fonts included are copyrighted by the vendor listed below-
+*
+*@vender: Andrew Paglinawan | Font Squirrel;
+*@licenseurl: http://www.fontsquirrel.com/license/quicksand
+*
+*/
+
+code {
+	color: #21CF0E;
+}
+
+@media screen and (max-width: 900px) {
+/* Planned Stuff */
+
+.plan {
+		display: none;
+	}
+
+/* TO DO BUTTON */
+
+#todoBT {
+	 display:none;
+	position:absolute !important;
+	top: 26px;
+	height:14px;
+	width: 10px;
+	right: 8px;
+	border: 1px solid #F63;
+	border-radius: 25px;
+	background-color: #F63;
+	color: white;
+	font-family: "Quicksand";
+	cursor: pointer;
+	outline: none;
+}
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {   
+	 display:none;
+        border : 0px;
+}
+
+input[type="submit"]:focus, input[type="button"]:focus {     
+	 display:none;
+        outline : none; 
+}
+
+/* TO DO */
+
+.todo {
+	 display:none;
+	position:absolute !important;
+	right: -110px;
+	top: 55px;
+	width: 250px;
+	height: 0px;
+	content: "";
+	overflow: hidden;
+	border: 1px solid #1b1b1b;
+	border-radius: 20px;
+	transition: height 1s ease;
+}
+
+.todoTEXT {
+	 display:none;
+	position: absolute;
+	height: 170px;
+	width: 250px;
+	color: #F63;
+	background-image: url("../images/trans.png");
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.box-change {
+	 display:none;
+	position:absolute;
+	/*box-sizing: border-box; */
+	border: 1px solid #F63;
+	border-radius: 20px;
+	width: 250px;
+	height: 170px;
+}
+
+.box-change:after, .box-change:before {
+	 display:none;
+     bottom: 100%;
+	 left: 50%;
+	 border: solid transparent;
+	 content: " ";
+	 height: 0;
+	 width: 0;
+	 position: absolute;
+	 pointer-events: none;
+}
+.box-change:after {
+	 display:none;
+     border-color: rgba (238, 99, 77, 0);
+	 border-bottom-color: #ee634d;
+	 border-width: 10px;
+	 margin-left: -10px;
+}
+}
+
+@media screen and (min-width: 900px) {
+	#todoBT {
+	position:absolute !important;
+	top: 26px;
+	height:14px;
+	width: 10px;
+	right: 8px;
+	border: 1px solid #F63;
+	border-radius: 25px;
+	background-color: #F63;
+	color: white;
+	font-family: "Quicksand";
+	cursor: pointer;
+	outline: none;
+}
+
+
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {   
+        border : 0px;
+}
+
+input[type="submit"]:focus, input[type="button"]:focus {     
+        outline : none; 
+}
+
+.todo {
+	position:absolute !important;
+	right: -110px;
+	top: 55px;
+	width: 250px;
+	height: 0px;
+	content: "";
+	overflow: hidden;
+	border: 1px solid #1b1b1b;
+	border-radius: 20px;
+	transition: height 1s ease;
+}
+
+.todoCONTENT {
+	position: absolute;
+	height: 170px;
+	width: 250px;
+	color: #F63;
+	background-image: url("../images/trans.png");
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-family: "Quicksand";
+}
+
+.box-change {
+	position:absolute;
+	/*box-sizing: border-box; */
+	border: 1px solid #F63;
+	border-radius: 20px;
+	width: 250px;
+	height: 170px;
+}
+
+.box-change:after, .box-change:before {
+     bottom: 100%;
+	 left: 50%;
+	 border: solid transparent;
+	 content: " ";
+	 height: 0;
+	 width: 0;
+	 position: absolute;
+	 pointer-events: none;
+}
+.box-change:after {
+     border-color: rgba (238, 99, 77, 0);
+	 border-bottom-color: #ee634d;
+	 border-width: 10px;
+	 margin-left: -10px;
+}	
+}
+
+/* TO DO CONTENT */
+
+.todo .todoCONTENT tr {
+	font-size: 13px;
+	color: white;
+	margin-bottom: 2px;
+	text-align: left;
+}
+.todo .todoCONTENT tr th {
+	white-space: nowrap;
+ 	overflow: hidden;
+}
+
+/* Navigation/Menu link */
+
+nav {
+	position:relative;
+	top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+	min-height: 30px;
+}
+
+header {
+	z-index: 9000;
+	min-height:30px;
+	background-color: #1b1b1b;
+	border-bottom: solid 1px #F63;
+	border-radius: 10px;
+	text-align: center;
+	margin-bottom: 35px;
+}
+
+header #nav li {
+	font-family: "Quicksand";
+	display: inline;
+}
+
+.navlist {
+	position:relative;
+	margin:10px 10px;
+	display:inline-block;
+}
+
+.navlist a {
+	display:inline-block;
+	min-width:70px;
+	color:#FFF;
+	text-transform:capitalize;
+	text-decoration:none;
+	font-size:13px;
+	font-family: "Quicksand";
+	padding: 5px 5px;
+	outline:none;
+	background-image:url(../images/trans.png);
+	opacity:0.5;
+	transition: all 0.5s;
+	}
+.navlist:hover a {
+	color: #FFF;
+	border-top: solid 1px #FFF;
+	opacity:1.0;
+	text-decoration: none;
+}
+
+.navlist .active {
+	opacity:1.0;
+	border-top: solid 1px #F63;
+}
+
+body {
+	background-color: #1b1b1b;
+	margin-top: 0px;
+}
+
+/* #wrap {
+	margin: auto;
+}
+
+#wrap #todo-list {
+	margin-left: 40px;
+	max-width: 550px;
+	min-height: 50px;
+	padding: 2px;
+	-webkit-box-shadow: inset 1px 0px 0px rgba(255,255,255,0.3);
+	-moz-box-shadow   : inset 1px 0px 0px rgba(255,255,255,0.3);
+	box-shadow        : inset 1px 0px 0px rgba(255,255,255,0.3);
+}
+
+#wrap #todo-list .task{
+	border-top: 1px solid #F63;
+	border-bottom: 1px solid #F63;
+}
+
+// Add a new task form
+
+.add-task{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 40px;
+    min-width: 200px;
+    font-size: 16px;
+}
+.add-task input[type=submit],
+.add-task input[type=button],
+.add-task input[type=text],
+.add-task textarea,
+.add-task label
+{
+    font-family: "Quicksand";
+    font-size: 16px;
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.add-task label {
+    display:block;
+}
+
+.add-task label > span{
+    display: inline-block;
+    float: left;
+    width: 150px;
+}
+.add-task input[type=text],
+.add-task input[type=email]
+{
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed #F63;
+    width: 185px;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    font-style: italic;
+}
+
+.add-task textarea:focus,
+.add-task input[type=text]:focus,
+.add-task input[type=email]:focus,
+.add-task input[type=email] :focus
+{
+    border-bottom: 1px dashed #FFF;
+}
+
+.add-task input[type=submit],
+.add-task input[type=button]{
+    background: #F63;
+    border: none;
+    padding: 3px;
+    border-radius: 5px;
+    color: #FFF;
+}
+.add-task input[type=submit]:hover,
+.add-task input[type=button]:hover{
+background: #555;
+}
+
+*/
+
+/* Fonts */
+
+@font-face {
+	font-family: "Quicksand";
+	src: url("/fonts/Quicksand-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "QuicksandBold";
+	src: url("/fonts/Quicksand-Bold.otf") format("opentype");
+}
+
+/* Links menu starts here */
+
+h1.links {
+	text-align: center;
+	margin-top:10px;
+	margin-bottom:30px;
+	}
+
+h1.links .ulist {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+
+h1.links .list {
+	position:relative;
+	margin:10px 10px;
+	display:inline-block;
+}
+
+h1.links .list a {
+	display:inline-block;
+	min-width:70px;
+	color:#FFF;
+	text-transform:capitalize;
+	text-decoration:none;
+	font-size:13px;
+	font-family: "Quicksand";
+	padding: 5px 5px;
+	border-top: 2px solid #F63;
+	border-bottom: 2px solid #F63;
+	border-radius: 25px;
+	outline:none;
+	background-image:url(../images/trans.png);
+	transition: all 0.8s;
+	opacity:0.5;
+	}
+h1.links .list:hover a {
+	color: #FFF;
+	border-color: #FFF;
+	opacity:1.0;
+}
+
+h1.links .list .active {
+	opacity:1.0;
+	border-top-color: #FFF;
+	border-bottom-color: #FFF;
+
+}
+
+/* logo */
+
+#logo {
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	top:150px;
+}
+
+
+.title {
+	position:relative;
+	width:100%;
+	top:10px;
+	left:0;
+	text-align:center;
+	font-size:18px;
+	color:#FFF;
+	font-family: "QuicksandBold";
+	text-transform:uppercase;
+	word-spacing:5px;
+}
+
+.title2 {
+	position:relative;
+	width:100%;
+	top:5px;
+	left:0;
+	text-align:center;
+	font-size:18px;
+	color:#F63;
+	font-family: "Quicksand";
+	word-spacing:5px;
+}
+/* Outer box with center*/
+
+.arrow_box {
+	top: 50px;
+	max-width: 700px;
+	height:auto;
+	margin-left: auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	padding:5px 5px;
+	 position: relative;
+	 background:url(../images/trans.png);
+	 border-top: 1px solid #F63;
+	 border-bottom: 1px solid #F63;
+	 text-align:center;
+}
+.arrow_box:after, .arrow_box:before {
+     bottom: 100%;
+	 left: 50%;
+	 border: solid transparent;
+	 content: " ";
+	 height: 0;
+	 width: 0;
+	 position: absolute;
+	 pointer-events: none;
+}
+.arrow_box:after {
+     border-color: rgba (238, 99, 77, 0);
+	 border-bottom-color: #ee634d;
+	 border-width: 30px;
+	 margin-left: -30px;
+}
+.arrow_box:before {
+     border-color: rgba(255, 255, 255, 0);
+	 border-bottom-color: #FFF;
+	 border-width: 32px;
+	 margin-left: -32px;
+}
+
+/* Outer box normal */
+
+.arrow_box_normal {
+	top: 50px;
+	max-width: 700px;
+	height:auto;
+	margin-left: auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	padding:5px 5px;
+	 position: relative;
+	 background:url(../images/trans.png);
+	 border-top: 1px solid #F63;
+	 border-bottom: 1px solid #F63;
+}
+.arrow_box_normal:after, .arrow_box_normal:before {
+     bottom: 100%;
+	 left: 50%;
+	 border: solid transparent;
+	 content: " ";
+	 height: 0;
+	 width: 0;
+	 position: absolute;
+	 pointer-events: none;
+}
+.arrow_box_normal:after {
+     border-color: rgba (238, 99, 77, 0);
+	 border-bottom-color: #ee634d;
+	 border-width: 30px;
+	 margin-left: -30px;
+}
+.arrow_box_normal:before {
+     border-color: rgba(255, 255, 255, 0);
+	 border-bottom-color: #FFF;
+	 border-width: 32px;
+	 margin-left: -32px;
+}
+
+/* Inner box */
+
+.arrow_box .box {
+	position:relative;
+	display:inline-block;
+	width:150px;
+	height:200px;
+	border-top: 2px solid #F63;
+	border-bottom: 2px solid #F63;
+	margin: 20px 27px;
+}
+
+.arrow_box_normal .box_me {
+	position:relative;
+	display:inline-block;
+	width:200px;
+	height:200px;
+	margin: 20px 30px;
+	float: left;
+	text-align: center;
+}
+
+.arrow_box .box:hover, .arrow_box2 .box:hover {
+	cursor:pointer;
+	box-shadow: 0 0 5px #F63;
+	transition: all 0.2s;
+	opacity: 1;
+}
+
+#spinner {
+	position: absolute;
+	left: 118px;
+	width: 32px;
+	height: 32px;
+	background-image: url('../images/spinner.png');
+}
+
+/* Inner box image */
+
+.arrow_box img {
+	position: relative;
+	float:left;
+	height:200px;
+	width:150px;
+	z-index:1;
+}
+
+/* List Styling */
+/*
+.link {
+	list-style: none;
+	padding: 0;
+	padding-bottom: 5px;
+	margin: 0;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-family: "Quicksand";
+	color: white;
+}
+
+.link_li {
+	padding-left: 1em;
+	text-indent: -.7em;
+	padding-bottom: 5px;
+
+}
+
+.link_li:before {
+	content: "•";
+	padding-right: 15px;
+	color: red;
+}
+
+*/
+
+/* Alternative List Styling */
+
+a:link {
+	text-decoration: none;
+	font-family: "Quicksand";
+	color: white;
+}
+
+a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+#list2 {
+	color: #F63;
+}
+
+#list2 ol {
+	font-family: "Quicksand";
+	font-size: 18px;
+}
+
+#list2 ol li {
+	list-style: none;
+}
+
+#list2 ol li ol {
+	padding: 5px 0px 5px 10px;
+	font-size: 15px;
+}
+
+#list2 ol li ol li {
+	color: white;
+	height: 15px;
+	margin-left:10px;
+	margin-bottom: 3px;
+}
+
+#list2 ol li ol li:before {
+	content: "•";
+	color: #F63;
+	padding-right: 2px;
+}
+
+
+/* Project Euler */
+.header {
+	font-family: "Quicksand";
+	color: #F63;
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+#toggle {
+	margin: auto;
+	margin-bottom: 25px;
+	width: 100%;
+	color: white;
+	font-family: "Quicksand";
+}
+
+#toggle .toggleAll {
+	margin-right: 10px;
+}
+
+#euler {
+	margin-top: 10px;
+	margin-left: 35px;
+	margin-bottom: 8px;
+}
+
+#euler .problems {
+	display: list-item;
+	list-style: none;
+	margin-bottom: 2px;
+}
+
+.code {
+	font-size: 15px;
+	font-family: sans-serif;
+	font-style: italic;
+	color: #F63;
+}
+/* About page */
+
+.lang {
+	position: absolute;
+	max-left: 300px;
+	display: inline-block;
+	color: white;
+	font-family: "Quicksand";
+}
+
+.lang li {
+	border: solid 1px #F63;
+	transition: all 0.5s;
+	margin: 5px;
+	list-style: none;
+	display: inline-block;
+}
+
+.lang li:hover {
+	background-color: #F63;
+	border: solid 1px white;
+}
+
+.lang li a {
+	color: white;
+	text-decoration: none;
+}
+
+.lang .aktiv {
+	background-color: #F63;
+	border: solid 1px #F63;
+}
+
+.cursor {
+	cursor: default;
+}
+
+
+
+#me {
+	height:200px;
+	width:200px;
+	border:2px solid #ee634d;
+	border-radius:3px;
+	}
+
+/* P Property */
+
+p {
+	color: #FFF;
+	font-family: "Quicksand";
+	border-left: 1px solid #F63;
+	border-right: 1px solid #F63;
+}
+/* Long Texts */
+.text {
+	clear:both;
+	padding: 5px 5px;
+	color: #FFF;
+	border-left: 1px solid #F63;
+	border-right: 1px solid #F63;
+}
+
+#imgtext {
+	float: right;
+	word-wrap: break-word;
+	margin-bottom: 10px;
+	width: calc(100% - 300px);
+	max-width: 410px;
+	max-height: 250px;
+	margin-top: 45px;
+	border-left: 1px solid #F63;
+	border-right: 1px solid #F63;
+	color: #FFF;
+	font-family: "Quicksand";
+	padding-left: 5px;
+}
+
+@media (max-width: 500px) {
+	#imgtext {
+		width: 100%; clear: both;
+		}
+	.arrow_box_normal .box_me {
+		margin: auto;
+		width: 100%;
+	}
+	#me {
+		margin: auto;
+	}
+	}
+
+/* Inner box title */
+
+.text-box {
+	position:absolute;
+	width:100%;
+	top:80%;
+	left:0;
+	z-index:2;
+	text-align:center;
+	font-size:16px;
+	color:#FFF;
+	text-transform:capitalize;
+	font-family:"QuicksandBold";
+	text-decoration:none;
+	background-image:url(../images/trans2.png);
+}
+
+/* Milestones */
+
+#milestone {
+	display: inline;
+	width: 600px;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 10px;
+	color: white;
+	font-family: "Quicksand";
+
+}
+
+.milestonetext {
+	display: inline-block;
+	text-transform: capitalize;
+	font-size: 16px;
+}
+
+/* normal size meters */
+
+.meter {
+	font-size: 14px;
+	line-height: 17px;
+	margin:15px;
+	width: 260px;
+	height: 15px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 2px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+	box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+	display: block;
+	height: 100%;
+	   -webkit-border-top-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	       -moz-border-radius-topright: 20px;
+	    -moz-border-radius-bottomright: 20px;
+	           border-top-right-radius: 20px;
+	        border-bottom-right-radius: 20px;
+	    -webkit-border-top-left-radius: 20px;
+	 -webkit-border-bottom-left-radius: 20px;
+	        -moz-border-radius-topleft: 20px;
+	     -moz-border-radius-bottomleft: 20px;
+	            border-top-left-radius: 20px;
+	         border-bottom-left-radius: 20px;
+	background-color: rgb(43,194,83);
+	background-image: -webkit-gradient(
+	  linear,
+	  left bottom,
+	  left top,
+	  color-stop(0, rgb(43,194,83)),
+	  color-stop(1, rgb(84,240,84))
+	 );
+	background-image: -webkit-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -moz-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -ms-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -o-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	-webkit-box-shadow:
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	-moz-box-shadow:
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	position: relative;
+	overflow: hidden;
+}
+
+/* small size meter */
+
+.smallmeter {
+	text-align: center;
+	font-size: 12px;
+	line-height: 15px;
+	margin:3px;
+	width: 200px;
+	height: 13px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 1px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+	box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.smallmeter > span {
+	display: block;
+	height: 100%;
+	   -webkit-border-top-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	       -moz-border-radius-topright: 20px;
+	    -moz-border-radius-bottomright: 20px;
+	           border-top-right-radius: 20px;
+	        border-bottom-right-radius: 20px;
+	    -webkit-border-top-left-radius: 20px;
+	 -webkit-border-bottom-left-radius: 20px;
+	        -moz-border-radius-topleft: 20px;
+	     -moz-border-radius-bottomleft: 20px;
+	            border-top-left-radius: 20px;
+	         border-bottom-left-radius: 20px;
+	background-color: rgb(43,194,83);
+	background-image: -webkit-gradient(
+	  linear,
+	  left bottom,
+	  left top,
+	  color-stop(0, rgb(43,194,83)),
+	  color-stop(1, rgb(84,240,84))
+	 );
+	background-image: -webkit-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -moz-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -ms-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	background-image: -o-linear-gradient(
+	  center bottom,
+	  rgb(43,194,83) 37%,
+	  rgb(84,240,84) 69%
+	 );
+	-webkit-box-shadow:
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	-moz-box-shadow:
+	  inset 0 2px 9px  rgba(255,255,255,0.3),
+	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	position: relative;
+	overflow: hidden;
+}
+
+/* meter colors */
+
+.orange > span {
+	background-color: #f63;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1a165),color-stop(1, #f36d0a));
+	background-image: -webkit-linear-gradient(top, #f63, #f36d0a);
+        background-image: -moz-linear-gradient(top, #f63, #f36d0a);
+        background-image: -ms-linear-gradient(top, #f63, #f36d0a);
+        background-image: -o-linear-gradient(top, #f63, #f36d0a);
+}
+
+.red > span {
+	background-color: #c11f1f;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f0a3a3),color-stop(1, #f42323));
+	background-image: -webkit-linear-gradient(top, #c11f1f, #f42323);
+        background-image: -moz-linear-gradient(top, #c11f1f, #f42323);
+        background-image: -ms-linear-gradient(top, #c11f1f, #f42323);
+        background-image: -o-linear-gradient(top, #c11f1f, #f42323);
+}
+
+@-webkit-animation expandWidth {
+   0% { width: 0; }
+   100% { width: auto; }
+}
+
+
+/* Stuff planning */
+
+#plans {
+	margin: auto;
+	max-width: 600px;
+	margin-top: 10px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-right: 1px solid #F63;
+	border-left: 1px solid #F63;
+	border-bottom: 1px solid #F63;
+	margin-bottom: 15px;
+	font-family: "Quicksand";
+	font-size: 17px;
+ 	color: white;
+ 	white-space: nowrap;
+ 	overflow: hidden;
+}
+
+#plans2 {
+	margin: auto;
+	width: 600px;
+	margin-top: 0px;
+	padding: 2px;
+	padding-top: -2px;
+	padding-bottom: -2px;
+	border-right: 1px solid #F63;
+	border-left: 1px solid #F63;
+	border-bottom: 1px solid #F63;
+	font-family: "Quicksand";
+	font-size: 17px;
+ 	color: white;
+ 	white-space: nowrap;
+ 	overflow: hidden;
+}
+
+/* footer */
+
+footer {
+	position:relative;
+	text-align:center;
+	font-family: "Quicksand";
+	color:#CCC;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}

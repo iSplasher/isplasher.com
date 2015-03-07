@@ -1,0 +1,41 @@
+@import "reset.css";
+@import "normalize.css";
+
+.task-list li {
+	font-size: 1.2em;
+	padding: 8px 0;
+	overflow: hidden;
+}
+
+.task-list li span {
+	width: 86%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+}
+
+.task-list li .delete-button {
+	width: 10px;
+	height: auto;
+	padding-top: 7px;
+	float: right;
+	vertical-align: top;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.task-list li .delete-button:hover {
+	opacity: 0.85;
+}
+
+:focus {
+	outline: 0;
+}
+
+@media all and (max-width: 425px) {
+	.wrap {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
