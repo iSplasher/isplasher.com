@@ -22,13 +22,13 @@
 <div class="milestonetext">
 		Dive Into Python 3
 <div class="meter orange">
-	<span style="width: 43.23%">43,23%<span></span></span>
+	<span style="width: 68.28%">68,28%<span></span></span>
 </div>
 </div>
 <div class="milestonetext">
 		<a href="euler.php">Project Euler - 50</a>
 <div class="meter orange">
-	<span style="width: 6%">6%<span></span></span>
+	<span style="width: 16%">16%<span></span></span>
 </div>
 </div>
 </div>
