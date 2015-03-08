@@ -110,7 +110,6 @@ $(".smallmeter > span").each(function() {
 				<li><a href="aarhus.php">Aarhus Gymnasium</a></li>
 				<li><a href="../gymnasium/Kærlighedsfilm/Kærlighedsfilm.html">Kærlighedsfilm</a></li>
 				<li><a href="old.php">Old Page</a></li>
-				<li><a href="../Radoss/radoss.htm"><s style="color: red;">Radoss Project</s></a></li>
 	</ol>
 </li>
 </ol>
