@@ -21,8 +21,8 @@
 <div id="milestone">
 <div class="milestonetext">
 		Dive Into Python 3
-<div class="meter orange">
-	<span style="width: 68.28%">68,28%<span></span></span>
+<div class="completed green">
+	<span style="width: 100%">Completed<span></span></span>
 </div>
 </div>
 <div class="milestonetext">
@@ -82,7 +82,8 @@ $(".smallmeter > span").each(function() {
 	</tr>
 	<tr>
 	<td width="2px" style="color: #F63;">*</td>
-	<td width="45%">Read: How to Design Programs</td>
+	<td width="45%">Read: <a href="http://www.ccs.neu.edu/home/matthias/HtDP2e/Draft/index.html">
+					How to Design Programs</a></td>
 	<td><b style="color: #F63">When:</b> Done reading the Python book</td>
 	</tr>
 	<tr>
