@@ -8,6 +8,9 @@
 			<th style="font-size:95%">Renovate the Project Euler code view</th>
 			</tr>
 			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Oprette skolefag links på Gymnasium<br>side</th>
+			</tr>
 			<tr>
 			<th style="color:#F63;">•</th>
 			<th style="font-size:95%">Make a music section, with feeds<br>
