@@ -19,7 +19,7 @@
 <img id="me" src="images/me.png">
 </div>
 <div id="imgtext">
-Umm~.. Yeah you can get in touch with me in one of the following ways:
+Get in touch with me~!!
 <br>
 <br>
 <b>Email:</b> isplasher@gmail.com
@@ -28,6 +28,17 @@ Umm~.. Yeah you can get in touch with me in one of the following ways:
 </div>
 <div>
 	<div class="text">
+	<div id="list2">
+<ol>
+		<li>Social Networks
+			<ol>
+				<li><a href="http://www.facebook.com/isplasher" target="_blank">Facebook - iSplasher</a></li>
+				<li><a href="http://www.isplasher.deviantart.com" target="_blank">DeviantArt - iSplasher</a></li>
+				<li><a href="http://www.twitter.com/isplasher" target="_blank">Twitter - @isplasher</a></li>
+	</ol>
+</li>
+</ol>
+</div>
 	</div>
 </div>
 </section>
