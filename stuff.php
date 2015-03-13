@@ -20,9 +20,9 @@
 	<h2 class="title2">Milestones</h2>
 <div id="milestone">
 <div class="milestonetext">
-		Dive Into Python 3
-<div class="completed green">
-	<span style="width: 100%">Completed<span></span></span>
+		Python Programming book
+<div class="meter orange">
+	<span style="width: 0%">0<span></span></span>
 </div>
 </div>
 <div class="milestonetext">
@@ -51,6 +51,14 @@ $(".meter > span").each(function() {
 	<td style="float:right; border-left:1px solid #F63;">
 		<div class="smallmeter red">
 			<span style="width: 100%">ON-HOLD @ 12,8%</span> <!-- 12.8% -->
+		</div>
+	</td>
+	</tr>
+	<tr>
+	<td>Dive Into Python 3</td>
+	<td style="float:right; border-left:1px solid #F63;">
+		<div class="smallcompleted green">
+			<span style="width: 100%">100%</span> <!-- 12.8% -->
 		</div>
 	</td>
 	</tr>
