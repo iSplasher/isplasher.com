@@ -86,13 +86,13 @@ $(".smallmeter > span").each(function() {
 	<tr>
 	<td width="2px" style="color: #F63;">*</td>
 	<td width="45%">My Big Software Project</td>
-	<td><b style="color: #F63">When:</b> Can fluently program programs</td>
+	<td><b style="color: #F63">When:</b> Can fluently program softwares</td>
 	</tr>
 	<tr>
 	<td width="2px" style="color: #F63;">*</td>
 	<td width="45%">Read: <a href="http://www.ccs.neu.edu/home/matthias/HtDP2e/Draft/index.html">
 					How to Design Programs</a></td>
-	<td><b style="color: #F63">When:</b> Done reading the Python book</td>
+	<td><b style="color: #F63">When:</b> Proficient in functional programming</td>
 	</tr>
 	<tr>
 	<td width="2px" style="color: #F63;">*</td>
@@ -109,28 +109,27 @@ $(".smallmeter > span").each(function() {
 
 <div id="list2">
 	<ol>
-		<li>Links
+		<ol>
+		<li>\Programming\ Related
 			<ol>
+				<li><a href="tips.php">\Programming\ Tips</a></li>
 				<li><a href="http://www.github.com/isplasher" target="_blank">GitHub - iSplasher</a></li>
 				<li><a href="http://www.projecteuler.net" target="_blank">Project Euler</a></li>
+				<li><a href="http://www.cppreference.com" target="_blank">C++ Reference</a></li>
+			</ol>
+		</li>
+	</ol>
+	<ol>
+		<li>Links
+			<ol>
 				<li><a href="http://www.4chan.org/g/" target="_blank">/g/ - 4Chan</a></li>
 				<li><a href="http://www.reddit.com" target="_blank">Reddit</a></li>
-				<li><a href="http://www.cppreference.com" target="_blank">C++ Reference</a></li>
-				<li><a href="aarhus.php">Aarhus Gymnasium</a></li>
+				<li><a href="gymnasium/kostens.php">Kostens Sammensætning</a></li>
 				<li><a href="../gymnasium/Kærlighedsfilm/Kærlighedsfilm.html">Kærlighedsfilm</a></li>
-				<li><a href="old.php">Old Page</a></li>
+				<li><a href="old.php">Old Design</a></li>
+			</ol>
+		</li>
 	</ol>
-</li>
-</ol>
-<ol>
-		<li>Social Networks
-			<ol>
-				<li><a href="http://www.facebook.com/isplasher" target="_blank">Facebook - iSplasher</a></li>
-				<li><a href="http://www.isplasher.deviantart.com" target="_blank">DeviantArt - iSplasher</a></li>
-				<li><a href="http://www.twitter.com/isplasher" target="_blank">Twitter - @isplasher</a></li>
-	</ol>
-</li>
-</ol>
 </div>
 </section>
 
