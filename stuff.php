@@ -20,15 +20,21 @@
 	<h2 class="title2">Milestones</h2>
 <div id="milestone">
 <div class="milestonetext">
+		Mordern TKinter for BPD
+<div class="meter orange">
+	<span style="width: 20.68%">18/87<span></span></span>
+</div>
+</div>
+<div class="milestonetext">
 		Python Programming book
 <div class="meter orange">
-	<span style="width: 0%">0<span></span></span>
+	<span style="width: 13%">53/415<span></span></span>
 </div>
 </div>
 <div class="milestonetext">
 		<a href="euler.php">Project Euler - 50</a>
 <div class="meter orange">
-	<span style="width: 16%">16%<span></span></span>
+	<span style="width: 16%">8 solved<span></span></span>
 </div>
 </div>
 </div>
@@ -50,7 +56,7 @@ $(".meter > span").each(function() {
 	<td>C++ Primer, 5th Edition</td>
 	<td style="float:right; border-left:1px solid #F63;">
 		<div class="smallmeter red">
-			<span style="width: 100%">ON-HOLD @ 12,8%</span> <!-- 12.8% -->
+			<span style="width: 100%">ON-HOLD @ 162/1399</span> <!-- 12.8% -->
 		</div>
 	</td>
 	</tr>
@@ -58,7 +64,7 @@ $(".meter > span").each(function() {
 	<td>Dive Into Python 3</td>
 	<td style="float:right; border-left:1px solid #F63;">
 		<div class="smallcompleted green">
-			<span style="width: 100%">100%</span> <!-- 12.8% -->
+			<span style="width: 100%">Finished</span> <!-- 12.8% -->
 		</div>
 	</td>
 	</tr>
@@ -92,7 +98,13 @@ $(".smallmeter > span").each(function() {
 	<td width="2px" style="color: #F63;">*</td>
 	<td width="45%">Read: <a href="http://www.ccs.neu.edu/home/matthias/HtDP2e/Draft/index.html">
 					How to Design Programs</a></td>
-	<td><b style="color: #F63">When:</b> Proficient in functional programming</td>
+	<td><b style="color: #F63">When:</b> Proficient in procedural programming</td>
+	</tr>
+	<tr>
+	<tr>
+	<td width="2px" style="color: #F63;">*</td>
+	<td width="45%">Read: Accelerated C++</td>
+	<td><b style="color: #F63">When:</b> Feel like learning a new language</td>
 	</tr>
 	<tr>
 	<td width="2px" style="color: #F63;">*</td>

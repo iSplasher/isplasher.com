@@ -20,25 +20,30 @@ body {
 	margin-bottom: 10px;
 	position: absolute;
 	top: 0;
-	width: 80%;
-	height: 8%;
+	width: 900px;
+	height: 50px;
 	background-color: #2ecc71;
-	border: 1px solid #2ecc71;
 	text-align: center;
 	color: white;
 	font-size: 31px;
 	font-family: "QuicksandBold";
 }
 
-table {
-	left: 0;
-	right: 0;
-	margin-right: auto;
-	margin-left: auto;
-	position: relative;
-	width: 80%;
-	min-height: 400px;
+#main {
 	background-color: white;
+	width: 900px;
+	min-height: 400px;
+	margin: auto;
 	border-bottom-right-radius: 25px;
 	border-bottom-left-radius: 25px;
+}
+
+table {
+	position: relative;
+	top: 120px;
+	margin: auto;
+	width: 800px;
+	color: #2ecc71;
+	font-size: 38px;
+	text-align: left;
 }

@@ -9,19 +9,36 @@
 <div id="header">
 	Tidsplanlæggeren - Brug din tid optimalt
 </div>
+<div id="main">	
 <table>
-	<caption>Næste Begivenhed</caption>
-	<thead>
 		<tr>
-			<th>header</th>
+			<th width="80%">Løb en tur...</th>
+			<th>om</th>
+			<th>05:34</th>
 		</tr>
-	</thead>
-	<tbody>
 		<tr>
-			<td>data</td>
+			<th width="80%">Købe en gave til mor</th>
+			<th>om</th>
+			<th>13:20</th>
 		</tr>
-	</tbody>
+		<tr>
+			<th width="80%">Hjælpe bedstemor med maden</th>
+			<th>om</th>
+			<th>34:20</th>
+		</tr>
+		<tr>
+			<th width="80%">Se Breaking Bad</th>
+			<th>om</th>
+			<th>53:20</th>
+		</tr>
+		<tr>
+			<th width="80%">Ikke lave mine lektier</th>
+			<th>om</th>
+			<th>63:20</th>
+		</tr>
+
 </table>
+</div>
 
 </body>
 </html>
