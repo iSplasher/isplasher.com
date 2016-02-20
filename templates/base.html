@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+{% if title%}
+<title>{{ title }} - iSplasher</title>
+{% else %}
+<title>My Projects - iSplasher</title>
+{% endif %}
+		<link type="text/css" rel="stylesheet" href="../static/style.css"/>
+				<script type="text/javascript" language="Javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+        </script>
+</head>
+<nav>
+<header>
+	<ul id="nav">
+	<li class="navlist"><a href="#">my projects</a></li>
+	<li class="navlist"><a href="#">gymnasium</a></li>
+	<li class="navlist"><a href="#">exclusive random stuff</a></li>
+	<li class="navlist"><a href="#">contact</a></li>
+</ul>
+</header>
+<input type="button" id="todoBT">
+<div class="todo">
+	<span class="todoCONTENT">
+		<table>
+			<caption>My TO-DO List</caption>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Renovate the Project Euler code view</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Oprette skolefag links på Gymnasium<br>side</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Make a music section, with feeds<br>
+										from SoundCloud
+			</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th>Make everything dynamic</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th><s>Finish the TO-DO list</s></th>
+			</tr>
+		</table>
+</span>
+	</div>
+	<script language="javascript" type="text/javascript">
+	$(function() {
+	$("#todoBT").click(function() {
+		$(".todo").toggleClass("box-change");
+	});
+});
+	</script>
+</nav>
+<body>
+<img id="logo" src="../static/images/logo.png" alt="iSplasher" >
+<p class="title">My Projects</p>
+{% block content %}{% endblock %}
+<br>
+</body>
+<footer>
+© iSplasher <br>
+All Rights Reserved
+</footer>
+</html>
