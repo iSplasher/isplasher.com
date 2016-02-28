@@ -9,6 +9,7 @@
 *.pyproj
 *.ini
 __pycache__
+*config*
 
 # Build results
 [Dd]ebug/

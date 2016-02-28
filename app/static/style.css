@@ -216,12 +216,11 @@ header {
 
 header #nav li {
 	font-family: "Quicksand";
-	display: inline;
 }
 
 .navlist {
 	position:relative;
-	margin:10px 10px;
+	margin:2px 2px;
 	display:inline-block;
 }
 
@@ -462,6 +461,7 @@ h1.links .list .active {
 	 width: 0;
 	 position: absolute;
 	 pointer-events: none;
+     overflow: visible !important;
 }
 .arrow_box:after {
      border-color: rgba (238, 99, 77, 0);
@@ -516,6 +516,17 @@ h1.links .list .active {
 
 /* Inner box */
 
+@keyframes box_show {
+    from {
+        max-height: 0px;
+        opacity: 0;
+    }
+    to {
+        max-height:500px;
+        opacity: 100%;
+    }
+}
+
 .arrow_box .box {
 	position:relative;
 	display:inline-block;
@@ -524,6 +535,9 @@ h1.links .list .active {
 	border-top: 2px solid #F63;
 	border-bottom: 2px solid #F63;
 	margin: 20px 27px;
+    overflow: hidden;
+    animation: box_show;
+    animation-duration: 4s;
 }
 
 .arrow_box_normal .box_me {

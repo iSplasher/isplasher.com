@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../static/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#F63">
+    <meta name="msapplication-TileImage" content="../static/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#F63">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+{% if title%}
+<title>{{ title }} - iSplasher</title>
+{% else %}
+<title>My Projects - iSplasher</title>
+{% endif %}
+		<link type="text/css" rel="stylesheet" href="../static/style.css"/>
+				<script type="text/javascript" language="Javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+        </script>
+</head>
+<nav>
+<header>
+	<ul id="nav">
+	<li class="navlist"><a href="index">my projects</a></li>
+	<li class="navlist"><a href="gymnasium">gymnasium</a></li>
+	<li class="navlist"><a href="github">github</a></li>
+	<li class="navlist"><a href="random">exclusive random stuff</a></li>
+	<li class="navlist"><a href="contact">contact</a></li>
+</ul>
+</header>
+<input type="button" id="todoBT">
+<div class="todo">
+	<span class="todoCONTENT">
+		<table>
+			<caption>My TO-DO List</caption>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Renovate the Project Euler code view</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Oprette skolefag links på Gymnasium<br>side</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th style="font-size:95%">Make a music section, with feeds<br>
+										from SoundCloud
+			</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th>Make everything dynamic</th>
+			</tr>
+			<tr>
+			<th style="color:#F63;">•</th>
+			<th><s>Finish the TO-DO list</s></th>
+			</tr>
+		</table>
+</span>
+	</div>
+	<script language="javascript" type="text/javascript">
+	$(function() {
+	$("#todoBT").click(function() {
+		$(".todo").toggleClass("box-change");
+	});
+});
+	</script>
+</nav>
+<body>
+<img id="logo" src="../static/images/logo.png" alt="iSplasher" >
+{% if descr%}
+<p class="title">{{ descr }}</p>
+{% endif %}
+{% block content %}{% endblock %}
+<br>
+</body>
+<footer>
+© iSplasher <br>
+All Rights Reserved
+</footer>
+</html>
