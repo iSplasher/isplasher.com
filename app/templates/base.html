@@ -30,53 +30,15 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
         </script>
 </head>
+<header></header>
 <nav>
-<header>
-	<ul id="nav">
-	<li class="navlist"><a href="index">my projects</a></li>
-	<li class="navlist"><a href="gymnasium">gymnasium</a></li>
-	<li class="navlist"><a href="github">github</a></li>
-	<li class="navlist"><a href="random">exclusive random stuff</a></li>
-	<li class="navlist"><a href="contact">contact</a></li>
+	<ul>
+	<li class="navlist" {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="index">my projects</a></li>
+	<li class="navlist" {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="gymnasium">gymnasium</a></li>
+	<li class="navlist" {% if request.path == '/github' %} id="active" {% endif %}><a href="github">github</a></li>
+	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="random">exclusive random stuff</a></li>
+	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="contact">contact</a></li>
 </ul>
-</header>
-<input type="button" id="todoBT">
-<div class="todo">
-	<span class="todoCONTENT">
-		<table>
-			<caption>My TO-DO List</caption>
-			<tr>
-			<th style="color:#F63;">•</th>
-			<th style="font-size:95%">Renovate the Project Euler code view</th>
-			</tr>
-			<tr>
-			<th style="color:#F63;">•</th>
-			<th style="font-size:95%">Oprette skolefag links på Gymnasium<br>side</th>
-			</tr>
-			<tr>
-			<th style="color:#F63;">•</th>
-			<th style="font-size:95%">Make a music section, with feeds<br>
-										from SoundCloud
-			</th>
-			</tr>
-			<tr>
-			<th style="color:#F63;">•</th>
-			<th>Make everything dynamic</th>
-			</tr>
-			<tr>
-			<th style="color:#F63;">•</th>
-			<th><s>Finish the TO-DO list</s></th>
-			</tr>
-		</table>
-</span>
-	</div>
-	<script language="javascript" type="text/javascript">
-	$(function() {
-	$("#todoBT").click(function() {
-		$(".todo").toggleClass("box-change");
-	});
-});
-	</script>
 </nav>
 <body>
 <img id="logo" src="../static/images/logo.png" alt="iSplasher" >
