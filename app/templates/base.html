@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <link rel="shortcut icon" href="../static/images/favicon/favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png">
@@ -30,15 +31,29 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
         </script>
 </head>
-<header></header>
+<header>
+    {% with messages = get_flashed_messages(category_filter=["global"]) %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="flash_box">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+    {% endwith %}
+</header>
 <nav>
 	<ul>
+    {% if g.user.is_authenticated%}
+	<li class="navlist" {% if request.path == '/admin' %} id="active" {% endif %} ><a href="admin">admin</a></li>    
+    {% endif %}
 	<li class="navlist" {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="index">my projects</a></li>
 	<li class="navlist" {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="gymnasium">gymnasium</a></li>
 	<li class="navlist" {% if request.path == '/github' %} id="active" {% endif %}><a href="github">github</a></li>
 	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="random">exclusive random stuff</a></li>
 	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="contact">contact</a></li>
 </ul>
+{% if g.user.is_authenticated == false%}
+<div class="login_button"><a href="login"><div class="login_button"></div></a></div>
+{% endif %}
 </nav>
 <body>
 <img id="logo" src="../static/images/logo.png" alt="iSplasher" >
