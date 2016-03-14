@@ -24,33 +24,55 @@ header {
 
 @keyframes flash_slide_down {
     from {
+        transform: scale(0);
         max-height: 0px;
+        opacity: 0;
     }
     to {
-        max-height:50px;
+        transform: scale(1);
+        opacity: 1;        
+        max-height:100px;
     }
 }
 
 .flash_box {
-    position: absolute;
-    top:2px;
+    opacity: 0;
+    color: #F63;
+    top: 2px;
+    max-height: 0;
+    transform: scale(0);
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-duration: 3s;
+}
+
+.flash_box_error {
+    color: orangered;
+    animation-duration: 0.2s;
+}
+
+.flash_box, .flash_box_error {
+    position: relative;
+    padding: 3px;
+    margin: 4px;
     left: 0;
     right: 0;
 	margin-left: auto;
 	margin-right: auto;
-    background: #1b1b1b;
-    color: #F63;
+    background: #1b1b1b;;
+    border: 2px solid #F63;
     text-align: center;
-    height: 100;
     max-width: 300px;
     display: inline-block;
     animation-name: flash_slide_down;
-    animation-duration: 2s;
     overflow: hidden;
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
     text-align: center;
     text-shadow: 0 -1px 0 #000000;
+    font-size: 18px;
 }
+
+
 
 /* Navigation/Menu link */
 
@@ -71,13 +93,21 @@ nav {
 }
 
 .login_button {
+    right: 1%;
+    background: #F63;
+}
+
+.logout_button {
+    left: 1%;
+    background: #c11f1f;
+}
+
+.login_button, .logout_button {
     position: absolute;
     top: 1%;
-    right: 1%;
     width:10px;
     height:10px;
     border-radius:50px;
-    background: #F63;
 }
 
 .navlist {
@@ -126,16 +156,27 @@ form > div {
     margin-bottom: 20px;
 }
 
-input {
-    border: 2px solid #F63;
-    width: 300px;
-    height: 30px;
+input, textarea, button {
+    text-shadow: 0 -1px 0 #000000;    
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
+}
+
+input, textarea {
     color: #1b1b1b;
     padding: 2px;
     padding-left: 10px;
     font-size: 13pt;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
-    text-shadow: 0 -1px 0 #000000;    
+}
+
+textarea {
+    border: 1px solid #F63;
+    width: 350px;
+}
+
+input {
+    border: 2px solid #F63;
+    width: 300px;
+    height: 30px;
 }
 
 button {
@@ -146,13 +187,11 @@ button {
   height: 20px;
   border: none;
   background-color: #F63;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.8), 0 1px 0 4px rgba(255, 255, 255, 0.15), 0 0 0 4px rgba(23, 25, 28, 0.8);
   color: #fff;
   list-style-type: none;
   text-align: center;
-  text-shadow: 0 -1px 0 #000000;
   font-weight: bold;
-  font-size: 13px;
+    font-size: 13px;
 }
 
 button:focus, button:hover {
@@ -441,6 +480,28 @@ a:hover {
 	text-decoration: underline;
 }
 
+.grouplist {
+	color: #F63;
+    
+}
+
+.grouplist ul {
+	font-family: "Quicksand";
+	font-size: 21px;
+    margin: 10px;
+}
+
+.grouplist ul li {
+    margin: 20px;
+    color: white;
+	font-size: 16px;
+    list-style: none;
+    padding-left: 50px;
+}
+
+.grouplist ul li span {
+    margin-right: 20px;
+}
 
 #list2 {
 	color: #F63;

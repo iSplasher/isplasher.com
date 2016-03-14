@@ -4,7 +4,7 @@
 {% with messages = get_flashed_messages(category_filter=["error"]) %}
   {% if messages %}
     {% for message in messages %}
-      <h2>{{ message }}</h2>
+      <div class="flash_box_error">{{ message }}</div>
     {% endfor %}
   {% endif %}
 {% endwith %}
@@ -16,7 +16,7 @@
     <input type="password" id="password" name="password" placeholder="password" required>
     </div>
     <div>
-    <button type="submit" class="submit_btn">Log in</button>
+    <button type="submit">Log in</button>
     </div>
   </form>
     </div>

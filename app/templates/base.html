@@ -32,15 +32,15 @@
         </script>
 </head>
 <header>
-    {% with messages = get_flashed_messages(category_filter=["global"]) %}
+</header>
+<nav>
+  {% with messages = get_flashed_messages(category_filter=["global"]) %}
   {% if messages %}
     {% for message in messages %}
-      <div class="flash_box">{{ message }}</div>
+      <div class="flash_box"><font color="white">Welcome </font>{{message}}<font color="white">-sama</font></div>    
     {% endfor %}
   {% endif %}
     {% endwith %}
-</header>
-<nav>
 	<ul>
     {% if g.user.is_authenticated%}
 	<li class="navlist" {% if request.path == '/admin' %} id="active" {% endif %} ><a href="admin">admin</a></li>    
@@ -51,7 +51,9 @@
 	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="random">exclusive random stuff</a></li>
 	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="contact">contact</a></li>
 </ul>
-{% if g.user.is_authenticated == false%}
+{% if g.user.is_authenticated %}
+<div class="logout_button"><a href="logout"><div class="logout_button"></div></a></div>
+{% else %}
 <div class="login_button"><a href="login"><div class="login_button"></div></a></div>
 {% endif %}
 </nav>

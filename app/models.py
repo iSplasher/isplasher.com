@@ -1,4 +1,5 @@
 from app import db
+from sqlalchemy.schema import UniqueConstraint
 import datetime
 
 class User(db.Model):
@@ -30,16 +31,27 @@ categories = db.Table('categories',
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
+    
+    def __repr__(self):
+        return self.name
+    
+class ProjectType(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), index=True, unique=True)
+    projects = db.relationship('Project', backref='type', cascade="all, delete-orphan", lazy='dynamic')
+
+    def __repr__(self):
+        return self.name
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
-    project_type = db.Column(db.String)
+    cover = db.Column(db.String)
     description = db.Column(db.String)
     timestamp = db.Column(db.DateTime)
-    date_started = db.Column(db.DateTime)
-    date_finished = db.Column(db.DateTime)
-    posts = db.relationship('Post', backref='post_project', lazy='dynamic')
+    date_started = db.Column(db.Date)
+    date_finished = db.Column(db.Date)
+    type_id = db.Column(db.Integer, db.ForeignKey('project_type.id'))
     
     def __repr__(self):
         t = "Project "
@@ -52,8 +64,8 @@ class Post(db.Model):
     body = db.Column(db.String)
     timestamp = db.Column(db.DateTime)
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
-    categories = db.relationship('Category', secondary=categories, backref=db.backref('post_categories', lazy='dynamic'))
-    comments = db.relationship('Comment', backref='post_comment', lazy='dynamic')
+    categories = db.relationship('Category', secondary=categories, backref=db.backref('categories', lazy='dynamic'))
+    comments = db.relationship('Comment', backref='post', cascade="all, delete-orphan", lazy='dynamic')
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
@@ -66,17 +78,25 @@ class Comment(db.Model):
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
-        
+ 
         
 def add_category(name):
     c = Category(name=name)
     db.session.add(c)
     
-def add_post(project, body, categories):
+def add_post(project, body, categories=[]):
     p = Post(body=body, timestamp=datetime.datetime.utcnow(), post_project=project)
+    if isinstance(categories, list):
+        for c in categories:
+            p.categories.append(c)
+    else:
+       p.categories.append(categories)
     db.session.add(p)
     
-def add_project(project_type, name, description, start_date=datetime.datetime.utcnow(), finish_date=datetime.datetime.utcnow()):
-    p = Project(name=name, project_type=project_type, description=description, timestamp=datetime.datetime.utcnow(),
+def add_comment(post, body):
+    pass
+    
+def add_project(project_type, name, description, cover="", start_date=datetime.datetime.utcnow(), finish_date=datetime.datetime.utcnow()):
+    p = Project(name=name, type=project_type, cover=cover, description=description, timestamp=datetime.datetime.utcnow(),
         date_started=start_date, date_finished=finish_date)
     db.session.add(p)
