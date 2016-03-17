@@ -23,36 +23,40 @@ header {
 /* slide-down box for flash messages */
 
 @keyframes flash_slide_down {
-    from {
-        transform: scale(0);
+    0% {
         max-height: 0px;
         opacity: 0;
     }
-    to {
-        transform: scale(1);
+    
+    20% {
+        opacity: 1;        
+    }
+    
+    100% {
         opacity: 1;        
         max-height:100px;
     }
 }
 
 .flash_box {
+    position: absolute;
     opacity: 0;
     color: #F63;
     top: 2px;
     max-height: 0;
-    transform: scale(0);
     animation-iteration-count: 2;
     animation-direction: alternate;
     animation-duration: 3s;
+    z-index: 10000;
 }
 
 .flash_box_error {
+    position: relative;
     color: orangered;
     animation-duration: 0.2s;
 }
 
 .flash_box, .flash_box_error {
-    position: relative;
     padding: 3px;
     margin: 4px;
     left: 0;
@@ -305,11 +309,11 @@ h1.links .list .active {
 	margin-right:auto;
 	margin-bottom:30px;
 	padding:5px 5px;
-	 position: relative;
-	 background:url("images/trans.png");
-	 border-top: 1px solid #F63;
-	 border-bottom: 1px solid #F63;
-	 text-align:center;
+    position: relative;
+    background:url("images/trans.png");
+    border-top: 1px solid #F63;
+    border-bottom: 1px solid #F63;
+    text-align:center;
 }
 .arrow_box:after, .arrow_box:before {
      bottom: 100%;
@@ -386,14 +390,28 @@ h1.links .list .active {
     }
 }
 
-.arrow_box .box {
-	position:relative;
-	display:inline-block;
-	width:150px;
+.box {
+    position:relative;
 	height:200px;
+	width:150px;
+    display:inline-block;
+    margin: 20px !important;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+}
+
+.box span {
+    color: white !important;
+    font-family: "Quicksand" !important;
+    font-size: 12pt !important;
+}
+
+.arrow_box .box {
 	border-top: 2px solid #F63;
 	border-bottom: 2px solid #F63;
-	margin: 20px 27px;
     overflow: hidden;
     animation: box_show;
     animation-duration: 2s;
@@ -406,7 +424,6 @@ h1.links .list .active {
 	width:200px;
 	height:200px;
 	margin: 20px 30px;
-	float: left;
 	text-align: center;
 }
 
@@ -423,16 +440,6 @@ h1.links .list .active {
 	width: 32px;
 	height: 32px;
 	background-image: url('images/spinner.png');
-}
-
-/* Inner box image */
-
-.arrow_box img {
-	position: relative;
-	float:left;
-	height:200px;
-	width:150px;
-	z-index:1;
 }
 
 /* List Styling */
@@ -481,14 +488,50 @@ a:hover {
 }
 
 .grouplist {
-	color: #F63;
-    
+    position: relative;
+    color: white;
+    right: 0;
+    left: 0;
 }
 
-.grouplist ul {
-	font-family: "Quicksand";
+.grouplist div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grouplist .groupname {
+	font-family: "QuicksandBold";
+    display: inline-block;
+	color: #F63;
 	font-size: 21px;
-    margin: 10px;
+    margin: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.groupname::before,
+.groupname::after{
+	display: inline-block;
+	opacity: 0;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.groupname::before{
+	margin-right: 5px;
+	content: '|';
+	transform: translateX(10px);
+}
+
+.groupname::after{
+	margin-left: 5px;
+	content: '|';
+	transform: translateX(-10px);
+}
+
+.groupname:hover::before,
+.groupname:hover::after{
+	opacity: 1;
+	transform: translateX(0px);
 }
 
 .grouplist ul li {
@@ -497,10 +540,6 @@ a:hover {
 	font-size: 16px;
     list-style: none;
     padding-left: 50px;
-}
-
-.grouplist ul li span {
-    margin-right: 20px;
 }
 
 #list2 {

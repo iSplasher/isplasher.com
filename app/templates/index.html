@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="arrow_box">
-    <div class="box"><a href="#">
-    <img src="../static/images/no-image.png">
-    <span class="text-box">Github</span>
-    </a></div>
-    <div class="box"><a href="#">
-    <img src="../static/images/no-image.png">
-    <span class="text-box">Gymnasium</span>
-    </a></div>
-    <div class="box"><a href="#">
-    <img src="../static/images/euler.png">
-    <span class="text-box">Project Euler</span>
-    </a></div>
+        
+    <div class="grouplist">
+    {% macro grouped_project_list(project_type) %}
+        <span class="groupname">{{ project_type.name }}</span>
+        <div>
+            {% for project in project_type.projects %}
+                <div class="box"><a href="/project/{{ project.type.id }}/{{ project.id }}">
+                <img src="{{ project.cover }}">
+                <span class="text-box">{{ project.name }}</span>
+                </a></div>
+            {% endfor %}
+        </div>
+    
+    {% endmacro %}
+           
+    {% for project_type in project_types %}
+        {{ grouped_project_list(project_type) }}
+    {% endfor %}
+    
+    </div>
     </div>
 {% endblock %}

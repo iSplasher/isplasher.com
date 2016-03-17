@@ -1,23 +1,23 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <link rel="shortcut icon" href="../static/images/favicon/favicon.ico?v=2" />
-    <link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../static/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../static/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../static/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../static/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../static/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../static/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../static/images/favicon/manifest.json">
+    <link rel="shortcut icon" href="/static/images/favicon/favicon.ico?v=2" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#F63">
-    <meta name="msapplication-TileImage" content="../static/images/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#F63">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
@@ -26,39 +26,39 @@
 {% else %}
 <title>My Projects - iSplasher</title>
 {% endif %}
-		<link type="text/css" rel="stylesheet" href="../static/style.css"/>
+		<link type="text/css" rel="stylesheet" href="/static/style.css"/>
 				<script type="text/javascript" language="Javascript"
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
         </script>
 </head>
 <header>
-</header>
-<nav>
   {% with messages = get_flashed_messages(category_filter=["global"]) %}
   {% if messages %}
     {% for message in messages %}
-      <div class="flash_box"><font color="white">Welcome </font>{{message}}<font color="white">-sama</font></div>    
+      <div class="flash_box">{{ message }}</div>    
     {% endfor %}
   {% endif %}
-    {% endwith %}
+    {% endwith %} 
+</header>
+<nav>
 	<ul>
     {% if g.user.is_authenticated%}
-	<li class="navlist" {% if request.path == '/admin' %} id="active" {% endif %} ><a href="admin">admin</a></li>    
+	<li class="navlist" {% if request.path == '/admin' %} id="active" {% endif %} ><a href="/admin">admin</a></li>    
     {% endif %}
-	<li class="navlist" {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="index">my projects</a></li>
-	<li class="navlist" {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="gymnasium">gymnasium</a></li>
-	<li class="navlist" {% if request.path == '/github' %} id="active" {% endif %}><a href="github">github</a></li>
-	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="random">exclusive random stuff</a></li>
-	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="contact">contact</a></li>
+	<li class="navlist" {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="/index">my projects</a></li>
+	<li class="navlist" {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="/gymnasium">gymnasium</a></li>
+	<li class="navlist" {% if request.path == '/github' %} id="active" {% endif %}><a href="/github">github</a></li>
+	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="/random">exclusive random stuff</a></li>
+	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
 </ul>
 {% if g.user.is_authenticated %}
-<div class="logout_button"><a href="logout"><div class="logout_button"></div></a></div>
+<div class="logout_button"><a href="/logout"><div class="logout_button"></div></a></div>
 {% else %}
-<div class="login_button"><a href="login"><div class="login_button"></div></a></div>
+<div class="login_button"><a href="/login"><div class="login_button"></div></a></div>
 {% endif %}
 </nav>
 <body>
-<img id="logo" src="../static/images/logo.png" alt="iSplasher" >
+<img id="logo" src="/static/images/logo.png" alt="iSplasher" >
 {% if descr%}
 <p class="title">{{ descr }}</p>
 {% endif %}

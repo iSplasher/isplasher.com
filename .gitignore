@@ -11,6 +11,7 @@
 __pycache__
 *config*
 *.db
+.key
 
 # Build results
 [Dd]ebug/

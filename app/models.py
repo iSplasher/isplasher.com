@@ -55,7 +55,7 @@ class Project(db.Model):
     
     def __repr__(self):
         t = "Project "
-        for x in [self.id, self.name, self.description, self.date_added, self.date_started, self.date_finished]:
+        for x in [self.id, self.name, self.description, self.timestamp, self.date_started, self.date_finished]:
             t += "{}\n".format(x)
         return t
         
@@ -96,7 +96,7 @@ def add_post(project, body, categories=[]):
 def add_comment(post, body):
     pass
     
-def add_project(project_type, name, description, cover="", start_date=datetime.datetime.utcnow(), finish_date=datetime.datetime.utcnow()):
+def add_project(project_type, name, description, cover="/static/images/no-image.png", start_date=datetime.datetime.utcnow(), finish_date=datetime.datetime.utcnow()):
     p = Project(name=name, type=project_type, cover=cover, description=description, timestamp=datetime.datetime.utcnow(),
         date_started=start_date, date_finished=finish_date)
     db.session.add(p)
