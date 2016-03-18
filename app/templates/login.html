@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="arrow_box">
+    <section class="arrow_box">
 {% with messages = get_flashed_messages(category_filter=["error"]) %}
   {% if messages %}
     {% for message in messages %}
@@ -20,5 +20,5 @@
     {{ login_form.submit }}
     </div>
   </form>
-    </div>
+    </section>
 {% endblock %}

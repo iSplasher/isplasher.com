@@ -62,14 +62,14 @@ def project_page(p_type=0, p_id=0):
     if p:
         if p.type.id == p_type:
             return render_template("project.html",
-                                descr="Working project!")
+                                descr="Working project!",
+                                project=p)
     flash("Project not found", "global")
     return redirect(url_for("index"))
                            
 @application.route("/login", methods=["GET", "POST"])
 def login():
     if not g.user.is_authenticated:
-        print(request.form)
         if request.method == "GET":
             return render_template("login.html",
                                    title="Login",

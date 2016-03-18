@@ -409,7 +409,7 @@ h1.links .list .active {
     font-size: 12pt !important;
 }
 
-.arrow_box .box {
+.arrow_box .box, table.project_detail tr {
 	border-top: 2px solid #F63;
 	border-bottom: 2px solid #F63;
     overflow: hidden;
@@ -540,6 +540,25 @@ a:hover {
 	font-size: 16px;
     list-style: none;
     padding-left: 50px;
+}
+
+table.project_detail {
+    position: relative;
+    background: #555;
+    padding: 5px;
+    width: 100%;
+}
+
+table.project_detail tr {
+    display: block;
+    height: 200px;
+    background: #F63;
+    margin: 5px;
+}
+
+table.project_detail tr h2 {
+    top: 2px;
+    margin: 2px;
 }
 
 #list2 {

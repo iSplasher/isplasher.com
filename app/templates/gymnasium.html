@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class="arrow_box">
-    <div class="box"><a href="#">
-    <img src="../static/images/no-image.png">
-    <span class="text-box">Github</span>
-    </a></div>
-    <div class="box"><a href="#">
-    <img src="../static/images/no-image.png">
-    <span class="text-box">Gymnasium</span>
-    </a></div>
-    <div class="box"><a href="#">
-    <img src="../static/images/euler.png">
-    <span class="text-box">Project Euler</span>
-    </a></div>
-    </section>
+<section class="arrow_box">
+    <table class="project_detail">
+        {% for project in [2, 3, 4] %}
+        <tr>
+            <td>
+                <h2>Test {{ project }} </h2>
+                <span> Really long description </span>
+                <button id="submit" name="submit" type="submit" value="posts">Show Posts</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
 {% endblock %}
