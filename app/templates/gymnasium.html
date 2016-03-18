@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="arrow_box">
-    <table class="project_detail">
-        {% for project in [2, 3, 4] %}
-        <tr>
-            <td>
-                <h2>Test {{ project }} </h2>
-                <span> Really long description </span>
-                <button id="submit" name="submit" type="submit" value="posts">Show Posts</button>
-            </td>
-        </tr>
+    <ul class="project_detail">
+        {% for project in projects %}
+        <li>
+            <img src="{{ project.cover }}">
+            <div class="project_info">
+                <h2>{{ project.name }}</h2>
+                <p> {{ project.description }} </p>
+            </div>
+            <span>From: {{ project.date_started }} | To: {{ project.date_finished }}</span>
+            <button id="submit" name="submit" type="submit" value="posts">Show Posts</button>
+        </li>
         {% endfor %}
-    </table>
+    </ul>
 </section>
 {% endblock %}

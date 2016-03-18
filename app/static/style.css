@@ -8,8 +8,8 @@
 *
 */
 
-code {
-	color: #21CF0E;
+* {
+    font-family: "Quicksand";
 }
 
 header {
@@ -309,6 +309,8 @@ h1.links .list .active {
 	margin-right:auto;
 	margin-bottom:30px;
 	padding:5px 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     position: relative;
     background:url("images/trans.png");
     border-top: 1px solid #F63;
@@ -380,20 +382,28 @@ h1.links .list .active {
 /* Inner box */
 
 @keyframes box_show {
-    from {
+    0% {
         max-height: 0px;
         opacity: 0;
     }
-    to {
-        max-height:500px;
+    
+    50% {
         opacity: 100%;
     }
+    
+    100% {
+        opacity: 100%;
+        max-height: 1000px;
+    }
+}
+
+ul.project_detail li img, .box {
+	height:200px;
+	width:150px;
 }
 
 .box {
     position:relative;
-	height:200px;
-	width:150px;
     display:inline-block;
     margin: 20px !important;
 }
@@ -409,12 +419,10 @@ h1.links .list .active {
     font-size: 12pt !important;
 }
 
-.arrow_box .box, table.project_detail tr {
-	border-top: 2px solid #F63;
-	border-bottom: 2px solid #F63;
+.arrow_box .box {
     overflow: hidden;
     animation: box_show;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-timing-function: ease-out;
 }
 
@@ -474,7 +482,6 @@ h1.links .list .active {
 
 a:link {
 	text-decoration: none;
-	font-family: "Quicksand";
 	color: white;
 }
 
@@ -490,16 +497,16 @@ a:hover {
 .grouplist {
     position: relative;
     color: white;
-    right: 0;
-    left: 0;
 }
 
-.grouplist div {
+/*.grouplist div {
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
 .grouplist .groupname {
+    right: 0;
+    left: 0;
 	font-family: "QuicksandBold";
     display: inline-block;
 	color: #F63;
@@ -510,21 +517,20 @@ a:hover {
 }
 
 .groupname::before,
-.groupname::after{
+.groupname::after {
 	display: inline-block;
 	opacity: 0;
 	transition: transform 0.3s, opacity 0.2s;
+	content: '|';
 }
 
-.groupname::before{
+.groupname::before {
 	margin-right: 5px;
-	content: '|';
 	transform: translateX(10px);
 }
 
-.groupname::after{
+.groupname::after {
 	margin-left: 5px;
-	content: '|';
 	transform: translateX(-10px);
 }
 
@@ -534,33 +540,74 @@ a:hover {
 	transform: translateX(0px);
 }
 
-.grouplist ul li {
-    margin: 20px;
-    color: white;
-	font-size: 16px;
-    list-style: none;
-    padding-left: 50px;
+ul.project_detail, ul.github_repo {
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    overflow: hidden;
 }
 
-table.project_detail {
+ul.project_detail {
+    animation: box_show;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+ul.project_detail li {
     position: relative;
     background: #555;
-    padding: 5px;
-    width: 100%;
-}
-
-table.project_detail tr {
-    display: block;
+    color: white;
     height: 200px;
-    background: #F63;
-    margin: 5px;
+    text-align: left;
 }
 
-table.project_detail tr h2 {
+ul.project_detail li img {
+    float: left; 
+    margin-right: 10px;
+}
+
+ul.project_detail li div.project_info h2 {
+	color: #F63;
     top: 2px;
-    margin: 2px;
 }
 
+ul.project_detail li button, ul.github_repo li button {
+    right: 2%;
+}
+
+ul.project_detail li span {
+    color: #1b1b1b;
+}
+
+ul.project_detail li span, ul.project_detail li button {
+    position: absolute;
+    bottom: 5%;
+}
+
+ul.github_repo li {
+    display: block;
+    position: relative;
+    background: #555;
+    color: white;
+    height: 100px;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+ul.github_repo li h3 {
+    top: 2px;
+    margin: 0;
+	color: #F63;
+}
+
+.simple_button_right {
+    position: absolute;
+    right: 2%;
+    bottom: 8%;
+}
+    
 #list2 {
 	color: #F63;
 }
@@ -592,45 +639,6 @@ table.project_detail tr h2 {
 	padding-right: 2px;
 }
 
-
-/* Project Euler */
-.header {
-	font-family: "Quicksand";
-	color: #F63;
-	font-size: 18px;
-	margin-left: 20px;
-}
-
-#toggle {
-	margin: auto;
-	margin-bottom: 25px;
-	width: 100%;
-	color: white;
-	font-family: "Quicksand";
-}
-
-#toggle .toggleAll {
-	margin-right: 10px;
-}
-
-#euler {
-	margin-top: 10px;
-	margin-left: 35px;
-	margin-bottom: 8px;
-}
-
-#euler .problems {
-	display: list-item;
-	list-style: none;
-	margin-bottom: 2px;
-}
-
-.code {
-	font-size: 15px;
-	font-family: sans-serif;
-	font-style: italic;
-	color: #F63;
-}
 /* About page */
 
 .lang {
@@ -668,20 +676,10 @@ table.project_detail tr h2 {
 	cursor: default;
 }
 
-
-
-#me {
-	height:200px;
-	width:200px;
-	border:2px solid #ee634d;
-	border-radius:3px;
-	}
-
 /* P Property */
 
 p {
 	color: #FFF;
-	font-family: "Quicksand";
 	border-left: 1px solid #F63;
 	border-right: 1px solid #F63;
 }

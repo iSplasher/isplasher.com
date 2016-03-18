@@ -37,7 +37,7 @@ def github():
 
 @application.route("/gymnasium")
 def gymnasium():
-    return render_template("index.html",
+    return render_template("gymnasium.html",
                            title="Gymnasium",
                            descr="Aarhus Gymnasium",
                            projects=get_projects("Gymnasium"))

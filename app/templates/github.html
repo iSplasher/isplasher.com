@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
     <section class="arrow_box">
-    <div class="box"><a href="#">
-    <img src="../static/images/no-image.png">
-    <span class="text-box">Github</span>
-    </a></div>
-    <div class="box"><a href="#">
-    <img src="../static/images/no-image.png">
-    <span class="text-box">Gymnasium</span>
-    </a></div>
-    <div class="box"><a href="#">
-    <img src="../static/images/euler.png">
-    <span class="text-box">Project Euler</span>
-    </a></div>
+        <div class="grouplist">
+            <span class="groupname">Gists</span>
+            <div>
+            </div>
+            <span class="groupname">Repositories</span>
+            <ul class="github_repo">
+            {% for project in projects %}
+                <li>
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description }}</p>
+                    <div class="simple_button_right">
+                       <button id="submit" name="submit" type="submit" value="posts">Show Posts</button>
+                        <button id="submit" name="submit" type="submit" value="posts">Show on Github</button>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
     </section>
 {% endblock %}
