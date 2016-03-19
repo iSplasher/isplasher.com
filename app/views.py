@@ -48,11 +48,19 @@ def random():
                            title="Exclusive Random Stuff",
                            descr="Random stuff!!")
 
-@application.route("/contact")
+@application.route("/contact", methods=['GET', 'POST'])
 def contact():
-    return render_template("index.html",
+    form = forms.ContactForm()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            flash("Message sent!", "global")
+            return redirect(url_for("index"))
+        else:
+            flash("Please fill out all fields", "error")
+    return render_template("contact.html",
                            title="Contact",
-                           descr="Contact Me")
+                           descr="Contact Me",
+                           form=form)
 
 @application.route("/project")
 @application.route("/project/<int:p_type>")

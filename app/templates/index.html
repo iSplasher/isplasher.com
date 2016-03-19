@@ -5,7 +5,7 @@
     <div class="grouplist">
     {% macro grouped_project_list(project_type) %}
         <span class="groupname">{{ project_type.name }}</span>
-        <div>
+        <div class="center">
             {% for project in project_type.projects %}
                 <div class="box"><a href="/project/{{ project.type.id }}/{{ project.id }}">
                 <img src="{{ project.cover }}">

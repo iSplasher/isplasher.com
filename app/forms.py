@@ -29,3 +29,11 @@ class LoginForm(Form):
     name = TextField('Name', [validators.Length(min=1, max=200), validators.Required()], render_kw={"placeholder": "Name"})
     password = PasswordField("Password", [validators.Required()], render_kw={"placeholder": "Password"})
     submit = ButtonField('Log In')
+    
+    
+class ContactForm(Form):
+    name = TextField('Name', [validators.Length(min=1, max=200), validators.Required()], render_kw={"placeholder": "Name"})
+    email = TextField('Email', [validators.Required(), validators.Email()], render_kw={"placeholder": "Email"})
+    subject = TextField('Subject', [validators.Required()], render_kw={"placeholder": "Subject"})
+    body = TextAreaField('Message', [validators.Required()], render_kw={"placeholder": "Message"})
+    submit = ButtonField('Send')

@@ -174,19 +174,20 @@ input, textarea {
 
 textarea {
     border: 1px solid #F63;
-    width: 350px;
 }
 
 input {
     border: 2px solid #F63;
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
     height: 30px;
+    box-sizing: border-box;
 }
 
 button {
   box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-bottom: 5px;
   height: 20px;
   border: none;
@@ -299,6 +300,12 @@ h1.links .list .active {
 	font-family: "Quicksand";
 	word-spacing:5px;
 }
+
+/* center element */
+.center {
+    text-align: center;
+}
+
 /* Outer box with center*/
 
 .arrow_box {
@@ -315,7 +322,6 @@ h1.links .list .active {
     background:url("images/trans.png");
     border-top: 1px solid #F63;
     border-bottom: 1px solid #F63;
-    text-align:center;
 }
 .arrow_box:after, .arrow_box:before {
      bottom: 100%;
@@ -405,7 +411,10 @@ ul.project_detail li img, .box {
 .box {
     position:relative;
     display:inline-block;
-    margin: 20px !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .box img {
@@ -499,19 +508,11 @@ a:hover {
     color: white;
 }
 
-/*.grouplist div {
-    margin-left: auto;
-    margin-right: auto;
-}*/
-
 .grouplist .groupname {
-    right: 0;
-    left: 0;
 	font-family: "QuicksandBold";
     display: inline-block;
 	color: #F63;
 	font-size: 21px;
-    margin: 20px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -540,14 +541,14 @@ a:hover {
 	transform: translateX(0px);
 }
 
-ul.project_detail, ul.github_repo {
+ul.project_detail, ul.github_repo, ul.contact_form {
     padding: 0;
     list-style-type: none;
     width: 100%;
     overflow: hidden;
 }
 
-ul.project_detail {
+ul.project_detail, ul.contact_form {
     animation: box_show;
     animation-duration: 2s;
     animation-timing-function: ease-out;
@@ -600,6 +601,16 @@ ul.github_repo li h3 {
     top: 2px;
     margin: 0;
 	color: #F63;
+}
+
+ul.contact_form li {
+    margin: 20px;
+}
+
+ul.contact_form textarea {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
 }
 
 .simple_button_right {
