@@ -556,10 +556,11 @@ ul.project_detail, ul.contact_form {
 
 ul.project_detail li {
     position: relative;
-    background: #555;
+    background: #353535;
     color: white;
     height: 200px;
     text-align: left;
+    margin: 5px 0px 10px 0px; 
 }
 
 ul.project_detail li img {
@@ -569,7 +570,7 @@ ul.project_detail li img {
 
 ul.project_detail li div.project_info h2 {
 	color: #F63;
-    top: 2px;
+    top: 5px;
 }
 
 ul.project_detail li button, ul.github_repo li button {
@@ -577,7 +578,9 @@ ul.project_detail li button, ul.github_repo li button {
 }
 
 ul.project_detail li span {
-    color: #1b1b1b;
+    border-bottom: 1px solid #f63;
+    color: #c9c9c9;
+    font-style: italic;
 }
 
 ul.project_detail li span, ul.project_detail li button {
@@ -588,7 +591,7 @@ ul.project_detail li span, ul.project_detail li button {
 ul.github_repo li {
     display: block;
     position: relative;
-    background: #555;
+    background: #353535;
     color: white;
     height: 100px;
     text-align: left;
