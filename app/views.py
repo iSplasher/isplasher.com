@@ -3,6 +3,23 @@ from flask.ext.login import login_user, logout_user, current_user, login_require
 from app import application, db, login_manager, bcrypt, models, forms
 from app.models import User
 
+from datetime import datetime
+from os import listdir, path
+from random import randint
+
+debug = True
+
+def get_r_image():
+    hour = datetime.now().hour
+    day = "day"
+    if 14 < hour < 20:
+        day = "night"
+    elif hour > 20 or hour < 6:
+        day = "midnight"
+    
+    images = listdir("app/static/images/{}".format(day))
+    return  day + "/" + images[randint(0, len(images)-1)]
+
 def get_projects(p_type):
     projects = []
     if isinstance(p_type, str):
@@ -16,7 +33,11 @@ def get_projects(p_type):
 @application.before_request
 def before_request():
     g.user = current_user
-
+    g.bg = session.get("bg")
+    if not g.bg:
+        g.bg = get_r_image()
+        session["bg"] = g.bg
+       
 @login_manager.user_loader
 def user_loader(user_id):
     return User.query.get(user_id)
@@ -92,7 +113,7 @@ def login():
                         login_user(valid)
                         flash("Welcome {}-sama".format(valid.name), "global")
                         return redirect(request.args.get('next') or url_for("index"))
-        flash("I-it's not like I want you to log in or anything, B-baka!", "error")
+        flash("I-it's not like I want you to log in or anything, s-stupid!", "error")
         return redirect(url_for("login"))
     return redirect(url_for("index"))
     
