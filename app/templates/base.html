@@ -40,17 +40,19 @@
   {% endif %}
     {% endwith %} 
 </header>
+<body>
 <div class="bg" id="bg" style="background-image: url(/static/images/{{g.bg}}) !important;"></div>
+<div id="content" class="center">
 <nav>
 	<ul>
     {% if g.user.is_authenticated%}
-	<li class="navlist" {% if request.path == '/admin' %} id="active" {% endif %} ><a href="/admin">admin</a></li>    
+	<li {% if request.path == '/admin' %} id="active" {% endif %} ><a href="/admin">admin</a></li>    
     {% endif %}
-	<li class="navlist" {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="/index">my projects</a></li>
-	<li class="navlist" {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="/gymnasium">gymnasium</a></li>
-	<li class="navlist" {% if request.path == '/github' %} id="active" {% endif %}><a href="/github">github</a></li>
-	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="/random">exclusive random stuff</a></li>
-	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
+	<li {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="/index">my projects</a></li>
+	<li {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="/gymnasium">gymnasium</a></li>
+	<li {% if request.path == '/github' %} id="active" {% endif %}><a href="/github">github</a></li>
+	<li {% if request.path == '/random' %} id="active" {% endif %}><a href="/random">exclusive random stuff</a></li>
+	<li {% if request.path == '/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
 </ul>
 {% if g.user.is_authenticated %}
 <div class="logout_button"><a href="/logout"><div class="logout_button"></div></a></div>
@@ -58,12 +60,12 @@
 <div class="login_button"><a href="/login"><div class="login_button"></div></a></div>
 {% endif %}
 </nav>
-<body>
 <img id="logo" src="/static/images/logo.png" alt="iSplasher" >
 {% if descr%}
-<p class="title">{{ descr }}</p>
+<p class="title dark_bg">{{ descr }}</p>
 {% endif %}
 {% block content %}{% endblock %}
+</div>
 <br>
 </body>
 <footer>
