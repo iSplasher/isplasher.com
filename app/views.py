@@ -12,7 +12,7 @@ debug = True
 def get_r_image():
     hour = datetime.now().hour
     day = "day"
-    if 14 < hour < 20:
+    if 15 < hour < 20:
         day = "night"
     elif hour > 20 or hour < 6:
         day = "midnight"

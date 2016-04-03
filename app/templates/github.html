@@ -2,13 +2,13 @@
 {% block content %}
     <section class="arrow_box">
         <div class="grouplist">
-            <span class="groupname">Gists</span>
+            <span class="groupname grad_dark">Gists</span>
             <div>
             </div>
-            <span class="groupname">Repositories</span>
+            <span class="groupname grad_dark">Repositories</span>
             <ul class="github_repo">
             {% for project in projects %}
-                <li>
+                <li class="main_color">
                     <h3>{{ project.name }}</h3>
                     <p>{{ project.description }}</p>
                     <div class="simple_button_right">
