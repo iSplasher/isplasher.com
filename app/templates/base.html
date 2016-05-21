@@ -31,7 +31,7 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
         </script>
 </head>
-<header>
+<!--<header>
     <div class="flash_box">This site is under construction. Please check by later!</div>
   {% with messages = get_flashed_messages(category_filter=["global"]) %}
   {% if messages %}
@@ -41,31 +41,43 @@
   {% endif %}
     {% endwith %} 
 </header>
-<nav>
-	<ul>
-    {% if g.user.is_authenticated%}
-	<li class="navlist" {% if request.path == '/admin' %} id="active" {% endif %} ><a href="/admin">admin</a></li>    
-    {% endif %}
-	<li class="navlist" {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="/index">my projects</a></li>
-	<li class="navlist" {% if request.path == '/gymnasium' %} id="active" {% endif %}><a href="/gymnasium">gymnasium</a></li>
-	<li class="navlist" {% if request.path == '/github' %} id="active" {% endif %}><a href="/github">github</a></li>
-	<li class="navlist" {% if request.path == '/random' %} id="active" {% endif %}><a href="/random">exclusive random stuff</a></li>
-	<li class="navlist" {% if request.path == '/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
-</ul>
 {% if g.user.is_authenticated %}
 <div class="logout_button"><a href="/logout"><div class="logout_button"></div></a></div>
 {% else %}
 <div class="login_button"><a href="/login"><div class="login_button"></div></a></div>
-{% endif %}
-</nav>
+{% endif %}-->
 <body>
-<div class="bg" id="bg" style="background-image: url(/static/images/{{g.bg}}) !important;"></div>
-<img id="logo" src="/static/images/logo.png" alt="iSplasher" >
-{% if descr%}
-<p class="title grad_dark">{{ descr }}</p>
-{% endif %}
-{% block content %}{% endblock %}
-<br>
+    <div class="container">
+    <div class="sidebar">
+        <ul class="navlist">
+    {% if g.user.is_authenticated%}
+	<li {% if request.path == '/admin' %} id="active" {% endif %} ><a href="/admin">admin</a></li>    
+    {% endif %}
+	<li {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="/index">home</a></li>
+	<li {% if request.path == '/posts' %} id="active" {% endif %}><a href="/posts">posts</a></li>
+	<li {% if request.path == '/projects' %} id="active" {% endif %}><a href="/projects">projects</a></li>
+	<li {% if request.path == '/education' %} id="active" {% endif %}><a href="/education">education</a></li>
+	<li {% if request.path == '/random' %} id="active" {% endif %}><a href="/random">random stuff</a></li>
+	<li {% if request.path == '/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
+    </ul>
+    
+    <ul class="recent-a">
+        <span>Activity</span>
+        <li>working on site</li>
+        </ul>
+    <ul class="recent-p">
+        <span>Recent Posts</span>
+        <li>test</li>
+        <li>test2</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="title">
+            {{ descr }}
+            </div>
+        {% block content %}{% endblock %}
+    </div>
+    </div>
 </body>
 <footer class="grad_dark">
 © iSplasher <br>

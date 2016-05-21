@@ -46,28 +46,33 @@ def user_loader(user_id):
 @application.route("/index")
 def index():
     return render_template("index.html",
-                            descr="My Projects",
+                            descr="Me",
                             project_types=models.ProjectType.query.all())
 
-@application.route("/github")
-def github():
-    return render_template("github.html",
-                           title="Github",
-                           descr="My Github Related Stuff",
-                           projects=get_projects("Github"))
+@application.route("/posts")
+def posts():
+    return render_template("posts.html",
+                           title="Posts",
+                           descr="My Posts")
+                           
+@application.route("/projects")
+def projects():
+    return render_template("projects.html",
+                           title="Projects",
+                           descr="My Projects")          
 
-@application.route("/gymnasium")
-def gymnasium():
-    return render_template("gymnasium.html",
-                           title="Gymnasium",
-                           descr="Aarhus Gymnasium",
+@application.route("/education")
+def education():
+    return render_template("education.html",
+                           title="Education",
+                           descr="Education Related Stuff",
                            projects=get_projects("Gymnasium"))
 
 @application.route("/random")
 def random():
     return render_template("index.html",
-                           title="Exclusive Random Stuff",
-                           descr="Random stuff!!")
+                           title="Random Stuff",
+                           descr="Exclusive Random Stuff!!")
 
 @application.route("/contact", methods=['GET', 'POST'])
 def contact():
@@ -91,7 +96,7 @@ def project_page(p_type=0, p_id=0):
     if p:
         if p.type.id == p_type:
             return render_template("project.html",
-                                descr="Working project!",
+                                descr="Working Project!",
                                 project=p)
     flash("Project not found", "global")
     return redirect(url_for("index"))

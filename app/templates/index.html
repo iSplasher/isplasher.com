@@ -1,25 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class="arrow_box">
-        
-    <div class="grouplist">
-    {% macro grouped_project_list(project_type) %}
-        <span class="groupname grad_dark">{{ project_type.name }}</span>
-        <div class="center">
-            {% for project in project_type.projects %}
-                <div class="box"><a href="/project/{{ project.type.id }}/{{ project.id }}">
-                <img src="{{ project.cover }}">
-                <span class="text-box">{{ project.name }}</span>
-                </a></div>
-            {% endfor %}
-        </div>
-    
-    {% endmacro %}
-           
-    {% for project_type in project_types %}
-        {{ grouped_project_list(project_type) }}
-    {% endfor %}
-    
-    </div>
+    <section>
+         <ul class="intro">
+             <span>Hi, I'm iSplasher</span>
+             <li class="one">I code..</li>
+             <li class="two">and make fun stuff</li>
+             <li class="three">I know a handful of programming languages</li>
+             <li class="four">I 3D design</li>
+             <li class="five">I draw</li>
+             <li class="six">I play the piano</li>
+             <li class="seven">I play games</li>
+             <li class="eight">I love music</li>
+             <li class="nine">Enjoy my site.</li>
+             </ul>
     </section>
 {% endblock %}
