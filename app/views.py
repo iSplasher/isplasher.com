@@ -120,7 +120,7 @@ def login():
                         return redirect(request.args.get('next') or url_for("index"))
         flash("I-it's not like I want you to log in or anything, s-stupid!", "error")
         return redirect(url_for("login"))
-    return redirect(url_for("index"))
+    return redirect(url_for("logout"))
     
 @application.route("/logout")
 @login_required
