@@ -70,7 +70,7 @@ def education():
 
 @application.route("/random")
 def random():
-    return render_template("index.html",
+    return render_template("random.html",
                            title="Random Stuff",
                            descr="Exclusive Random Stuff!!")
 

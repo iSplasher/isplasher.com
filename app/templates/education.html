@@ -1,18 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="arrow_box">
-    <ul class="project_detail">
-        {% for project in projects %}
-        <li class="main_color">
-            <img src="{{ project.cover }}">
-            <div class="project_info">
-                <h2>{{ project.name }}</h2>
-                <p> {{ project.description }} </p>
-            </div>
-            <span>{{ project.date_started }} ➜ {{ project.date_finished }}</span>
-            <button id="submit" name="submit" type="submit" value="posts">Show Posts</button>
-        </li>
-        {% endfor %}
-    </ul>
+<section>
+    <div class="group">
+               <span class="group-title">Gymnasium</span>
+               <ul class="edu-year">
+                   <span>1.G</span>
+                   <li>test</li>
+                   </ul>
+               <ul class="edu-year">
+                   <span>2.G</span>
+                   <li>test</li>
+                   </ul>
+    </div>
 </section>
 {% endblock %}

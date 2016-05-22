@@ -1,23 +1,25 @@
-{% extends "base.html" %}
-{% block content %}
-    <section class="arrow_box">
-        <div class="grouplist">
-            <span class="groupname grad_dark">Gists</span>
-            <div>
-            </div>
-            <span class="groupname grad_dark">Repositories</span>
-            <ul class="github_repo">
-            {% for project in projects %}
-                <li class="main_color">
-                    <h3>{{ project.name }}</h3>
-                    <p>{{ project.description }}</p>
-                    <div class="simple_button_right">
-                       <button id="submit" name="submit" type="submit" value="posts">Show Posts</button>
-                        <button id="submit" name="submit" type="submit" value="posts">Show on Github</button>
-                    </div>
-                </li>
-            {% endfor %}
+{% extends "base.html" %} {% block content %}
+<section>
+    <ul class="posts">
+        <li>
+            <span>Post Title</span>
+            <div>Post description here......</div>
+            <ul class="tags">
+                <li>2. Feb. 2016</li>
+                <li>Python</li>
             </ul>
-        </div>
-    </section>
+        </li>
+        <li>
+            <span>Post Title</span>
+            <div>Post description here......</div>
+            <ul class="tags">
+                <li>2. Feb. 2016</li>
+                <li>Python</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="group">
+        <span class="group-title">Archive</span>
+    </div>
+</section>
 {% endblock %}
