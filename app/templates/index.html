@@ -1,17 +1,203 @@
-{% extends "base.html" %}
-{% block content %}
-    <section>
-         <ul class="intro">
-             <span>Hi, I'm iSplasher</span>
-             <li class="one">I code..</li>
-             <li class="two">and make fun stuff</li>
-             <li class="three">I know a handful of programming languages</li>
-             <li class="four">I 3D design</li>
-             <li class="five">I draw</li>
-             <li class="six">I play the piano</li>
-             <li class="seven">I play games</li>
-             <li class="eight">I love music</li>
-             <li class="nine">Enjoy my site.</li>
-             </ul>
-    </section>
+{% extends "base.html" %} {% block content %}
+<section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+    <ul class="intro">
+        <span>Hi, I'm iSplasher</span>
+        <li class="one">I code..</li>
+        <li class="two">and make fun stuff</li>
+        <li class="three">I know a handful of programming languages</li>
+        <li class="four">I 3D model</li>
+        <li class="five">I draw</li>
+        <li class="six">I play the piano</li>
+        <li class="seven">I play games</li>
+        <li class="eight">I love music</li>
+        <li class="nine">Enjoy my site.</li>
+    </ul>
+    <div class="about-buttons">
+        <button>Who am I?</button>
+        <button>Hobbies</button>
+        <button>Resumé</button>
+    </div>
+    <div class="about">
+        <div class="group">
+            <span class="group-title">
+                Who am I?
+                <div class="props">
+                    <span class="admin-prop">Edit</span>
+        </div>
+        </span>
+
+        <div class="ltext">
+            <h4>I am Autriche Kabwe Sango</h4>
+            <p>pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth
+                pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
+            </p>
+        </div>
+
+        <div class="minibox">
+            I enjoy programming
+        </div>
+        <div class="minibox">
+            I like classical piano music
+        </div>
+        <div class="minibox">
+            I consider myself to be pretty creative
+        </div>
+        <div class="minibox">
+            I can't sit in lotus position
+        </div>
+    </div>
+
+    <div class="group">
+        <span class="group-title">
+                Hobbies
+                <div class="props">
+                    <span class="admin-prop">Edit</span>
+    </div>
+    </span>
+
+    <center>
+        <div class="box">
+            <h4>Piano</h4>
+            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
+                pesdfdshdthpesdfdshdthp
+            </p>
+        </div>
+
+        <div class="box">
+            <h4>Programming</h4>
+            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
+                pesdfdshdthpesdfdshdthp
+            </p>
+        </div>
+
+        <div class="box">
+            <h4>3D modeling</h4>
+            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
+                pesdfdshdthpesdfdshdthp
+            </p>
+        </div>
+
+        <div class="box">
+            <h4>Drawing</h4>
+            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
+                pesdfdshdthpesdfdshdthp
+            </p>
+        </div>
+    </center>
+
+    <canvas class="chart" id="radarskills"></canvas>
+
+    <script>
+        var ctx = document.getElementById("radarskills");
+        Chart.defaults.global.maintainAspectRatio = false;
+        Chart.defaults.global.title.display = false;
+        Chart.defaults.global.legend.display = false;
+var radarskills = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ["Piano", "Drawing", "Programming", "3D Modeling"],
+        datasets: [{
+            label: 'Skills',
+            data: [20, 35, 80, 5],
+            backgroundColor: "rgba(0, 97, 167, 0.2)",
+            borderColor: "rgba(0, 97, 167, 0.5)",
+            pointBackgroundColor: "rgba(0, 97, 167, 0.5)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(rgba(0, 97, 167, 0.5))",
+        }]
+    },
+    options: {
+            scale: {
+                gridLines: {
+                    lineWidth: 1,
+                    color: "rgba(0, 0, 0, 0.1)",
+                    drawOnChartArea:false,
+                    drawTicks: true,
+                },
+                ticks: {
+                reverse: true,
+                max: 100,
+                maxTicksLimit: 20,
+                showLabelBackdrop: false,
+                beginAtZero: true,
+                display: false,
+            },
+            scaleLabel: {
+                display: true,
+            },
+            pointLabels: {
+        fontFamily: "Quicksand",
+        fontStyle: "normal",
+        fontSize: 16,
+        fontColor: "#666",
+    },
+            },
+        }
+});
+    </script>
+
+    </div>
+
+    <div class="group">
+        <span class="group-title">
+                Resumé
+                <div class="props">
+                    <span class="admin-prop">Edit</span>
+    </div>
+    </span>
+    
+     <canvas class="chart" id="radarlang"></canvas>
+
+    <script>
+        var ctx = document.getElementById("radarlang");
+var radarskills = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ["HTML", "Javascript", "C++", "CSS", "Python", "Java"],
+        datasets: [{
+            label: 'Skills',
+            data: [95, 25, 75, 90, 85, 10],
+            backgroundColor: "rgba(0, 97, 167, 0.2)",
+            borderColor: "rgba(0, 97, 167, 0.5)",
+            pointBackgroundColor: "rgba(0, 97, 167, 0.5)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(rgba(0, 97, 167, 0.5))",
+        }]
+    },
+    options: {
+            scale: {
+                gridLines: {
+                    lineWidth: 1,
+                    color: "rgba(0, 0, 0, 0.1)",
+                    drawOnChartArea:false,
+                    drawTicks: true,
+                },
+                ticks: {
+                reverse: true,
+                max: 100,
+                maxTicksLimit: 20,
+                showLabelBackdrop: false,
+                beginAtZero: true,
+                display: false,
+            },
+            scaleLabel: {
+                display: true,
+            },
+            pointLabels: {
+        fontFamily: "Quicksand",
+        fontStyle: "normal",
+        fontSize: 16,
+        fontColor: "#666",
+    },
+            },
+        }
+});
+    </script>
+    
+    </div>
+    </div>
+</section>
 {% endblock %}

@@ -22,10 +22,14 @@ body {
 	background: #F7F7F7;
 }
 
- a {
-	 text-decoration: none;
-	 color: inherit;
- }
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+section {
+	position: relative;
+}
 
 .container {
 	margin: auto;
@@ -37,22 +41,23 @@ body {
 }
 
 .sidebar {
-	float:left;
-    width: 18%;
+	float: left;
+	width: 18%;
 	min-width: 105px;
-    overflow:hidden;
+	overflow: hidden;
 	background: url("images/sidebarbg.jpg");
 	background-size: auto 100%;
 	padding-top: 40px;
 	padding-bottom: 50px;
-	-webkit-box-shadow: inset -3px 0px 5px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: inset -3px 0px 5px 0px rgba(0,0,0,0.5);
-	box-shadow: inset -3px 0px 5px 0px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .content {
-    overflow:hidden;
-    background: #F6F7FA;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #F6F7FA;
 }
 
 footer {
@@ -69,6 +74,7 @@ footer {
 	background-size: contain;
 	background: url("images/aarhus_tech_logo.jpg") no-repeat;
 }
+
 
 /* Sidebar */
 
@@ -124,6 +130,7 @@ footer {
 	content: '- ';
 }
 
+
 /* Content */
 
 .content .content-title {
@@ -133,9 +140,9 @@ footer {
 	text-align: center;
 	color: rgba(0, 0, 0, 0.8);
 	background: #F6F7FA;
-	-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.15);
-	-moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.15);
-	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 	font-size: 15pt;
 	font-weight: bold;
 	text-transform: capitalize;
@@ -144,26 +151,29 @@ footer {
 .gradient {
 	pointer-events: none;
 	content: '';
-    position:absolute;
-    z-index:2;
-    right:0; bottom:0; left:0;
-    height:30px; /* adjust it to your needs */
-    background: url(data:image/svg+xml;base64,alotofcodehere);
-    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,.9) 70%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(70%,rgba(255,255,255,.9)));
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.9) 70%);
-    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.9) 70%);
-    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.9) 70%);
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,.9) 70%);
-}​
+	position: absolute;
+	z-index: 2;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+	/* adjust it to your needs */
+	background: url(data:image/svg+xml;base64,alotofcodehere);
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 70%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(70%, rgba(255, 255, 255, .9)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 70%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 70%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 70%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 70%);
+}
 
-.gradient:hover {
-    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,.2) 70%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(70%,rgba(255,255,255,.2)));
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.2) 70%);
-    background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.2) 70%);
-    background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,.2) 70%);
-    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,.2) 70%);
+​ .gradient:hover {
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 70%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(70%, rgba(255, 255, 255, .2)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 70%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 70%);
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 70%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 70%);
 }
 
 .group {
@@ -173,14 +183,15 @@ footer {
 }
 
 .group span.group-title {
+	position: relative;
 	display: block;
 	padding-left: 5pt;
 	border-top: 1px solid darkgrey;
 	border-bottom: 1px solid darkgrey;
 	font-size: 14pt;
-	-webkit-box-shadow: 0px -3px 3px 0px rgba(0,0,0,0.15);
-	-moz-box-shadow: 0px -3px 3px 0px rgba(0,0,0,0.15);
-	box-shadow: 0px -3px 3px 0px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, 0.15);
 	margin-bottom: 15pt;
 }
 
@@ -190,14 +201,32 @@ footer {
 
 .group ul li {
 	position: relative;
-	background: rgba(0,0,0,.1);
+	background: rgba(0, 0, 0, .1);
 	border: 1px solid lightgray;
 	border-radius: 5px;
 }
 
+.props {
+	position: absolute;
+	right: 2pt;
+	font-size: 9pt;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	display: inline-block;
+}
+
+.props .admin-prop {
+	border: 0.5px solid rgba(0, 0, 0, 0.2);
+	background-color: lightgray;
+	border-radius: 2px;
+	padding: 1px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
 button, input, textarea {
 	margin-top: 10pt;
-	margin-bottom: 10pt;	
+	margin-bottom: 10pt;
 	border: 1.5px solid lightgray;
 	border-radius: 2px;
 }
@@ -220,15 +249,19 @@ textarea {
 
 button {
 	height: 25pt;
-	width: 60pt;
+	width: auto;
 	padding: 5pt;
 }
+
+button:hover {
+	background-color: rgba(255, 255, 255, .2);
+}
+
 
 ul.tags {
 	display: inline-block;
 	padding: 5pt;
 	font-size: 9pt;
-	width: 100%;
 	margin: 2pt;
 }
 
@@ -240,16 +273,16 @@ ul.tags li {
 	border-radius: 2px;
 }
 
+
 /* Introduction */
 
 @keyframes intro {
 	0% {
 		opacity: 0;
 	}
-	
-	80% { opacity: 0;
+	80% {
+		opacity: 0;
 	}
-	
 	100% {
 		opacity: 100%;
 	}
@@ -259,9 +292,11 @@ ul.tags li {
 	text-align: center;
 	list-style: none;
 	font-size: 18pt;
-	margin:auto;
+	margin: auto;
 	margin-top: 50px;
 	width: 100%;
+	overflow: auto;
+	height: 350pt;
 }
 
 .content ul.intro span {
@@ -269,6 +304,7 @@ ul.tags li {
 	font-weight: bold;
 	animation: intro 1s ease-in;
 	margin-bottom: 10px;
+	height: 80%;
 }
 
 .content ul.intro li {
@@ -312,6 +348,61 @@ ul.tags li {
 	animation: intro 19s ease-in;
 }
 
+div.about-buttons {
+	display: block;
+	width: 100%;
+	height: 80pt;
+	margin: auto;
+	text-align: center;
+}
+
+div.ltext {
+	padding: 5pt;
+}
+
+div.minibox {
+	margin: 10pt;
+	max-width: 150pt;
+	padding: 3pt;
+	font-size: 10pt;
+	font-style: italic;
+	font-weight: bold;
+	border-radius: 2px solid lightgray;
+}
+
+div.box h4, div.minibox {
+	text-align: center;
+}
+
+div.box, div.minibox {
+	word-wrap: break-word;
+	display: inline-block;
+}
+
+div.box {
+	max-width: 250pt;
+	margin: 15pt;
+}
+
+div.box, canvas.chart {
+	padding: 10pt;
+}
+
+div.box, canvas.chart, div.minibox {
+	border: 1px solid lightgray;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+canvas.chart {
+	max-width: 300pt;
+	max-height: 250pt;
+	margin:auto;
+	display: block;
+}
+
+
 /* Projects */
 
 .group ul.pproject li, .group ul.gprojects li {
@@ -351,12 +442,12 @@ ul.tags li {
 	font-weight: bold;
 	border-bottom: 1px solid lightgray;
 }
-	
+
 .group ul.pproject li div.progress {
 	height: 10pt;
 	position: absolute;
-	left:2px;
-	right:2px;
+	left: 2px;
+	right: 2px;
 	font-size: 8pt;
 	bottom: 2px;
 	background: #555;
@@ -364,36 +455,41 @@ ul.tags li {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	padding: 2px;
-	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .group ul.pproject li div.progress > span {
 	display: block;
 	height: 100%;
-	   -webkit-border-top-right-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
 	-webkit-border-bottom-right-radius: 2px;
-	       -moz-border-radius-topright: 2px;
-	    -moz-border-radius-bottomright: 2px;
-	           border-top-right-radius: 2px;
-	        border-bottom-right-radius: 2px;
-	    -webkit-border-top-left-radius: 2px;
-	 -webkit-border-bottom-left-radius: 2px;
-	        -moz-border-radius-topleft: 2px;
-	     -moz-border-radius-bottomleft: 2px;
-	            border-top-left-radius: 2px;
-	         border-bottom-left-radius: 2px;
+	-moz-border-radius-topright: 2px;
+	-moz-border-radius-bottomright: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
 	background-color: #F6F7FA;
-	-webkit-box-shadow:
-	  inset 0 2px 9px  rgba(255,255,255,0.3),
-	  inset 0 -2px 6px rgba(0,0,0,0.4);
-	-moz-box-shadow:
-	  inset 0 2px 9px  rgba(255,255,255,0.3),
-	  inset 0 -2px 6px rgba(0,0,0,0.4);
+	-webkit-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4);
 	position: relative;
 	overflow: hidden;
 }
 
+
 /* Posts */
+
+button.new-post {
+	position: relative;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	width: 70pt;
+}
 
 ul.posts, ul.gists {
 	position: relative;
@@ -413,37 +509,56 @@ ul.posts li {
 	border-radius: 2px;
 	margin-top: 10pt;
 	margin-bottom: 10pt;
-	overflow-x: hidden;
 }
 
-ul.posts li span, ul.edu-year span, ul.gists li span.gist-title {
-	width: 100%;
+ul.posts li span.post-title, ul.edu-year span.year-title, ul.gists li span.gist-title {
+	position: relative;
+	width: auto;
 	display: block;
-	margin:auto;
+	margin: auto;
 	padding: 3pt;
 	border-bottom: 0.5px solid lightgray;
-	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
-	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
-	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
-ul.posts li div {
+ul.posts li div.post-text {
 	padding: 5pt;
 	padding-top: 8pt;
 	font-size: 10pt;
 }
 
+ul.posts li div.post-meta {
+	position: relative;
+	width: 100%;
+}
+
+ul.posts li div.post-meta span.post-origin {
+	position: absolute;
+	display: inline;
+	right: 0;
+	font-size: 8pt;
+	margin-top: 10pt;
+	margin-right: 5pt;
+}
+
+ul.posts li div.post-meta span.post-origin a {
+	font-style: italic;
+	text-transform: underline;
+}
+
+
 /* Education */
 
-ul.edu-year span {
+ul.edu-year span.year-title {
 	text-align: center;
 }
 
 ul.edu-year {
 	width: 90%;
-	margin:auto;
+	margin: auto;
 	border: 1px solid lightgray;
-	overflow-x: hidden;
 	margin-top: 10pt;
 }
 
@@ -452,6 +567,7 @@ ul.edu-year li {
 	height: 40pt;
 	margin: 8pt;
 }
+
 
 /* Random */
 
@@ -465,7 +581,6 @@ ul.gists li {
 	border-radius: 2px;
 	background-color: inherit;
 	width: 100%;
-	overflow-x: hidden;
 }
 
 div.book {
@@ -473,6 +588,7 @@ div.book {
 	height: 60pt;
 	padding: 3pt;
 }
+
 div.book img {
 	float: left;
 	height: 100%;
@@ -499,6 +615,7 @@ div.book div.book-info .date2 {
 	right: 5pt;
 }
 
+
 /* Contact */
 
 ul.contact_form {
@@ -508,6 +625,7 @@ ul.contact_form {
 	list-style: none;
 	margin-top: 40pt;
 }
+
 
 /* login */
 

@@ -1,16 +1,23 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <section>
     <div class="group">
-               <span class="group-title">Gymnasium</span>
-               <ul class="edu-year">
-                   <span>1.G</span>
-                   <li>test</li>
-                   </ul>
-               <ul class="edu-year">
-                   <span>2.G</span>
-                   <li>test</li>
-                   </ul>
+        <span class="group-title">Gymnasium
+                               <div class="props">
+                    <span class="admin-prop">New Year</span>
+    </div>
+    </span>
+    <ul class="edu-year">
+        <span class="year-title">1.G
+                                   <div class="props">
+                    <span class="admin-prop">New Project</span>
+        </div>
+        </span>
+        <li>test</li>
+    </ul>
+    <ul class="edu-year">
+        <span class="year-title">2.G</span>
+        <li>test</li>
+    </ul>
     </div>
 </section>
 {% endblock %}
