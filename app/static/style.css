@@ -45,7 +45,8 @@ section {
 	width: 18%;
 	min-width: 105px;
 	overflow: hidden;
-	background: url("images/sidebarbg.jpg");
+	background-color: #27282B;
+	/*background: url("images/sidebarbg.jpg");*/
 	background-size: auto 100%;
 	padding-top: 40px;
 	padding-bottom: 50px;
