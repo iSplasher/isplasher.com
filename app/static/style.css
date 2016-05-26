@@ -25,6 +25,7 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
+	outline: 0;
 }
 
 section {
@@ -45,11 +46,10 @@ section {
 	width: 18%;
 	min-width: 105px;
 	overflow: hidden;
-	background-color: #27282B;
-	/*background: url("images/sidebarbg.jpg");*/
+	background-color: rgba(0, 0, 0, .6);
 	background-size: auto 100%;
-	padding-top: 40px;
-	padding-bottom: 50px;
+	padding-top: 5pt;
+	padding-bottom: 5pt;
 	-webkit-box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
 	box-shadow: inset -3px 0px 5px 0px rgba(0, 0, 0, 0.5);
@@ -93,6 +93,14 @@ footer {
 	margin-bottom: 20px;
 	color: white;
 	list-style: none;
+}
+
+img.profile {
+	width: 90%;
+	margin: auto;
+	display: block;
+	border: 1px solid rgba(0, 0, 0, 0);
+	border-radius: 5px;
 }
 
 .sidebar ul.navlist {
@@ -292,16 +300,16 @@ ul.tags li {
 .content ul.intro {
 	text-align: center;
 	list-style: none;
-	font-size: 18pt;
+	font-size: 25pt;
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 55pt;
 	width: 100%;
 	overflow: auto;
 	height: 350pt;
 }
 
 .content ul.intro span {
-	font-size: 24pt;
+	font-size: 32pt;
 	font-weight: bold;
 	animation: intro 1s ease-in;
 	margin-bottom: 10px;
@@ -408,7 +416,9 @@ canvas.chart {
 
 .group ul.pproject li, .group ul.gprojects li {
 	text-align: center;
-	margin: 10pt;
+	margin-left: 10pt;
+	margin-right: 10pt;
+	display: inline-block;
 }
 
 .group ul.pproject li {
@@ -481,6 +491,27 @@ canvas.chart {
 	overflow: hidden;
 }
 
+/* Project */
+
+div.project-descr, div.post-text {
+	margin: auto;
+	width: 100%;
+	padding: 10pt;
+}
+
+div.p-meta {
+	margin-top: 13pt;
+	width:100%;
+	text-align: center;
+}
+
+div.p-meta span {
+	margin: 5pt;
+}
+
+div.project-source {
+	text-align: center;
+}
 
 /* Posts */
 
@@ -549,6 +580,9 @@ ul.posts li div.post-meta span.post-origin a {
 	text-transform: underline;
 }
 
+/* Post */
+
+
 
 /* Education */
 
@@ -564,11 +598,22 @@ ul.edu-year {
 }
 
 ul.edu-year li {
-	width: 200pt;
-	height: 40pt;
+	min-width: 150pt;
+	max-width: 300pt;
+	max-height: 100pt;
 	margin: 8pt;
+	padding: 3pt;
+	display: inline-block;
 }
 
+ul.edu-year li .edu-date {
+	font-size: 9pt;
+	padding-top: 3pt;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	color: #555;
+}
 
 /* Random */
 

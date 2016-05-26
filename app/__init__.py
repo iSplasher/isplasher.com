@@ -6,6 +6,10 @@ from flask.ext.wtf import CsrfProtect
 from flask.ext.session import Session
 
 application = Flask(__name__, static_url_path='/static')
+
+from .util import ListConverter
+
+application.url_map.converters['list'] = ListConverter
 application.config.from_object("config")
 db = SQLAlchemy(application)
 login_manager = LoginManager()

@@ -92,6 +92,7 @@ def contact():
 @application.route("/project/<int:p_type>")
 @application.route("/project/<int:p_type>/<int:p_id>")
 def project_page(p_type=0, p_id=0):
+    return render_template("project.html")
     p = models.Project.query.get(p_id)
     if p:
         if p.type.id == p_type:
@@ -99,6 +100,14 @@ def project_page(p_type=0, p_id=0):
                                 descr="Working Project!",
                                 project=p)
     flash("Project not found", "global")
+    return redirect(url_for("index"))
+    
+@application.route("/post")
+@application.route("/post/<list:p_tags>")
+@application.route("/post/<int:p_id>")
+def post_page(p_tags=[], p_id=None):
+    return render_template("post.html")
+    flash("Post not found", "global")
     return redirect(url_for("index"))
                            
 @application.route("/login", methods=["GET", "POST"])

@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <link rel="shortcut icon" href="/static/images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicon/apple-icon-57x57.png">
@@ -11,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/static/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png">
@@ -19,19 +20,18 @@
     <meta name="msapplication-TileColor" content="#B87954">
     <meta name="msapplication-TileImage" content="/static/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#B87954">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content='width=device-width, initial-scale=1' name='viewport'/>
-{% if title%}
-<title>{{ title }} - iSplasher</title>
-{% else %}
-<title>My Projects - iSplasher</title>
-{% endif %}
-		<link type="text/css" rel="stylesheet" href="/static/style.css"/>
-<script
-			  src="https://code.jquery.com/jquery-2.2.4.min.js"
-			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous"></script>
-        </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content='width=device-width, initial-scale=1' name='viewport' /> {% if title%}
+    <title>{{ title }} - iSplasher</title>
+    {% else %}
+    <title>My Projects - iSplasher</title>
+    {% endif %}
+    <link type="text/css" rel="stylesheet" href="/static/style.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    </script>
+    <script src="static/misc.js"></script>
+
 </head>
 <!--<header>
     <div class="flash_box">This site is under construction. Please check by later!</div>
@@ -48,41 +48,44 @@
 {% else %}
 <div class="login_button"><a href="/login"><div class="login_button"></div></a></div>
 {% endif %}-->
+
 <body>
     <div class="container">
-    <div class="sidebar">
-        <ul class="navlist">
-    {% if g.user.is_authenticated%}
-	<li {% if request.path == '/admin' %} id="active" {% endif %} ><a href="/admin">admin</a></li>    
-    {% endif %}
-	<li {% if request.path in ['/', '/index'] %} id="active" {% endif %} ><a href="/index">home</a></li>
-	<li {% if request.path == '/posts' %} id="active" {% endif %}><a href="/posts">posts</a></li>
-	<li {% if request.path == '/projects' %} id="active" {% endif %}><a href="/projects">projects</a></li>
-	<li {% if request.path == '/education' %} id="active" {% endif %}><a href="/education">education</a></li>
-	<li {% if request.path == '/random' %} id="active" {% endif %}><a href="/random">random stuff</a></li>
-	<li {% if request.path == '/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
-    </ul>
-    
-    <ul class="recent-a">
-        <span>Activity</span>
-        <li>working on site</li>
-        </ul>
-    <ul class="recent-p">
-        <span>Recent Posts</span>
-        <li>test</li>
-        <li>test2</li>
-        </ul>
-    </div>
-    <div class="content">
-        <div class="content-title">
-            {{ descr }}
+        <div class="sidebar">
+            <img class="profile" src="static/images/me.jpg" />
+
+            <ul class="navlist">
+                {% if g.user.is_authenticated%}
+                <li {% if request.path=='/admin' %} id="active" {% endif %}><a href="/admin">admin</a></li>
+                {% endif %}
+                <li {% if request.path in [ '/', '/index'] %} id="active" {% endif %}><a href="/index">home</a></li>
+                <li {% if request.path=='/posts' %} id="active" {% endif %}><a href="/posts">posts</a></li>
+                <li {% if request.path=='/projects' %} id="active" {% endif %}><a href="/projects">projects</a></li>
+                <li {% if request.path=='/education' %} id="active" {% endif %}><a href="/education">education</a></li>
+                <li {% if request.path=='/random' %} id="active" {% endif %}><a href="/random">random stuff</a></li>
+                <li {% if request.path=='/contact' %} id="active" {% endif %}><a href="/contact">contact</a></li>
+            </ul>
+
+            <ul class="recent-a">
+                <span>Activity</span>
+                <li>working on site</li>
+            </ul>
+            <ul class="recent-p">
+                <span>Recent Posts</span>
+                <li>test</li>
+                <li>test2</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="content-title">
+                {{ descr }}
             </div>
-        {% block content %}{% endblock %}
-    </div>
+            {% block content %}{% endblock %}
+        </div>
     </div>
 </body>
 <footer class="grad_dark">
-<a href="/login">©</a> iSplasher <br>
-All Rights Reserved
+    <a href="/login">©</a> iSplasher <br> All Rights Reserved
 </footer>
+
 </html>
