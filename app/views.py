@@ -32,11 +32,8 @@ def get_projects(p_type):
 
 @application.before_request
 def before_request():
-    g.user = current_user
+    g.user = User()
     g.bg = session.get("bg")
-    if not g.bg:
-        g.bg = get_r_image()
-        session["bg"] = g.bg
        
 @login_manager.user_loader
 def user_loader(user_id):
@@ -46,6 +43,7 @@ def user_loader(user_id):
 @application.route("/index")
 def index():
     return render_template("index.html",
+                            mdedit_form=forms.MDEdit(),
                             descr="Me",
                             project_types=models.ProjectType.query.all())
 

@@ -37,3 +37,8 @@ class ContactForm(Form):
     subject = TextField('Subject', [validators.Required()], render_kw={"placeholder": "Subject"})
     body = TextAreaField('Message', [validators.Required()], render_kw={"placeholder": "Message"})
     submit = ButtonField('Send')
+    
+class MDEdit(Form):
+    body = TextAreaField('Markdown', [validators.Required()], render_kw={"placeholder": "Markdown Text"})
+    submit = ButtonField('Submit')
+    

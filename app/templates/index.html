@@ -14,189 +14,181 @@
         <li class="nine">Enjoy my site.</li>-->
     </ul>
     <div class="about-buttons">
-        <button>Who am I?</button>
-        <button>Hobbies</button>
-        <button>Resumé</button>
+        <button id="whoscroll">Who am I?</button>
+        <button id="hobbyscroll">Hobbies</button>
+        <button id="resumescroll">Resumé</button>
     </div>
     <div class="about">
-        <div class="group">
+        <div id="who" class="group">
             <span class="group-title">
                 Who am I?
                 <div class="props">
-                    <span class="admin-prop">Edit</span>
+                           {% if g.user.is_authenticated %}
+                    <span id="whoedit" class="admin-prop">Edit</span>
+                {% endif %}
         </div>
         </span>
 
-        <div class="ltext">
-            <h4>I am Autriche Kabwe Sango</h4>
-            <p>pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth
-                pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
-            </p>
-        </div>
+            {% if g.user.is_authenticated %}
+        <div class="cwhoedit">
+            <div class="mdedit">
+                <form class="mdedit" action="" method=post>
+                    {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                </form>
+            </div>
+            {% endif %}
+            <div class="md">
+            </div>
 
-        <div class="minibox">
-            I enjoy programming
+            <div class="minibox">
+                {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
+                    I enjoy programming
+                </div>
+            </div>
+            <div class="minibox">
+                {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
+                I like classical piano music
+                </div>
+            </div>
+            <div class="minibox">
+                {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
+                I consider myself to be pretty creative
+                </div>
+            </div>
+            <div class="minibox">
+                {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
+                I can't sit in a lotus position
+                </div>
+            </div>
+                   {% if g.user.is_authenticated %}
         </div>
-        <div class="minibox">
-            I like classical piano music
-        </div>
-        <div class="minibox">
-            I consider myself to be pretty creative
-        </div>
-        <div class="minibox">
-            I can't sit in a lotus position
-        </div>
+                {% endif %}
     </div>
 
-    <div class="group">
+    <div id="hobby" class="group">
         <span class="group-title">
                 Hobbies
                 <div class="props">
-                    <span class="admin-prop">Edit</span>
+                           {% if g.user.is_authenticated %}
+                    <span id="hobbyedit" class="admin-prop">Edit</span>
+                {% endif %}
     </div>
     </span>
 
     <center>
+        {% if g.user.is_authenticated %}
+        <div class="chobbyedit">
+                {% endif %}
         <div class="box">
+            {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
             <h4>Piano</h4>
             <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
                 pesdfdshdthpesdfdshdthp
             </p>
+                </div>
         </div>
 
         <div class="box">
+            {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
             <h4>Programming</h4>
             <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
                 pesdfdshdthpesdfdshdthp
             </p>
+                </div>
         </div>
 
         <div class="box">
+            {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
             <h4>3D modeling</h4>
             <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
                 pesdfdshdthpesdfdshdthp
             </p>
+                </div>
         </div>
 
         <div class="box">
+            {% if g.user.is_authenticated %}
+                <div class="mdedit">
+                    <form class="mdedit" action="" method=post>
+                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
+                    </form>
+                </div>
+                {% endif %}
+                <div class="md">
             <h4>Drawing</h4>
             <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
                 pesdfdshdthpesdfdshdthp
             </p>
+                </div>
         </div>
+               {% if g.user.is_authenticated %}
+        </div>
+                {% endif %}
     </center>
 
     <canvas class="chart" id="radarskills"></canvas>
 
-    <script>
-        var ctx = document.getElementById("radarskills");
-        Chart.defaults.global.maintainAspectRatio = false;
-        Chart.defaults.global.title.display = false;
-        Chart.defaults.global.legend.display = false;
-var radarskills = new Chart(ctx, {
-    type: 'radar',
-    data: {
-        labels: ["Piano", "Drawing", "Programming", "3D Modeling"],
-        datasets: [{
-            label: 'Skills',
-            data: [20, 35, 80, 5],
-            backgroundColor: "rgba(0, 97, 167, 0.2)",
-            borderColor: "rgba(0, 97, 167, 0.5)",
-            pointBackgroundColor: "rgba(0, 97, 167, 0.5)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(rgba(0, 97, 167, 0.5))",
-        }]
-    },
-    options: {
-            scale: {
-                gridLines: {
-                    lineWidth: 1,
-                    color: "rgba(0, 0, 0, 0.1)",
-                    drawOnChartArea:false,
-                    drawTicks: true,
-                },
-                ticks: {
-                reverse: true,
-                max: 100,
-                maxTicksLimit: 20,
-                showLabelBackdrop: false,
-                beginAtZero: true,
-                display: false,
-            },
-            scaleLabel: {
-                display: true,
-            },
-            pointLabels: {
-        fontFamily: "Quicksand",
-        fontStyle: "normal",
-        fontSize: 16,
-        fontColor: "#666",
-    },
-            },
-        }
-});
-    </script>
-
     </div>
 
-    <div class="group">
+    <div id="resume" class="group">
         <span class="group-title">
                 Resumé
                 <div class="props">
                     <span class="admin-prop">Edit</span>
     </div>
     </span>
-    
-     <canvas class="chart" id="radarlang"></canvas>
 
-    <script>
-        var ctx = document.getElementById("radarlang");
-var radarskills = new Chart(ctx, {
-    type: 'radar',
-    data: {
-        labels: ["HTML", "Javascript", "C++", "CSS", "Python", "Java"],
-        datasets: [{
-            label: 'Skills',
-            data: [95, 25, 75, 90, 85, 10],
-            backgroundColor: "rgba(0, 97, 167, 0.2)",
-            borderColor: "rgba(0, 97, 167, 0.5)",
-            pointBackgroundColor: "rgba(0, 97, 167, 0.5)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(rgba(0, 97, 167, 0.5))",
-        }]
-    },
-    options: {
-            scale: {
-                gridLines: {
-                    lineWidth: 1,
-                    color: "rgba(0, 0, 0, 0.1)",
-                    drawOnChartArea:false,
-                    drawTicks: true,
-                },
-                ticks: {
-                reverse: true,
-                max: 100,
-                maxTicksLimit: 20,
-                showLabelBackdrop: false,
-                beginAtZero: true,
-                display: false,
-            },
-            scaleLabel: {
-                display: true,
-            },
-            pointLabels: {
-        fontFamily: "Quicksand",
-        fontStyle: "normal",
-        fontSize: 16,
-        fontColor: "#666",
-    },
-            },
-        }
-});
-    </script>
-    
+    <canvas class="chart" id="radarlang"></canvas>
+
     </div>
     </div>
 </section>
