@@ -231,6 +231,7 @@ img.profile {
 	padding: 1px;
 	margin-left: 2px;
 	margin-right: 2px;
+	cursor: pointer;
 }
 
 button, input, textarea {
@@ -241,23 +242,10 @@ button, input, textarea {
 }
 
 input, textarea {
-	width: 100%;
 	padding-left: 5pt;
 }
 
-input {
-	height: 30pt;
-}
-
-textarea {
-	height: 150pt;
-	max-width: 100%;
-	min-width: 100%;
-	min-height: 50pt;
-}
-
 button {
-	height: 25pt;
 	width: auto;
 	padding: 5pt;
 }
@@ -265,7 +253,6 @@ button {
 button:hover {
 	background-color: rgba(255, 255, 255, .2);
 }
-
 
 ul.tags {
 	display: inline-block;
@@ -276,6 +263,9 @@ ul.tags {
 
 ul.tags li {
 	display: inline;
+}
+
+ul.tags li, div.tagsinput span.tag {
 	padding: 2pt;
 	background-color: rgba(0, 0, 0, 0.1) !important;
 	border: 1px solid lightgray;
@@ -399,15 +389,15 @@ div.box, canvas.chart {
 
 div.box, canvas.chart, div.minibox {
 	border: 1px solid lightgray;
-	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 canvas.chart {
 	max-width: 300pt;
 	max-height: 250pt;
-	margin:auto;
+	margin: auto;
 	display: block;
 }
 
@@ -491,6 +481,7 @@ canvas.chart {
 	overflow: hidden;
 }
 
+
 /* Project */
 
 div.project-descr, div.post-text {
@@ -501,7 +492,7 @@ div.project-descr, div.post-text {
 
 div.p-meta {
 	margin-top: 13pt;
-	width:100%;
+	width: 100%;
 	text-align: center;
 }
 
@@ -512,6 +503,7 @@ div.p-meta span {
 div.project-source {
 	text-align: center;
 }
+
 
 /* Posts */
 
@@ -580,8 +572,8 @@ ul.posts li div.post-meta span.post-origin a {
 	text-transform: underline;
 }
 
-/* Post */
 
+/* Post */
 
 
 /* Education */
@@ -614,6 +606,7 @@ ul.edu-year li .edu-date {
 	text-align: center;
 	color: #555;
 }
+
 
 /* Random */
 
@@ -672,6 +665,25 @@ ul.contact_form {
 	margin-top: 40pt;
 }
 
+.contact_form input, .contact_form textarea {
+	width: 100%;
+}
+
+.contact_form input {
+	height: 30pt;
+}
+
+.contact_form textarea {
+	height: 150pt;
+	max-width: 100%;
+	min-width: 100%;
+	min-height: 50pt;
+}
+
+.contact_form button {
+	height: 25pt;
+}
+
 
 /* login */
 
@@ -679,4 +691,224 @@ form.login {
 	width: 70%;
 	margin: auto;
 	margin-top: 30pt;
+}
+
+
+/* admin */
+
+.mdedit {
+	height: inherit;
+	width: inherit;
+	max-width: inherit;
+	max-height: inherit;
+}
+
+form.mdedit {
+	margin: 2pt;
+}
+
+form.mdedit textarea {
+	height: 100%;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	/* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;
+	/* Firefox, other Gecko */
+	box-sizing: border-box;
+	margin: 0;
+}
+
+form.mdedit button {
+	margin: 2pt;
+	height: 20pt;
+	font-size: 10pt;
+	padding: 2pt;
+}
+
+
+/* admin post */
+
+div#new-post-d {
+	width: 90%;
+	margin: auto;
+}
+
+div#new-post-d ul {
+	list-style: none;
+}
+
+div#new-post-d form {
+	text-align: center;
+	margin: auto;
+}
+
+div#new-post-d form input, .tag-editor, div#new-post-d form textarea {
+	width: 95%;
+	max-width: 95%;
+}
+
+div#new-post-d form input {
+	height: 20pt;
+}
+
+div#new-post-d form textarea {
+	min-height: 300pt;
+}
+
+
+/* admin tags input */
+
+
+/* surrounding tag container */
+
+.tag-editor {
+	list-style-type: none;
+	padding: 2pt;
+	overflow: hidden;
+	cursor: text;
+	line-height: 25px;
+	font-size: 10pt;
+}
+
+
+/* core styles usually need no change */
+
+.tag-editor li {
+	display: block;
+	float: left;
+	overflow: hidden;
+	margin: 3px 0;
+}
+
+.tag-editor div {
+	float: left;
+	padding: 0 4px;
+}
+
+.tag-editor .placeholder {
+	padding: 0 8px;
+	color: #bbb;
+}
+
+.tag-editor .tag-editor-spacer {
+	padding: 0;
+	width: 8px;
+	overflow: hidden;
+	color: transparent;
+	background: none;
+}
+
+.tag-editor input {
+	vertical-align: inherit;
+	border: 0;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	cursor: text;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	box-shadow: none;
+	background: none;
+	color: #444;
+}
+
+
+/* hide original input field or textarea visually to allow tab navigation */
+
+.tag-editor-hidden-src {
+	position: absolute !important;
+	left: -99999px;
+}
+
+
+/* hide IE10 "clear field" X */
+
+.tag-editor::-ms-clear {
+	display: none;
+}
+
+
+/* tag style */
+
+.tag-editor .tag-editor-tag {
+	padding-left: 5px;
+	color: #fff;
+	background: #555;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: 2px;
+}
+
+
+/* delete icon */
+
+.tag-editor .tag-editor-delete {
+	display: none;
+}
+
+.tag-editor .tag-editor-delete i {
+	line-height: 18px;
+	display: inline-block;
+}
+
+.tag-editor .tag-editor-tag.active+.tag-editor-delete, .tag-editor .tag-editor-tag.active+.tag-editor-delete i {
+	visibility: hidden;
+	cursor: text;
+}
+
+.tag-editor .tag-editor-tag.active {
+	background: none !important;
+}
+
+
+/* jQuery UI autocomplete - code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css */
+
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+	font-size: 14px;
+}
+
+.ui-front {
+	z-index: 9999;
+}
+
+.ui-menu {
+	list-style: none;
+	padding: 1px;
+	margin: 0;
+	display: block;
+	outline: none;
+}
+
+.ui-menu .ui-menu-item a {
+	text-decoration: none;
+	display: block;
+	padding: 2px .4em;
+	line-height: 1.4;
+	min-height: 0;
+	/* support: IE7 */
+}
+
+.ui-widget-content {
+	border: 1px solid #bbb;
+	background: #fff;
+	color: #555;
+}
+
+.ui-widget-content a {
+	color: #46799b;
+}
+
+.ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	background: #e0eaf1;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
 }

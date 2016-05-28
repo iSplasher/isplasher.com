@@ -35,6 +35,13 @@ function mdform(h) {
 
 $(document).ready(function () {
     $(".mdedit").hide();
+    $("#new-post-d").hide();
+
+    $('.inputtag').tagEditor({
+        clickDelete: true,
+        placeholder: 'Enter tags ...',
+        forceLowercase: false,
+    });
 
     $(".admin-prop").click(function () {
         var cls = ".c" + $(this).attr("id");
@@ -51,6 +58,19 @@ $(document).ready(function () {
         $(this).parent().hide();
         $(this).parent().next().html(data[1]["value"]);
         $(this).parent().next().show();
+    });
+
+    $("#new-post").click(function () {
+        $("#new-post-d").show();
+        $(this).hide();
+    });
+
+    $("form.new-post").submit(function (event) {
+        event.preventDefault();
+        var data = $(this).serializeArray();
+        console.log(data)
+        $("#new-post").show();
+        $("#new-post-d").hide();
     });
 
 });

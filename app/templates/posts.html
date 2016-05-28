@@ -1,15 +1,30 @@
 {% extends "base.html" %} {% block content %}
 <section>
-    <button class="new-post">New Post</button>
+    {% if g.user.is_authenticated %}
+    <button id="new-post" class="new-post">New Post</button>
+
+    <div id="new-post-d">
+        <form class="new-post" action="" method=post>
+            <ul>
+                <li>{{ post_form.hidden_tag() }}</li>
+                <li>{{ post_form.title }}</li>
+                <li>{{ post_form.body }}</li>
+                <li>{{ post_form.tag }}</li>
+                <li>{{ post_form.submit }}</li>
+            </ul>
+        </form>
+    </div>
+    {% endif %}
+
     <ul class="posts">
         <li>
             <a href="post">
-            <span class="post-title">Post Title
+                <span class="post-title">Post Title
                 <div class="props">
                     1/2-2016
                     </div>
             </span>
-            <div class="post-text">Post description here......</div>
+                <div class="post-text">Post description here......</div>
             </a>
             <div class="post-meta">
                 <ul class="tags">
@@ -21,12 +36,12 @@
         </li>
         <li>
             <a href="post">
-            <span class="post-title">Post Title
+                <span class="post-title">Post Title
                 <div class="props">
                     <span class="admin-prop">Edit</span>
-            </div>
-            </span>
-            <div class="post-text">Post description here......</div>
+                </div>
+                </span>
+                <div class="post-text">Post description here......</div>
             </a>
             <div class="post-meta">
                 <ul class="tags">

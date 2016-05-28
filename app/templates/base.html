@@ -24,7 +24,7 @@
     <meta content='width=device-width, initial-scale=1' name='viewport' /> {% if title%}
     <title>{{ title }} - iSplasher</title>
     {% else %}
-    <title>My Projects - iSplasher</title>
+    <title>iSplasher</title>
     {% endif %}
     <link type="text/css" rel="stylesheet" href="/static/style.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -32,6 +32,8 @@
     </script>
     <script src="static/misc.js"></script>
     {% if g.user.is_authenticated %}
+    <script src="static/caret.js"></script>
+    <script src="static/tag-editor.js"></script>
     <script src="static/admin.js"></script>
     {% endif %}
 

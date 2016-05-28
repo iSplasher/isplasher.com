@@ -40,5 +40,14 @@ class ContactForm(Form):
     
 class MDEdit(Form):
     body = TextAreaField('Markdown', [validators.Required()], render_kw={"placeholder": "Markdown Text"})
-    submit = ButtonField('Submit')
+    submit = ButtonField('Edit')
+    
+class Tags(Form):
+    tag = TextField('Tag', [validators.Length(min=1, max=100)], render_kw={"placeholder": "Tag", "class":"inputtag"})
+ 
+class NewPost(Tags):
+    title = TextField('Title', [validators.Required()], render_kw={"placeholder": "Title"})
+    body = TextAreaField('Body', [validators.Required()], render_kw={"placeholder": "Body"})
+    submit = ButtonField('Post') 
+    
     

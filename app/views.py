@@ -51,7 +51,8 @@ def index():
 def posts():
     return render_template("posts.html",
                            title="Posts",
-                           descr="My Posts")
+                           descr="My Posts",
+                           post_form=forms.NewPost())
                            
 @application.route("/projects")
 def projects():
