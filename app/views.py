@@ -58,7 +58,8 @@ def posts():
 def projects():
     return render_template("projects.html",
                            title="Projects",
-                           descr="My Projects")          
+                           descr="My Projects",
+                           project_form=forms.NewProject())          
 
 @application.route("/education")
 def education():
@@ -105,7 +106,8 @@ def project_page(p_type=0, p_id=0):
 @application.route("/post/<list:p_tags>")
 @application.route("/post/<int:p_id>")
 def post_page(p_tags=[], p_id=None):
-    return render_template("post.html")
+    return render_template("post.html",
+                                post_form=forms.NewPost())
     flash("Post not found", "global")
     return redirect(url_for("index"))
                            

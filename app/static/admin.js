@@ -60,9 +60,20 @@ $(document).ready(function () {
         $(this).parent().next().show();
     });
 
-    $("#new-post").click(function () {
+    $("#new-post, #edit-post").click(function () {
         $("#new-post-d").show();
         $(this).hide();
+    });
+    
+    $("#edit-post").click(function () {
+        $('#post-tags').children("li").each(function (i) {
+            console.log($(this).text())
+         $('.inputtag').tagEditor('addTag', $(this).text(), true);
+        });
+        
+        $("#title").text($(".content-title").text());
+        $("#body").text($(".post-text").text());
+        
     });
 
     $("form.new-post").submit(function (event) {

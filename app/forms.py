@@ -2,6 +2,8 @@ from flask.ext.wtf import Form
 from wtforms import TextField, TextAreaField, SubmitField, BooleanField, validators, PasswordField
 from wtforms.widgets.core import html_params
 from wtforms.widgets import HTMLString
+from wtforms.fields.html5 import DateField
+from wtforms.fields import SelectField
 
 class InlineButtonWidget(object):
     """
@@ -50,4 +52,8 @@ class NewPost(Tags):
     body = TextAreaField('Body', [validators.Required()], render_kw={"placeholder": "Body"})
     submit = ButtonField('Post') 
     
+    
+class NewProject(NewPost):
+    project_start = DateField('Project Start', format='%d-%m-%Y')
+    project_type = SelectField("Project Type", choices=[], coerce=int)
     

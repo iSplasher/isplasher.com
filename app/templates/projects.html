@@ -9,6 +9,17 @@
                     <span class="admin-prop">New Project</span>
                     </div>
                     </span>
+                    <div id="new-project-d" class="new-project">
+                        <form id="new-project" action="" method="POST">
+                            {{ project_form.hidden_tag() }}
+                            {{ project_form.project_start }}
+                            {{ project_form.project_type }}
+                            {{ project_form.title }}
+                            {{ project_form.body }}
+                            {{ project_form.tag }}
+                            {{ project_form.submit }}
+                            </form>
+                        </div>
             <ul class="pproject">
                     <a href="project">
                 <li>

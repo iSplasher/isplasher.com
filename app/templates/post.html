@@ -1,5 +1,20 @@
 {% extends "base.html" %} {% block content %}
 <section>
+    {% if g.user.is_authenticated %}
+    <button id="edit-post" class="new-post">Edit Post</button>
+
+    <div id="new-post-d">
+        <form class="edit-post" action="" method=post>
+            <ul>
+                <li>{{ post_form.hidden_tag() }}</li>
+                <li>{{ post_form.title }}</li>
+                <li>{{ post_form.body }}</li>
+                <li>{{ post_form.tag }}</li>
+                <li>{{ post_form.submit }}</li>
+            </ul>
+        </form>
+    </div>
+    {% endif %}
     <div class="p-meta">
         <span>
             Posted:
@@ -15,7 +30,7 @@
             </span>
         <span>
             Tags:
-            <ul class="tags">
+            <ul id="post-tags" class="tags">
                     <li>C++</li>
                     <li>Python</li>
                 </ul>
