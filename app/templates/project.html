@@ -1,5 +1,29 @@
 {% extends "base.html" %} {% block content %}
 <section>
+    {% if g.user.is_authenticated %}
+    <button id="edit-project" class="new-project">Edit Project</button>
+
+    <div id="project" class="new-form-d">
+        <form class="new-project" action="" method=post>
+            <ul>
+                <li>{{ project_form.hidden_tag() }}</li>
+                <li>
+                    {{ project_form.project_image.label }}:
+                    <span>{{ project_form.project_image }}</span>
+                </li>
+                <li>
+                    {{ project_form.project_start.label }}:
+                    <span>{{ project_form.project_start }}</span> {{ project_form.project_type.label }}:
+                    <span>{{ project_form.project_type }}</span>
+                </li>
+                <li>{{ project_form.title }}</li>
+                <li>{{ project_form.body }}</li>
+                <li>{{ project_form.tag }}</li>
+                <li>{{ project_form.submit }}</li>
+            </ul>
+        </form>
+    </div>
+    {% endif %}
     <div class="p-meta">
         <span>
             Project Start:
@@ -15,7 +39,7 @@
             </span>
         <span>
             Tags:
-            <ul class="tags">
+            <ul id="project-tags" class="tags">
                     <li>C++</li>
                     <li>Python</li>
                 </ul>
@@ -25,7 +49,7 @@
         <button>
             View on Github
             </button>
-        </div>
+    </div>
     <div class="project-descr">
         this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a description
         this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is
@@ -36,6 +60,58 @@
     </div>
     <div class="group">
         <span class="group-title">Posts</span>
+        {% if g.user.is_authenticated %}
+            <button id="new-post" class="new-post">New Post</button>
+
+        <div id="post" class="new-form-d">
+        <form class="new-post" action="" method=post>
+            <ul>
+                <li>{{ post_form.hidden_tag() }}</li>
+                <li>{{ post_form.title }}</li>
+                <li>{{ post_form.body }}</li>
+                <li>{{ post_form.tag }}</li>
+                <li>{{ post_form.submit }}</li>
+            </ul>
+        </form>
+    </div>
+    {% endif %}
+
+    <ul class="posts">
+        <li>
+            <a href="post">
+                <span class="post-title">Post Title
+                <div class="props">
+                    1/2-2016
+                    </div>
+            </span>
+                <div class="post-text">Post description here......</div>
+            </a>
+            <div class="post-meta">
+                <ul class="tags">
+                    <li>2. Feb. 2016</li>
+                    <li>Python</li>
+                </ul>
+                <span class="post-origin">Posted in <a href="#">hello</a> project</span>
+            </div>
+        </li>
+        <li>
+            <a href="post">
+                <span class="post-title">Post Title
+                <div class="props">
+                    1/2-2016
+                </div>
+                </span>
+                <div class="post-text">Post description here......</div>
+            </a>
+            <div class="post-meta">
+                <ul class="tags">
+                    <li>2. Feb. 2016</li>
+                    <li>Python</li>
+                </ul>
+                <span class="post-origin">Posted in <a href="#">hello</a> project</span>
+            </div>
+        </li>
+    </ul>
     </div>
 </section>
 {% endblock %}

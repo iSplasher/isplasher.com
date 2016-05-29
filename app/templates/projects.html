@@ -1,40 +1,52 @@
-{% extends "base.html" %}
-{% block content %}
-    <section>
-        <div class="group">
-            <span class="group-title">
+{% extends "base.html" %} {% block content %}
+<section>
+    {% if g.user.is_authenticated %}
+    <div id="project" class="new-form-d">
+        <form class="new-project" action="" method=post>
+            <ul>
+                <li>{{ project_form.hidden_tag() }}</li>
+                <li>
+                    {{ project_form.project_image.label }}:
+                    <span>{{ project_form.project_image }}</span>
+                    </li>
+                <li>
+                    {{ project_form.project_start.label }}:
+                    <span>{{ project_form.project_start }}</span>
+                    {{ project_form.project_type.label }}:
+                    <span>{{ project_form.project_type }}</span>
+                    </li>
+                <li>{{ project_form.title }}</li>
+                <li>{{ project_form.body }}</li>
+                <li>{{ project_form.tag }}</li>
+                <li>{{ project_form.submit }}</li>
+            </ul>
+        </form>
+    </div>
+    {% endif %}
+    <div class="group">
+        <span class="group-title">
                 Personal Projects 
                 <div class="props">
-                    <span class="admin-prop">New Project</span>
-                    <span class="admin-prop">New Project</span>
-                    </div>
-                    </span>
-                    <div id="new-project-d" class="new-project">
-                        <form id="new-project" action="" method="POST">
-                            {{ project_form.hidden_tag() }}
-                            {{ project_form.project_start }}
-                            {{ project_form.project_type }}
-                            {{ project_form.title }}
-                            {{ project_form.body }}
-                            {{ project_form.tag }}
-                            {{ project_form.submit }}
-                            </form>
-                        </div>
-            <ul class="pproject">
-                    <a href="project">
-                <li>
-                    <span class="project-title">Title</span>
-                    <div class="progress"><span style="width: 25%">25%</span></div>
-                    </li>
-                    </a>
-                     <a href="project">
-                <li>
-                    <span class="project-title">Title</span>
-                    <div class="progress"><span style="width: 25%">25%</span></div>
-                    </li>
-                    </a>
-                    
-            <!--{% for project in projects %}
+                    {% if g.user.is_authenticated %}
+                    <span id="new-project" class="admin-prop">New Project</span> {% endif %}
+    </div>
+    </span>
+
+    <ul class="pproject">
+        <a href="project">
+            <li>
+                <span class="project-title">Title</span>
+                <div class="progress"><span style="width: 25%">25%</span></div>
+            </li>
+        </a>
+        <a href="project">
+            <li>
+                <span class="project-title">Title</span>
+                <div class="progress"><span style="width: 25%">25%</span></div>
+            </li>
+        </a>
+
+        <!--{% for project in projects %}
                 <li class="main_color">
                     <h3>{{ project.name }}</h3>
                     <p>{{ project.description }}</p>
@@ -44,27 +56,28 @@
                     </div>
                 </li>
             {% endfor %}-->
-            </ul>
-        </div>
-        
-        <div class="group">
-            <span class="group-title">Repositories
+    </ul>
+    </div>
+
+    <div class="group">
+        <span class="group-title">Repositories
                 <div class="props">
                     12/02-2006
                     </div>
             </span>
-            <ul class="gprojects">
-                <li>
-                    <span class="project-title">Title</span>
-                    <img></img>
-                    <div>description heredescription heredescription heredescription here
-                        description heredescription heredescription heredescription heredescription heredescription heredescription heredescription heredescription heredescription heredescription heredescription here
-                        description heredescription heredescription heredescription heredescription heredescription here
-                        description heredescription heredescription heredescription heredescription heredescription heredescription here
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-    </section>
+        <ul class="gprojects">
+            <li>
+                <span class="project-title">Title</span>
+                <img></img>
+                <div>description heredescription heredescription heredescription here description heredescription heredescription
+                    heredescription heredescription heredescription heredescription heredescription heredescription heredescription
+                    heredescription heredescription here description heredescription heredescription heredescription heredescription
+                    heredescription here description heredescription heredescription heredescription heredescription heredescription
+                    heredescription here
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</section>
 {% endblock %}

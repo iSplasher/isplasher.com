@@ -92,7 +92,9 @@ def contact():
 @application.route("/project/<int:p_type>")
 @application.route("/project/<int:p_type>/<int:p_id>")
 def project_page(p_type=0, p_id=0):
-    return render_template("project.html")
+    return render_template("project.html",
+                            project_form=forms.NewProject(),
+                            post_form=forms.NewPost())
     p = models.Project.query.get(p_id)
     if p:
         if p.type.id == p_type:

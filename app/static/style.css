@@ -728,33 +728,44 @@ form.mdedit button {
 
 /* admin post */
 
-div#new-post-d {
+div.new-form-d {
 	width: 90%;
 	margin: auto;
 }
 
-div#new-post-d ul {
+div.new-form-d ul {
 	list-style: none;
 }
 
-div#new-post-d form {
+div.new-form-d ul li span {
+	display: inline-block;
+	max-width: 40%;
+}
+
+div.new-form-d form {
 	text-align: center;
 	margin: auto;
 }
 
-div#new-post-d form input, .tag-editor, div#new-post-d form textarea {
+div.new-form-d form input, .tag-editor, div.new-form-d form textarea {
 	width: 95%;
 	max-width: 95%;
 }
 
-div#new-post-d form input {
+div.new-form-d form input, div.new-form-d form input {
 	height: 20pt;
 }
 
-div#new-post-d form textarea {
+div.new-form-d form textarea {
 	min-height: 300pt;
 }
 
+button#edit-project {
+	margin: auto;
+	width: auto;
+	display: block;
+	margin-top: 10pt;
+}
 
 /* admin tags input */
 

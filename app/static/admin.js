@@ -35,7 +35,7 @@ function mdform(h) {
 
 $(document).ready(function () {
     $(".mdedit").hide();
-    $("#new-post-d").hide();
+    $(".new-form-d").hide();
 
     $('.inputtag').tagEditor({
         clickDelete: true,
@@ -61,7 +61,12 @@ $(document).ready(function () {
     });
 
     $("#new-post, #edit-post").click(function () {
-        $("#new-post-d").show();
+        $("#post").show();
+        $(this).hide();
+    });
+    
+    $("#edit-project, #new-project").click(function () {
+        $("#project").show();
         $(this).hide();
     });
     
@@ -81,7 +86,20 @@ $(document).ready(function () {
         var data = $(this).serializeArray();
         console.log(data)
         $("#new-post").show();
-        $("#new-post-d").hide();
+        $("#post").hide();
+    });
+    
+    $("#edit-project").click(function () {
+        var p = $("#project"); 
+        $('#project-tags').children("li").each(function (i) {
+            console.log($(this).text())
+                     
+         $(p).find('.inputtag').tagEditor('addTag', $(this).text(), true);
+        });
+        
+        $(p).find("#title").text($(".content-title").text());
+        $(p).find("#body").text($(".project-descr").text());
+        
     });
 
 });

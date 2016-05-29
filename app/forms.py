@@ -3,7 +3,7 @@ from wtforms import TextField, TextAreaField, SubmitField, BooleanField, validat
 from wtforms.widgets.core import html_params
 from wtforms.widgets import HTMLString
 from wtforms.fields.html5 import DateField
-from wtforms.fields import SelectField
+from wtforms.fields import SelectField, FileField
 
 class InlineButtonWidget(object):
     """
@@ -54,6 +54,7 @@ class NewPost(Tags):
     
     
 class NewProject(NewPost):
+    project_image = FileField('Project Image', [validators.regexp('.')])
     project_start = DateField('Project Start', format='%d-%m-%Y')
     project_type = SelectField("Project Type", choices=[], coerce=int)
-    
+    submit = ButtonField('Submit') 

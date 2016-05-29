@@ -3,7 +3,7 @@
     {% if g.user.is_authenticated %}
     <button id="edit-post" class="new-post">Edit Post</button>
 
-    <div id="new-post-d">
+    <div id="post" class="new-form-d">
         <form class="edit-post" action="" method=post>
             <ul>
                 <li>{{ post_form.hidden_tag() }}</li>
