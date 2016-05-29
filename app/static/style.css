@@ -1,13 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
 * {
-	font-family: "Quicksand";
+	font-family: 'Varela Round', sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
-@font-face {
+/*@font-face {
 	font-family: "Quicksand";
 	src: url("fonts/Quicksand-Regular.otf") format("opentype");
-}
+}*/
 
 html, body {
 	width: 100%;
@@ -739,7 +741,8 @@ div.new-form-d ul {
 
 div.new-form-d ul li span {
 	display: inline-block;
-	max-width: 40%;
+	margin-left: 5pt;
+	margin-right: 5pt;
 }
 
 div.new-form-d form {

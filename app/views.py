@@ -72,7 +72,8 @@ def education():
 def random():
     return render_template("random.html",
                            title="Random Stuff",
-                           descr="Exclusive Random Stuff!!")
+                           descr="Exclusive Random Stuff!!",
+                           book_form=forms.NewBook())
 
 @application.route("/contact", methods=['GET', 'POST'])
 def contact():

@@ -52,9 +52,17 @@ class NewPost(Tags):
     body = TextAreaField('Body', [validators.Required()], render_kw={"placeholder": "Body"})
     submit = ButtonField('Post') 
     
-    
 class NewProject(NewPost):
     project_image = FileField('Project Image', [validators.regexp('.')])
     project_start = DateField('Project Start', format='%d-%m-%Y')
     project_type = SelectField("Project Type", choices=[], coerce=int)
-    submit = ButtonField('Submit') 
+    submit = ButtonField('Submit')
+    
+    
+class NewBook(Form):
+    title = TextField('Title', [validators.Required()], render_kw={"placeholder": "Title"})
+    book_image = FileField('Book Image', [validators.regexp('.')])
+    book_start = DateField('Started', format='%d-%m-%Y')
+    book_end = DateField('Finished', format='%d-%m-%Y')
+    submit = ButtonField('Submit')
+    

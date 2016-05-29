@@ -42,6 +42,14 @@ $(document).ready(function () {
         placeholder: 'Enter tags ...',
         forceLowercase: false,
     });
+    
+    $('input[type=date]').combodate({
+        minYear: 2000,
+        maxYear: 2050,
+        format: "DD-MM-YYYY",
+        template: "D-MMM-YYYY",
+        value: moment().format("DD-MM-YYYY")
+    });   
 
     $(".admin-prop").click(function () {
         var cls = ".c" + $(this).attr("id");
@@ -67,6 +75,11 @@ $(document).ready(function () {
     
     $("#edit-project, #new-project").click(function () {
         $("#project").show();
+        $(this).hide();
+    });
+    
+    $("#new-book").click(function () {
+        $("#book").show();
         $(this).hide();
     });
     
@@ -101,5 +114,7 @@ $(document).ready(function () {
         $(p).find("#body").text($(".project-descr").text());
         
     });
+    
+    
 
 });
