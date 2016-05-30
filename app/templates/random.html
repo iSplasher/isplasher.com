@@ -27,25 +27,42 @@
                 <li>{{ book_form.hidden_tag() }}</li>
                 <li>{{ book_form.book_image.label }}: <span> {{ book_form.book_image }}</span></li>
                 <li>{{ book_form.title }}</li>
-                <li>{{ book_form.book_start.label }}: <span>{{ book_form.book_start }} </span>
-                    {{ book_form.book_end.label }}: <span>{{ book_form.book_end }} </span>
+                <li>{{ book_form.book_start.label }}: <span>{{ book_form.book_start }} </span> {{ book_form.book_end.label }}:
+                    <span>{{ book_form.book_end }} </span>
                 </li>
                 <li>{{ book_form.submit }}</li>
             </ul>
         </form>
     </div>
     {% endif %}
-    <ul class="pproject">
+    <ul class="pproject books">
         <li>
+
             <div class="book">
-                <img src="static/images/euler.png">
-                <div class="book-info">
-                    <span>TitleTitle</span>
-                    <span class="date1">2/9-2016</span>
-                    <span class="date2">2/9-2016</span>
-                </div>
+                <img src="static/images/euler.png"> TitleTitleTitleTitle TitleTitleTitleTitle TitleTitleTitleTitle
             </div>
-            <div class="progress"><span style="width: 25%">25%</span></div>
+            <div class="progress book-progress"><span style="width: 25%">25%</span></div>
+            {% if g.user.is_authenticated %}
+            <div class="admin-book">
+                <div class="props">
+                    <span id="book-prog-down" class="admin-prop">-</span>
+                    <form class="book-form" action="" method="POST">
+                        <input class="book-input">
+                        </input>
+                    </form>
+                    <span id="book-prog-up" class="admin-prop">+</span>
+                    <span class="admin-prop edit-book">Edit</span>
+                </div>
+
+                <form class="book-edit" action="" method="POST">
+                {{ book_form.hidden_tag() }}
+                {{ book_form.book_image }}
+                {{ book_form.title }}
+               {{ book_form.submit }}
+                </form>
+
+            </div>
+            {% endif %}
         </li>
     </ul>
     </div>

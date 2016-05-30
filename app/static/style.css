@@ -624,38 +624,51 @@ ul.gists li {
 	width: 100%;
 }
 
+div.book-progress {
+	position: relative !important;
+	margin-right: 3pt;
+}
+
 div.book {
+	position: relative;
 	width: 100%;
 	height: 60pt;
+	max-height: 60pt;
 	padding: 3pt;
+	overflow: hidden;
 }
 
 div.book img {
+	position: relative;
 	float: left;
 	height: 100%;
 	border: 0.5px solid lightgray;
 	border-radius: 1.5px;
 }
 
-div.book div.book-info {
-	position: relative;
-	height: 100%;
+div.book div.admin-book {
+	width: 100%;
 }
 
-div.book div.book-info .date1, div.book div.book-info .date2 {
-	font-size: 8pt;
-	position: absolute;
-	bottom: 2pt;
+input.book-input {
+	width: 20pt;
+	margin: 0;
+	padding: 0;
 }
 
-div.book div.book-info .date1 {
-	right: 50%;
+form.book-form {
+	display: inline-block;
 }
 
-div.book div.book-info .date2 {
-	right: 5pt;
+form.book-edit {
+	padding-top: 20pt;
+	width: 90%;
 }
 
+form.book-edit input, form.book-edit button {
+	margin: 2pt;
+	padding: 0;
+}
 
 /* Contact */
 

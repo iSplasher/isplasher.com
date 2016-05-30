@@ -36,6 +36,7 @@ function mdform(h) {
 $(document).ready(function () {
     $(".mdedit").hide();
     $(".new-form-d").hide();
+    $(".book-edit").hide();
 
     $('.inputtag').tagEditor({
         clickDelete: true,
@@ -83,6 +84,11 @@ $(document).ready(function () {
         $(this).hide();
     });
     
+    $(".edit-book").click(function () {
+        $(this).parent().parent().find(".book-edit").show();
+        $(this).hide();
+    });
+    
     $("#edit-post").click(function () {
         $('#post-tags').children("li").each(function (i) {
             console.log($(this).text())
@@ -115,6 +121,11 @@ $(document).ready(function () {
         
     });
     
-    
+    $("form.book-edit").submit(function (event) {
+        event.preventDefault();
+        var data = $(this).serializeArray();
+        $(this).hide();
+        $(this).prev().find(".edit-book").show();
+    });
 
 });
