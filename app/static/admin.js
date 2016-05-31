@@ -37,6 +37,7 @@ $(document).ready(function () {
     $(".mdedit").hide();
     $(".new-form-d").hide();
     $(".book-edit").hide();
+    $(".gist-form").hide();
 
     $('.inputtag').tagEditor({
         clickDelete: true,
@@ -84,6 +85,11 @@ $(document).ready(function () {
         $(this).hide();
     });
     
+    $(".edit-gist").click(function () {
+        $(this).parentsUntil("li").find(".gist-form").show();
+        $(this).hide();
+    });
+    
     $(".edit-book").click(function () {
         $(this).parent().parent().find(".book-edit").show();
         $(this).hide();
@@ -126,6 +132,13 @@ $(document).ready(function () {
         var data = $(this).serializeArray();
         $(this).hide();
         $(this).prev().find(".edit-book").show();
+    });
+    
+    $("form.gist-form").submit(function (event) {
+        event.preventDefault();
+        var data = $(this).serializeArray();
+        $(this).hide();
+        $(this).parent().find(".edit-gist").show();
     });
 
 });

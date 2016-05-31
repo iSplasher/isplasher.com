@@ -73,7 +73,8 @@ def random():
     return render_template("random.html",
                            title="Random Stuff",
                            descr="Exclusive Random Stuff!!",
-                           book_form=forms.NewBook())
+                           book_form=forms.NewBook(),
+                           gist_form=forms.Tags())
 
 @application.route("/contact", methods=['GET', 'POST'])
 def contact():

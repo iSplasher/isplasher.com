@@ -3,7 +3,7 @@ from wtforms import TextField, TextAreaField, SubmitField, BooleanField, validat
 from wtforms.widgets.core import html_params
 from wtforms.widgets import HTMLString
 from wtforms.fields.html5 import DateField
-from wtforms.fields import SelectField, FileField
+from wtforms.fields import SelectField, FileField, IntegerField
 
 class InlineButtonWidget(object):
     """
@@ -62,7 +62,6 @@ class NewProject(NewPost):
 class NewBook(Form):
     title = TextField('Title', [validators.Required()], render_kw={"placeholder": "Title"})
     book_image = FileField('Book Image', [validators.regexp('.')])
-    book_start = DateField('Started', format='%d-%m-%Y')
-    book_end = DateField('Finished', format='%d-%m-%Y')
+    pages = IntegerField('Pages', [validators.Required()])
     submit = ButtonField('Submit')
     

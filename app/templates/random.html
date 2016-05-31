@@ -5,11 +5,23 @@
         </span>
         <ul class="gists">
             <li>
-                <span class="gist-title">test</span>
+                <span class="gist-title">test
+                    <div class="props">
+                {% if g.user.is_authenticated %}
+                    <span class="admin-prop edit-gist">Edit</span>
+                    {% endif %}
+                </div>
+                </span>
                 <ul class="tags">
                     <li>2. Feb. 2016</li>
                     <li>Python</li>
                 </ul>
+                {% if g.user.is_authenticated %}
+                   <form class="gist-form">
+              {{ gist_form.tag }}
+               <button id="gist-submit" name="submit" type="submit" value="Submit">Submit</button>
+                    </form>
+                    {% endif %}
             </li>
         </ul>
     </div>
@@ -25,11 +37,9 @@
         <form class="new-book" action="" method=post>
             <ul>
                 <li>{{ book_form.hidden_tag() }}</li>
-                <li>{{ book_form.book_image.label }}: <span> {{ book_form.book_image }}</span></li>
+                <li>{{ book_form.book_image.label }}: <span> {{ book_form.book_image }}</span>
+                {{ book_form.pages.label }}: <span>{{ book_form.pages }} </span></li>
                 <li>{{ book_form.title }}</li>
-                <li>{{ book_form.book_start.label }}: <span>{{ book_form.book_start }} </span> {{ book_form.book_end.label }}:
-                    <span>{{ book_form.book_end }} </span>
-                </li>
                 <li>{{ book_form.submit }}</li>
             </ul>
         </form>
@@ -48,7 +58,7 @@
                     <span id="book-prog-down" class="admin-prop">-</span>
                     <form class="book-form" action="" method="POST">
                         <input class="book-input">
-                        </input>
+                        </input>/500
                     </form>
                     <span id="book-prog-up" class="admin-prop">+</span>
                     <span class="admin-prop edit-book">Edit</span>
@@ -58,6 +68,7 @@
                 {{ book_form.hidden_tag() }}
                 {{ book_form.book_image }}
                 {{ book_form.title }}
+                {{ book_form.pages.label }}:{{ book_form.pages }}
                {{ book_form.submit }}
                 </form>
 
