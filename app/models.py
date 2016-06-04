@@ -23,18 +23,30 @@ class User(db.Model):
         return True
         
 
-categories = db.Table('categories',
-    db.Column('category_id', db.Integer, db.ForeignKey('category.id')),
+project_tags = db.Table('project_tags',
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
+    db.Column('project_id', db.Integer, db.ForeignKey('project.id'))
+)
+
+post_tags = db.Table('post_tags',
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
     db.Column('post_id', db.Integer, db.ForeignKey('post.id'))
 )
 
-class Category(db.Model):
+gist_tags = db.Table('gist_tags',
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
+    db.Column('gist_id', db.Integer, db.ForeignKey('gist.id'))
+)
+
+class Text(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
-    
-    def __repr__(self):
-        return self.name
-    
+    body = db.Column(db.String)
+
+class Tag(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), index=True, unique=True)
+
 class ProjectType(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
@@ -51,38 +63,39 @@ class Project(db.Model):
     timestamp = db.Column(db.DateTime)
     date_started = db.Column(db.Date)
     date_finished = db.Column(db.Date)
+    progress = db.Column(db.Integer)
     type_id = db.Column(db.Integer, db.ForeignKey('project_type.id'))
+    posts = None
+    tags = db.relationship('Tag', secondary=project_tags, backref=db.backref('tag', lazy='dynamic'))
     
     def __repr__(self):
         t = "Project "
         for x in [self.id, self.name, self.description, self.timestamp, self.date_started, self.date_finished]:
             t += "{}\n".format(x)
         return t
-        
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     body = db.Column(db.String)
     timestamp = db.Column(db.DateTime)
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
-    categories = db.relationship('Category', secondary=categories, backref=db.backref('categories', lazy='dynamic'))
-    comments = db.relationship('Comment', backref='post', cascade="all, delete-orphan", lazy='dynamic')
+    tags = db.relationship('Tag', secondary=post_tags, backref=db.backref('tag', lazy='dynamic'))
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
-        
-class Comment(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    body = db.Column(db.String(500))
-    timestamp = db.Column(db.DateTime)
-    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
 
-    def __repr__(self):
-        return '<Post %r>' % (self.body)
- 
-        
-def add_category(name):
-    c = Category(name=name)
-    db.session.add(c)
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64), index=True, unique=True)
+    cover = db.Column(db.String)
+    page = db.Column(db.Integer)
+    total_pages = db.Column(db.Integer)
+
+class Gist(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64), index=True, unique=True)
+    tags = db.relationship('Tag', secondary=gist_tags, backref=db.backref('tag', lazy='dynamic'))
+    body = db.Column(db.String)
     
 def add_post(project, body, categories=[]):
     p = Post(body=body, timestamp=datetime.datetime.utcnow(), post_project=project)
@@ -92,9 +105,7 @@ def add_post(project, body, categories=[]):
     else:
        p.categories.append(categories)
     db.session.add(p)
-    
-def add_comment(post, body):
-    pass
+
     
 def add_project(project_type, name, description, cover="/static/images/no-image.png", start_date=datetime.datetime.utcnow(), finish_date=datetime.datetime.utcnow()):
     p = Project(name=name, type=project_type, cover=cover, description=description, timestamp=datetime.datetime.utcnow(),

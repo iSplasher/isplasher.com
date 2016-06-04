@@ -1,9 +1,9 @@
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import LoginManager
-from flask.ext.bcrypt import Bcrypt
-from flask.ext.wtf import CsrfProtect
-from flask.ext.session import Session
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
+from flask_wtf import CsrfProtect
+from flask_session import Session
 
 application = Flask(__name__, static_url_path='/static')
 

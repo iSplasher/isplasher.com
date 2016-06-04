@@ -1,5 +1,5 @@
 from flask import render_template, flash, session, request, url_for, redirect, abort, g
-from flask.ext.login import login_user, logout_user, current_user, login_required
+from flask_login import login_user, logout_user, current_user, login_required
 from app import application, db, login_manager, bcrypt, models, forms
 from app.models import User
 

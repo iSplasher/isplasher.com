@@ -44,14 +44,14 @@ $(document).ready(function () {
         placeholder: 'Enter tags ...',
         forceLowercase: false,
     });
-    
+
     $('input[type=date]').combodate({
         minYear: 2000,
         maxYear: 2050,
         format: "DD-MM-YYYY",
         template: "D-MMM-YYYY",
         value: moment().format("DD-MM-YYYY")
-    });   
+    });
 
     $(".admin-prop").click(function () {
         var cls = ".c" + $(this).attr("id");
@@ -74,36 +74,41 @@ $(document).ready(function () {
         $("#post").show();
         $(this).hide();
     });
-    
+
     $("#edit-project, #new-project").click(function () {
         $("#project").show();
         $(this).hide();
     });
-    
+
     $("#new-book").click(function () {
         $("#book").show();
         $(this).hide();
     });
-    
+
     $(".edit-gist").click(function () {
-        $(this).parentsUntil("li").find(".gist-form").show();
+        var p = $(this).parents("li");
+        p.find(".gist-form").show();
+        p.find("ul.tags").children("li").each(function (i) {
+            p.find(".gist-form").find('.inputtag').tagEditor('addTag', $(this).text(), true);
+        });
+        p.find("ul.tags").hide();
         $(this).hide();
     });
-    
+
     $(".edit-book").click(function () {
         $(this).parent().parent().find(".book-edit").show();
         $(this).hide();
     });
-    
+
     $("#edit-post").click(function () {
         $('#post-tags').children("li").each(function (i) {
             console.log($(this).text())
-         $('.inputtag').tagEditor('addTag', $(this).text(), true);
+            $('.inputtag').tagEditor('addTag', $(this).text(), true);
         });
-        
+
         $("#title").text($(".content-title").text());
         $("#body").text($(".post-text").text());
-        
+
     });
 
     $("form.new-post").submit(function (event) {
@@ -113,32 +118,34 @@ $(document).ready(function () {
         $("#new-post").show();
         $("#post").hide();
     });
-    
+
     $("#edit-project").click(function () {
-        var p = $("#project"); 
+        var p = $("#project");
         $('#project-tags').children("li").each(function (i) {
             console.log($(this).text())
-                     
-         $(p).find('.inputtag').tagEditor('addTag', $(this).text(), true);
+
+            $(p).find('.inputtag').tagEditor('addTag', $(this).text(), true);
         });
-        
+
         $(p).find("#title").text($(".content-title").text());
         $(p).find("#body").text($(".project-descr").text());
-        
+
     });
-    
+
     $("form.book-edit").submit(function (event) {
         event.preventDefault();
         var data = $(this).serializeArray();
         $(this).hide();
         $(this).prev().find(".edit-book").show();
     });
-    
+
     $("form.gist-form").submit(function (event) {
         event.preventDefault();
         var data = $(this).serializeArray();
+        var p = $(this).parents("li");
         $(this).hide();
-        $(this).parent().find(".edit-gist").show();
+        p.find(".edit-gist").show();
+        p.find("ul.tags").show();
     });
 
 });
