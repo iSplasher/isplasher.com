@@ -17,7 +17,7 @@
     <div class="about-buttons">
         <button id="whoscroll">Who am I?</button>
         <button id="hobbyscroll">Hobbies</button>
-        <button id="resumescroll">Resumé</button>
+        <button id="resumescroll">Skills</button>
     </div>
     <div class="about">
         <div id="who" class="group">
@@ -41,54 +41,29 @@
             <div class="md">
             </div>
 
+            <center>
+
             <div class="minibox">
-                {% if g.user.is_authenticated %}
-                <div class="mdedit">
-                    <form class="mdedit" action="" method=post>
-                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
-                    </form>
-                </div>
-                {% endif %}
                 <div class="md">
                     I enjoy programming
                 </div>
             </div>
             <div class="minibox">
-                {% if g.user.is_authenticated %}
-                <div class="mdedit">
-                    <form class="mdedit" action="" method=post>
-                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
-                    </form>
-                </div>
-                {% endif %}
                 <div class="md">
                 I like classical piano music
                 </div>
             </div>
             <div class="minibox">
-                {% if g.user.is_authenticated %}
-                <div class="mdedit">
-                    <form class="mdedit" action="" method=post>
-                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
-                    </form>
-                </div>
-                {% endif %}
                 <div class="md">
                 I consider myself to be pretty creative
                 </div>
             </div>
             <div class="minibox">
-                {% if g.user.is_authenticated %}
-                <div class="mdedit">
-                    <form class="mdedit" action="" method=post>
-                        {{ mdedit_form.hidden_tag() }} {{ mdedit_form.body }} {{ mdedit_form.submit }}
-                    </form>
-                </div>
-                {% endif %}
                 <div class="md">
                 I can't sit in a lotus position
                 </div>
             </div>
+            </center>
                    {% if g.user.is_authenticated %}
         </div>
                 {% endif %}
@@ -118,8 +93,7 @@
                 {% endif %}
                 <div class="md">
             <h4>Piano</h4>
-            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
-                pesdfdshdthpesdfdshdthp
+            <p>under construction...
             </p>
                 </div>
         </div>
@@ -134,8 +108,7 @@
                 {% endif %}
                 <div class="md">
             <h4>Programming</h4>
-            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
-                pesdfdshdthpesdfdshdthp
+            <p>under construction...
             </p>
                 </div>
         </div>
@@ -150,8 +123,7 @@
                 {% endif %}
                 <div class="md">
             <h4>3D modeling</h4>
-            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
-                pesdfdshdthpesdfdshdthp
+            <p>under construction...
             </p>
                 </div>
         </div>
@@ -166,8 +138,7 @@
                 {% endif %}
                 <div class="md">
             <h4>Drawing</h4>
-            <p>dshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdthpesdfdshdth pesdfdshdthpesdfdshdth
-                pesdfdshdthpesdfdshdthp
+            <p>under construction...
             </p>
                 </div>
         </div>
@@ -182,7 +153,7 @@
 
     <div id="resume" class="group">
         <span class="group-title">
-                Resumé
+                Skills
                 <div class="props">
                     <span class="admin-prop">Edit</span>
     </div>

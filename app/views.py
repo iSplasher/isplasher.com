@@ -1,4 +1,4 @@
-from flask import render_template, flash, session, request, url_for, redirect, abort, g
+from flask import render_template, flash, request, url_for, redirect, abort, g
 from flask_login import login_user, logout_user, current_user, login_required
 from app import application, db, login_manager, bcrypt, models, forms
 from app.models import User
@@ -8,17 +8,6 @@ from os import listdir, path
 from random import randint
 
 debug = True
-
-def get_r_image():
-    hour = datetime.now().hour
-    day = "day"
-    if 15 < hour < 20:
-        day = "night"
-    elif hour > 20 or hour < 6:
-        day = "midnight"
-    
-    images = listdir("app/static/images/{}".format(day))
-    return  day + "/" + images[randint(0, len(images)-1)]
 
 def get_projects(p_type):
     projects = []
@@ -32,8 +21,7 @@ def get_projects(p_type):
 
 @application.before_request
 def before_request():
-    g.user = User()
-    g.bg = session.get("bg")
+    g.user = current_user
        
 @login_manager.user_loader
 def user_loader(user_id):
@@ -126,7 +114,7 @@ def login():
                                    
         login_form = forms.LoginForm()
         if login_form.validate():
-            valid = User.query.filter(User.name.ilike("%{}%".format(login_form.name.data))).first()
+            valid = User.query.filter(User.name.ilike("{}".format(login_form.name.data))).first()
             if valid:
                 if bcrypt.check_password_hash(valid.password, login_form.password.data):
                         login_user(valid)

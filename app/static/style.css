@@ -21,7 +21,7 @@ html, body, .sidebar, .content {
 
 body {
     padding-top: 10px;
-    background: #F7F7F7;
+    background: url("images/bg-pattern.png") repeat;
 }
 
 a {
@@ -120,7 +120,10 @@ img.profile {
     }
 
         .sidebar ul.navlist li#active::before {
-            content: '>';
+            content: '{ ';
+        }
+        .sidebar ul.navlist li#active::after {
+            content: ' }';
         }
 
 .sidebar ul span {
@@ -328,11 +331,11 @@ ul.tags {
         }
 
         .content ul.intro li.four {
-            animation: intro 11s ease-in;
+            animation: intro 9s ease-in;
         }
 
         .content ul.intro li.five {
-            animation: intro 12s ease-in;
+            animation: intro 10s ease-in;
         }
 
         .content ul.intro li.six {

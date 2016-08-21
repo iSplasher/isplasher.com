@@ -66,7 +66,7 @@ class Project(db.Model):
     progress = db.Column(db.Integer)
     type_id = db.Column(db.Integer, db.ForeignKey('project_type.id'))
     posts = None
-    tags = db.relationship('Tag', secondary=project_tags, backref=db.backref('tag', lazy='dynamic'))
+    tags = db.relationship('Tag', secondary=project_tags, backref=db.backref('project', lazy='dynamic'))
     
     def __repr__(self):
         t = "Project "
@@ -79,7 +79,7 @@ class Post(db.Model):
     body = db.Column(db.String)
     timestamp = db.Column(db.DateTime)
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
-    tags = db.relationship('Tag', secondary=post_tags, backref=db.backref('tag', lazy='dynamic'))
+    tags = db.relationship('Tag', secondary=post_tags, backref=db.backref('post', lazy='dynamic'))
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
@@ -94,7 +94,7 @@ class Book(db.Model):
 class Gist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64), index=True, unique=True)
-    tags = db.relationship('Tag', secondary=gist_tags, backref=db.backref('tag', lazy='dynamic'))
+    tags = db.relationship('Tag', secondary=gist_tags, backref=db.backref('gist', lazy='dynamic'))
     body = db.Column(db.String)
     
 def add_post(project, body, categories=[]):
