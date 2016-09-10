@@ -8,3 +8,12 @@ class ListConverter(BaseConverter):
     def to_url(self, values):
         return '+'.join(BaseConverter.to_url(value)
                         for value in values)
+
+def text_process(txt, max_words=50):
+    assert isinstance(txt, str)
+    txt = txt.strip()
+    if len(txt) > max_words:
+        txt = txt[:max_words]
+        txt += "..."
+    return txt
+

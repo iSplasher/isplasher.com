@@ -150,15 +150,23 @@ img.profile {
     padding-left: 2px;
 }
 
+.sidebar ul.recent-a, .sidebar ul.recent-p {
+    padding-bottom: 5pt;
+}
+
 .sidebar ul.recent-a li, .sidebar ul.recent-p li {
     font-size: 9pt;
     padding-left: 5pt;
+    margin-bottom: 1.5pt;
 }
 
     .sidebar ul.recent-a li::before, .sidebar ul.recent-p li::before {
         content: '- ';
     }
 
+.sidebar ul.recent-a li a, .sidebar ul.recent-p li a {
+    text-decoration: dashed underline;
+}
 
 /* Content */
 
@@ -618,6 +626,7 @@ ul.edu-year {
         margin: 8pt;
         padding: 3pt;
         display: inline-block;
+        text-align: center;
     }
 
         ul.edu-year li .edu-date {

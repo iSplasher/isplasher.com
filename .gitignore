@@ -197,3 +197,5 @@ ModelManifest.xml
 /config.py
 /web.config
 /web.debug.config
+/isplasherdb/versions
+/webpoll.py

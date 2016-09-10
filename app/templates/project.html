@@ -1,29 +1,5 @@
 {% extends "base.html" %} {% block content %}
 <section>
-    {% if g.user.is_authenticated %}
-    <button id="edit-project" class="new-project">Edit Project</button>
-
-    <div id="project" class="new-form-d">
-        <form class="new-project" action="" method=post>
-            <ul>
-                <li>{{ project_form.hidden_tag() }}</li>
-                <li>
-                    {{ project_form.project_image.label }}:
-                    <span>{{ project_form.project_image }}</span>
-                </li>
-                <li>
-                    {{ project_form.project_start.label }}:
-                    <span>{{ project_form.project_start }}</span> {{ project_form.project_type.label }}:
-                    <span>{{ project_form.project_type }}</span>
-                </li>
-                <li>{{ project_form.title }}</li>
-                <li>{{ project_form.body }}</li>
-                <li>{{ project_form.tag }}</li>
-                <li>{{ project_form.submit }}</li>
-            </ul>
-        </form>
-    </div>
-    {% endif %}
     <div class="p-meta">
         <span>
             Project Start:
@@ -34,22 +10,30 @@
         <span>
             Project Type:
             <ul class="tags">
-                    <li>Personal</li>
+                    <li>{{ project.type.name }}</li>
                 </ul>
             </span>
         <span>
             Tags:
             <ul id="project-tags" class="tags">
-                    <li>C++</li>
-                    <li>Python</li>
+                {% for t in project.tags %}
+                    <li>{{ t.name }}</li>
+                {% endfor %}
                 </ul>
         </span>
     </div>
+
+    {% if project.extra %}
     <div class="project-source">
-        <button>
+        <a class="button" href="{{ project.extra }}" target="_blank">
+            {% if project.type.name == 'Github' %}
             View on Github
-            </button>
+            {% else %}
+            Show product
+            {% endif %}
+            </a>
     </div>
+    {% endif %}
     <div class="project-descr">
         this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a description
         this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is
@@ -58,6 +42,8 @@
         is a description this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis
         is a description
     </div>
+
+    {% if not project.type.name in ['Gymnasium', 'University'] %}
     <div class="group">
         <span class="group-title">Posts</span>
         {% if g.user.is_authenticated %}
@@ -74,7 +60,7 @@
             </ul>
         </form>
     </div>
-    {% endif %}
+        {% endif %}
 
     <ul class="posts">
         <li>
@@ -113,5 +99,6 @@
         </li>
     </ul>
     </div>
+    {% endif %}
 </section>
 {% endblock %}

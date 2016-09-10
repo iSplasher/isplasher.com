@@ -6,24 +6,44 @@
                     <span class="admin-prop">New Year</span>
     </div>
     </span>
-    <ul class="edu-year">
-        <span class="year-title">1.G
-                                   <div class="props">
+        <ul class="edu-year">
+            <span class="year-title">
+                1.G
+                <div class="props">
                     <span class="admin-prop">New Project</span>
-        </div>
-        </span>
-        <li>
-            <span class="project-title">Title</span>
-            <div class="edu-date">21/02-2016</div>
-        </li>
-    </ul>
+                </div>
+            </span>
+            {% for p in projects['gym']['1g'] %}
+            <li>
+                <a href="/project/{{ p.type_id }}/{{ p.id }}">
+                    <span class="project-title">{{ p.name }}</span>
+                    <div class="edu-date">{{ p.date_started }}</div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
     <ul class="edu-year">
         <span class="year-title">2.G</span>
+        {% for p in projects['gym']['2g'] %}
         <li>
-            <span class="project-title">Title</span>
-            <div class="edu-date">21/02-2016</div>
+            <a href="/project/{{ p.type_id }}/{{ p.id }}">
+                <span class="project-title">{{ p.name }}</span>
+                <div class="edu-date">{{ p.date_started }}</div>
+            </a>
         </li>
+        {% endfor %}
     </ul>
+        <ul class="edu-year">
+            <span class="year-title">3.G</span>
+            {% for p in projects['gym']['3g'] %}
+            <li>
+                <a href="/project/{{ p.type_id }}/{{ p.id }}">
+                    <span class="project-title">{{ p.name }}</span>
+                    <div class="edu-date">{{ p.date_started }}</div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </section>
 {% endblock %}

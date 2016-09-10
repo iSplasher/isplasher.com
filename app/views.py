@@ -1,6 +1,6 @@
 from flask import render_template, flash, request, url_for, redirect, abort, g
 from flask_login import login_user, logout_user, current_user, login_required
-from app import application, db, login_manager, bcrypt, models, forms
+from app import application, db, login_manager, bcrypt, models, forms, util
 from app.models import User
 
 from datetime import datetime
@@ -9,19 +9,23 @@ from random import randint
 
 debug = True
 
-def get_projects(p_type):
+def get_projects(p_type, limit=0):
     projects = []
     if isinstance(p_type, str):
-        project_type = models.ProjectType.query.filter(models.ProjectType.name.ilike("%{}%".format(p_type))).first()
+        project_type = models.ProjectType.query.filter(models.ProjectType.name.ilike("{}".format(p_type))).first()
     elif isinstance(p_type, int):
         project_type = models.ProjectType.query.get(p_type)
     if project_type:
-        projects = project_type.projects.all()
+        if limit:
+            projects = project_type.projects.limit(limit).all()
+        else:
+            projects = project_type.projects.all()
     return projects
 
 @application.before_request
 def before_request():
     g.user = current_user
+    g.activity = models.Activity.query.order_by(models.Activity.timestamp.desc()).limit(5).all()
        
 @login_manager.user_loader
 def user_loader(user_id):
@@ -51,10 +55,16 @@ def projects():
 
 @application.route("/education")
 def education():
+    gym_p = get_projects("Gymnasium", 5)
+
+    uni_p = get_projects("University", 5)
     return render_template("education.html",
                            title="Education",
                            descr="Education Related Stuff",
-                           projects=get_projects("Gymnasium"))
+                           projects={'gym': {'1g':[x for x in gym_p if x.tags and [y for y in x.tags if y.name == "1.G"]],
+                                             '2g':[x for x in gym_p if x.tags and [y for y in x.tags if y.name == "2.G"]],
+                                             '3g':[x for x in gym_p if x.tags and [y for y in x.tags if y.name == "3.G"]]}, 
+                                     'uni':uni_p})
 
 @application.route("/random")
 def random():
@@ -82,15 +92,18 @@ def contact():
 @application.route("/project/<int:p_type>")
 @application.route("/project/<int:p_type>/<int:p_id>")
 def project_page(p_type=0, p_id=0):
-    return render_template("project.html",
-                            project_form=forms.NewProject(),
-                            post_form=forms.NewPost())
-    p = models.Project.query.get(p_id)
-    if p:
-        if p.type.id == p_type:
-            return render_template("project.html",
-                                descr="Working Project!",
-                                project=p)
+    if p_id:
+        p = models.Project.query.get(p_id)
+        if p:
+            if p.type.id == p_type:
+                return render_template("project.html",
+                                    descr=p.name,
+                                    project=p,
+                                    post_form=forms.NewPost())
+    else:
+        p = models.ProjectType.query.get(p_type)
+        if p:
+            pass
     flash("Project not found", "global")
     return redirect(url_for("index"))
     

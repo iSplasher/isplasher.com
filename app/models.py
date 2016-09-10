@@ -1,4 +1,4 @@
-from app import db
+from app import db, util
 from sqlalchemy.schema import UniqueConstraint
 import datetime
 
@@ -67,12 +67,10 @@ class Project(db.Model):
     type_id = db.Column(db.Integer, db.ForeignKey('project_type.id'))
     posts = None
     tags = db.relationship('Tag', secondary=project_tags, backref=db.backref('project', lazy='dynamic'))
+    extra = db.Column(db.String, default='')
     
     def __repr__(self):
-        t = "Project "
-        for x in [self.id, self.name, self.description, self.timestamp, self.date_started, self.date_finished]:
-            t += "{}\n".format(x)
-        return t
+        return "Project({}: {})".format(self.id, self.name)
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -96,6 +94,20 @@ class Gist(db.Model):
     title = db.Column(db.String(64), index=True, unique=True)
     tags = db.relationship('Tag', secondary=gist_tags, backref=db.backref('gist', lazy='dynamic'))
     body = db.Column(db.String)
+
+class Activity(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.String())
+    url = db.Column(db.String())
+    extra = db.Column(db.String())
+    timestamp = db.Column(db.DateTime)
+
+    def pbody(self):
+        return util.text_process(self.body)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.timestamp = datetime.datetime.utcnow()
     
 def add_post(project, body, categories=[]):
     p = Post(body=body, timestamp=datetime.datetime.utcnow(), post_project=project)
