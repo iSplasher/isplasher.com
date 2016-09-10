@@ -44,6 +44,20 @@ section {
     overflow: hidden;
 }
 
+.also {
+    margin: 10pt;
+}
+
+.also a {
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    padding: 4pt;
+    border-radius: 5pt;
+    font-size: 21pt;
+
+}
+
+
 .sidebar {
     float: left;
     width: 18%;

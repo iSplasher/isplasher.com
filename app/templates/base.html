@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -30,6 +30,8 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
     </script>
+
+    <script src="https://use.fontawesome.com/912c0d9c6c.js"></script>
     <script src="static/misc.js"></script>
     {% if g.user.is_authenticated %}
     <script src="static/caret.js"></script>
@@ -60,6 +62,11 @@
     <div class="container">
         <div class="sidebar">
             <img class="profile" src="static/images/me.jpg" />
+
+            <div class="also">
+            <a href="https://github.com/iSplasher"><i class="fa fa-github fa-fw" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/iSplasher"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
+            </div>
 
             <ul class="navlist">
                 {% if g.user.is_authenticated%}
