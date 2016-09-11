@@ -30,6 +30,13 @@ a {
     outline: 0;
 }
 
+a.button {
+    padding: 5pt 10pt;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2pt;
+}
+
 section {
     position: relative;
 }
@@ -548,6 +555,7 @@ div.p-meta {
 
 div.project-source {
     text-align: center;
+    margin: 15pt 0 10pt 0;
 }
 
 

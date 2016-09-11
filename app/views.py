@@ -174,3 +174,10 @@ def new_project():
                            title="New Project",
                            descr="New project",
                            project_form=forms.NewProject())
+
+
+# DANSK PROJECT
+
+@application.route("/patienten")
+def patienten():
+    return render_template("project/patienten/patienten.html")

@@ -55,7 +55,9 @@ class NewPost(Tags):
 class NewProject(NewPost):
     project_image = FileField('Project Image', [validators.regexp('.')])
     project_start = DateField('Project Start', format='%d-%m-%Y')
+    project_end = DateField('Project End', format='%d-%m-%Y')
     project_type = SelectField("Project Type", choices=[], coerce=int)
+    extra = TextField('Extra', render_kw={"placeholder": "Extra"})
     submit = ButtonField('Submit')
     
     
