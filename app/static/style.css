@@ -93,6 +93,22 @@ footer {
     background: url("images/aarhus_tech_logo.jpg") no-repeat;
 }
 
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+}
+
+@media screen and (max-width: 780px) {
+
+    .markdown-body iframe {
+        width: 200pt;
+        height: 100pt;
+    }
+
+}
 
 /* Sidebar */
 

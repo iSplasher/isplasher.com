@@ -1,19 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <section>
     {% if g.user.is_authenticated %}
-    <button id="new-post" class="new-post">New Post</button>
-
-   <div id="post" class="new-form-d">
-        <form class="new-post" action="" method=post>
-            <ul>
-                <li>{{ post_form.hidden_tag() }}</li>
-                <li>{{ post_form.title }}</li>
-                <li>{{ post_form.body }}</li>
-                <li>{{ post_form.tag }}</li>
-                <li>{{ post_form.submit }}</li>
-            </ul>
-        </form>
-    </div>
+    <a class="button" href="/postadd">New Post</a>
     {% endif %}
 
     <ul class="posts">

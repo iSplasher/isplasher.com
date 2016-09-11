@@ -167,3 +167,10 @@ def admin_add():
         
     return redirect(request.args.get('next') or url_for("admin"))
     
+@application.route("/projectadd")
+@login_required
+def new_project():
+    return render_template("newproject.html",
+                           title="New Project",
+                           descr="New project",
+                           project_form=forms.NewProject())

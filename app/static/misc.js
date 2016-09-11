@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+    $(document).ready(function () {
+        $("div.markdown-body").fitVids();
+    });
+
 	$(".progress span").each(function () {
 		$(this)
 			.data("progwidth", $(this).width())

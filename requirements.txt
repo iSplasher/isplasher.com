@@ -6,3 +6,4 @@ flask-bcrypt
 flask-wtf
 flask-session
 sqlalchemy-migrate
+markdown

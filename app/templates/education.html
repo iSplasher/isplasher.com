@@ -3,14 +3,15 @@
     <div class="group">
         <span class="group-title">Gymnasium
                                <div class="props">
-                    <span class="admin-prop">New Year</span>
+            {% if g.user.is_authenticated %}
+                    <a href="/projectadd"><span class="admin-prop">New Project</span></a>
+            {% endif %}
     </div>
     </span>
         <ul class="edu-year">
             <span class="year-title">
                 1.G
                 <div class="props">
-                    <span class="admin-prop">New Project</span>
                 </div>
             </span>
             {% for p in projects['gym']['1g'] %}

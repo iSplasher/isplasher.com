@@ -1,6 +1,19 @@
 from app import db, util
 from sqlalchemy.schema import UniqueConstraint
 import datetime
+import markdown
+from pyembed.markdown import PyEmbedMarkdown
+
+class MD:
+    def toHTML(self, mdtxt):
+        # PyEmbed Syntax: [!embed?max_width=300&max_height=200](http://www.youtube.com/watch?v=9bZkp7q19f0)
+        # Abbr Syntax: *[W3C]:  World Wide Web Consortium
+        return markdown.markdown(mdtxt, extensions=[PyEmbedMarkdown(),
+                                                    'markdown.extensions.tables',
+                                                    'markdown.extensions.abbr',
+                                                    'markdown.extensions.smarty',
+                                                    'markdown.extensions.nl2br',
+                                                    'markdown.extensions.sane_lists'])
 
 class User(db.Model):
     name = db.Column(db.String(64), primary_key=True)
@@ -38,7 +51,7 @@ gist_tags = db.Table('gist_tags',
     db.Column('gist_id', db.Integer, db.ForeignKey('gist.id'))
 )
 
-class Text(db.Model):
+class Text(db.Model, MD):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True, unique=True)
     body = db.Column(db.String)
@@ -55,7 +68,7 @@ class ProjectType(db.Model):
     def __repr__(self):
         return self.name
 
-class Project(db.Model):
+class Project(db.Model, MD):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     cover = db.Column(db.String)
@@ -72,7 +85,7 @@ class Project(db.Model):
     def __repr__(self):
         return "Project({}: {})".format(self.id, self.name)
 
-class Post(db.Model):
+class Post(db.Model, MD):
     id = db.Column(db.Integer, primary_key = True)
     body = db.Column(db.String)
     timestamp = db.Column(db.DateTime)

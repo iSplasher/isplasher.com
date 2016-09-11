@@ -1,0 +1,15 @@
+﻿{% extends "base.html" %} {% block content %}
+<section>
+    <div id="post" class="new-form-d">
+        <form class="new-post" action="" method=post>
+            <ul>
+                <li>{{ post_form.hidden_tag() }}</li>
+                <li>{{ post_form.title }}</li>
+                <li>{{ post_form.body }}</li>
+                <li>{{ post_form.tag }}</li>
+                <li>{{ post_form.submit }}</li>
+            </ul>
+        </form>
+    </div>
+</section>
+{% endblock %}

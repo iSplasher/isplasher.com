@@ -23,24 +23,15 @@
         </span>
     </div>
 
-    {% if project.extra %}
+    {% if project.type.name == 'Github' %}
     <div class="project-source">
         <a class="button" href="{{ project.extra }}" target="_blank">
-            {% if project.type.name == 'Github' %}
             View on Github
-            {% else %}
-            Show product
-            {% endif %}
             </a>
     </div>
     {% endif %}
-    <div class="project-descr">
-        this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a description
-        this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is
-        a descriptionthis is a descriptionthis is a description this is a descriptionthis is a descriptionthis is a descriptionthis
-        is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis
-        is a description this is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis is a descriptionthis
-        is a description
+    <div class="project-descr markdown-body">
+        {{ project.toHTML(project.description)|safe }}
     </div>
 
     {% if not project.type.name in ['Gymnasium', 'University'] %}
