@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+* {
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: #4ca8a1;
+}
+
+section {
+    z-index: -999999;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#load {
+    position: absolute;
+  text-align: center;
+    background-color: #1b1b1b;
+    min-width: 100%;
+    min-height: 100%;
+    content: '';
+    z-index: 999999;
+}
+
+#load canvas {
+    position: relative;
+    margin-top: 300pt;
+}
+
+#quizbox {
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    background-color:rgba(0, 0, 0, 0.2);
+    width: 500pt;
+    padding: 10pt;
+}
+
+
+li {
+    list-style: none;
+    margin: 4pt;
+}
+
+div.button {
+    padding: 5pt;
+    border: 1pt solid rgba(0, 0, 0, 0.2);
+    background-color:rgba(0, 0, 0, 0.1);
+    width: 100pt;
+    display: inline-block;
+    text-align: center;
+}

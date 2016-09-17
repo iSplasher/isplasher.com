@@ -1,5 +1,10 @@
 ﻿{% extends "base.html" %} {% block content %}
 <section>
+    <script src="static/datepicker/picker.js"></script>
+    <script src="static/datepicker/picker.date.js"></script>
+    <script src="static/datepicker/legacy.js"></script>
+    <script src="static/datepicker/translations/da_DK.js"></script>
+    <script src="static/util.js"></script>
     <div id="project" class="new-form-d">
         <form class="new-project" action="" method=post>
             <ul>
@@ -18,7 +23,16 @@
                 </li>
                 <li>{{ project_form.title }}</li>
                 <li>{{ project_form.body }}</li>
+                <li>
+                    <ul class="greyarea">
+                        Existing tags:<br />
+                    {% for t in tags %}
+                        <li>{{ t.name }}</li>
+                    {% endfor %}
+                    </ul>
+                </li>
                 <li>{{ project_form.tag }}</li>
+                <li>{{ project_form.extra }}</li>
                 <li>{{ project_form.submit }}</li>
             </ul>
         </form>

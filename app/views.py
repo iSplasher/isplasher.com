@@ -170,10 +170,13 @@ def admin_add():
 @application.route("/projectadd")
 @login_required
 def new_project():
+    pform = forms.NewProject()
+    pform.project_type.choices = [(p.id, p.name) for p in models.ProjectType.query.order_by(models.ProjectType.name).all()]
     return render_template("newproject.html",
                            title="New Project",
                            descr="New project",
-                           project_form=forms.NewProject())
+                           project_form=pform,
+                           tags=models.Tag.query.filter(models.Tag.name).all())
 
 
 # DANSK PROJECT

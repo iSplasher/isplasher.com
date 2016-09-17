@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    $(".datepicker").pickadate({
+        selectYears: true,
+        selectMonths: true
+    });
+
 	$(".progress span").each(function () {
 		$(this)
 			.data("progwidth", $(this).width())
@@ -18,20 +23,13 @@ $(document).ready(function () {
             'slow');
     }
 
-    $("button[id*='scroll']").click(function (e) {
-		// Prevent a page reload when a link is pressed
-        e.preventDefault();
-		// Call the scroll function
-        goToByScroll($(this).attr("id"));
-    });
-	
-	
 	// charts
 	
 var ctx = document.getElementById("radarskills");
         Chart.defaults.global.maintainAspectRatio = false;
         Chart.defaults.global.title.display = false;
         Chart.defaults.global.legend.display = false;
+
 var radarskills = new Chart(ctx, {
     type: 'radar',
     data: {
