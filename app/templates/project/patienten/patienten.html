@@ -8,9 +8,33 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
     <script type="text/javascript" src="/static/project/patienten/misc.js"></script>
+    <!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="http://animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js"></script>
+    <style>
+        .edgeLoad-patienten {
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        AdobeEdge.loadComposition('/static/project/patienten/PatientenAfPeterSeeberg', 'patienten', {
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "303px",
+    height: "400px"
+}, {"dom":{}}, {"dom":{}});
+    </script>
+    <!--Adobe Edge Runtime End-->
 </head>
 <body>
     <div id="load">
+        <div id="Stage" class="patienten">
+        </div>
+        <svg class="heart" viewBox="0 0 32 29.6">
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+        </svg> 
         <canvas width=250>
         </canvas>
     </div>

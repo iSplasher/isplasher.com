@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     ctx.font = "50px Comic Sans MS, cursive, TSCu_Comic, sans-serif";
     ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.globalAlpha = 2 / 3;
-    ctx.strokeStyle = ctx.fillStyle = "#ffffff ";
+    ctx.strokeStyle = ctx.fillStyle = "#ff0000 ";
 
     (function loop() {
         ctx.clearRect(x, 0, 60, 150);
@@ -22,7 +22,7 @@ $(document).ready(function () {
             ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());        // random y-delta
             ctx.rotate(Math.random() * 0.005);                         // random rotation
             if (i < txt.length) requestAnimationFrame(loop);
-            //else $("#load").fadeOut("slow");
+            //else $("#load").delay(4000).fadeOut("slow");
         }
     })();
 
