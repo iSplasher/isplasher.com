@@ -61,7 +61,7 @@ $(document).ready(function () {
 
 
 
-        
+
 
 
         var questionCounter = 0; //Tracks question number
@@ -83,7 +83,7 @@ $(document).ready(function () {
 
             // If no user selection, progress is stopped
             if (isNaN(selections[questionCounter])) {
-                alert('Du glemte vidst nok lige at vælge sådan en ting, man kalder for et svar!');
+                alert('Du glemte vidst nok lige at vÃ¦lge sÃ¥dan en ting, man kalder for et svar!');
             } else {
                 questionCounter++;
                 displayNext();
@@ -118,7 +118,7 @@ $(document).ready(function () {
                 id: 'question'
             });
 
-            var header = $('<h2>Spørgsmål ' + (index + 1) + ':</h2>');
+            var header = $('<h2>SpÃ¸rgsmÃ¥l ' + (index + 1) + ':</h2>');
             qElement.append(header);
 
             var question = $('<p>').append(questions[index].question);
@@ -189,7 +189,7 @@ $(document).ready(function () {
             }
 
             score.append('Du fik ' + numCorrect + ' ud af' +
-                         questions.length + ' spørgsmål rigtigt! :D');
+                         questions.length + ' spÃ¸rgsmÃ¥l rigtigt! :D');
             return score;
         }
     })();
