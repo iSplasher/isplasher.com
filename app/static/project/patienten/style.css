@@ -8,11 +8,12 @@
 
 html, body {
   height: 100%;
-  background-color: #4ca8a1;
+  background: url("/static/project/patienten/bg.png")
 }
 
 section {
     z-index: -999999;
+    padding-bottom: 20pt;
 }
 
 a {
@@ -20,7 +21,55 @@ a {
     color: white;
 }
 
+nav {
+  position: fixed;
+  left:0;
+  right: 0;
+  top: 0;
+  margin-right: auto;
+  margin-left: auto;
+      margin-right: auto;
+  margin-left: auto;
+    background-color: #ff847c;
+  color: white;
+  text-align: center;
+    padding: 10px;
+    height: 160pt;
+}
+
+nav #title {
+    font-size: 36pt;
+    display: inline-block;
+    margin-right: 150pt;
+    font-weight: bold;
+}
+
+nav #author {
+    margin-top: 40pt;
+    display: block;
+    font-size: 32pt;
+    font-style: italic;
+}
+
+nav ul {
+    display: inline-block;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 5pt 10pt;
+    padding: 5pt;
+    border: 1px solid white;
+
+}
+
+#about {
+    margin-top: 180pt;
+}
+
 #load {
+    top: 0;
     position: absolute;
   text-align: center;
     background-color: #1b1b1b;
