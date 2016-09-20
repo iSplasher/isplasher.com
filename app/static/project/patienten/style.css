@@ -30,11 +30,11 @@ nav {
   margin-left: auto;
       margin-right: auto;
   margin-left: auto;
-    background-color: #ff847c;
+    background-color: #E84A5F;
   color: white;
   text-align: center;
     padding: 10px;
-    height: 160pt;
+    height: 50pt;
 }
 
 nav #title {
@@ -63,9 +63,45 @@ nav li {
     border: 1px solid white;
 
 }
+.content {
+    padding-top: 80pt;
+    padding-left: 20pt;
+    padding-right: 20pt;
+    height: 800pt;
+}
 
-#about {
-    margin-top: 180pt;
+.aboutColor {
+    background-color: #E84A5F;
+}
+
+.analyseColor {
+    background: rgba(232,74,95,1);
+background: -moz-linear-gradient(top, rgba(232,74,95,1) 0%, rgba(42,54,59,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(232,74,95,1)), color-stop(100%, rgba(42,54,59,1)));
+background: -webkit-linear-gradient(top, rgba(232,74,95,1) 0%, rgba(42,54,59,1) 100%);
+background: -o-linear-gradient(top, rgba(232,74,95,1) 0%, rgba(42,54,59,1) 100%);
+background: -ms-linear-gradient(top, rgba(232,74,95,1) 0%, rgba(42,54,59,1) 100%);
+background: linear-gradient(to bottom, rgba(232,74,95,1) 0%, rgba(42,54,59,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e84a5f', endColorstr='#2a363b', GradientType=0 );
+}
+
+.quizColor {
+    background-color: #E84A5F;
+}
+
+#analyse {
+background: #2A363B;
+color: white;
+}
+
+
+#quizbox {
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    background-color:rgba(0, 0, 0, 0.2);
+    width: 500pt;
+    padding: 10pt;
 }
 
 #load {
@@ -116,16 +152,6 @@ nav li {
     transform: scale(1);
   }
 }
-
-#quizbox {
-    margin: auto;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-    background-color:rgba(0, 0, 0, 0.2);
-    width: 500pt;
-    padding: 10pt;
-}
-
 
 li {
     list-style: none;

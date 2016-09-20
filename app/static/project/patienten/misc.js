@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    //$("#load").fadeOut("slow");
+    $("#load").fadeOut("slow");
+    //$("section").hide()
     var ctx = document.querySelector("canvas").getContext("2d"),
     dashLen = 100, dashOffset = dashLen, speed = 6,
     txt = "Patienten", x = 0, i = 0;
@@ -23,28 +24,38 @@ $(document).ready(function () {
             ctx.rotate(Math.random() * 0.005);                         // random rotation
             if (i < txt.length) requestAnimationFrame(loop);
             else {
-                $("#load").delay(4000).fadeOut("slow");
+                //$("#load").delay(4000).fadeOut("slow");
+                //$("section").delay(3000).show();
             }
         }
     })();
 
+    $("a[data-toggle]").on("click", function (e) {
+        e.preventDefault(); 
+        var selector = $(this).data("toggle");
+        $('html, body').animate({
+            scrollTop: $(selector).offset().top
+        }, 1200);
+    });
+
+    var currentDiv = null;
+
     $(window).scroll(function(){
         if($(document).scrollTop() > 0)
-        {
             $('#head').data('size', 'small');
-            $('#author').fadeOut('slow')
-            $('#head').stop().animate({
-                height:'50pt'
-            },500);
-        }
+        $('#author').fadeOut('slow')
+        $('#head').stop().animate({
+            height:'50pt'
+        },700);
+        var elem = document.elementFromPoint(1, $("#head").height());
+        if (!currentDiv || elem != currentDiv) {
+            
+        } else currentDiv = elem;
     });
 
     // QUIZ
 
     (function () {
-
-
-
 
         var questions = [{
             // husk index=0
