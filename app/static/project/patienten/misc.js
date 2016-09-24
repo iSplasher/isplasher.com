@@ -26,6 +26,16 @@ $(document).ready(function () {
             else {
                 //$("#load").delay(4000).fadeOut("slow");
                 //$("section").delay(3000).show();
+
+                setTimeout(function () {
+                    $('#author').fadeOut('slow')
+                    $('#head').stop().animate({
+                        height: '50pt'
+                    }, 700);
+                    $('#about').stop().animate({
+                        marginTop: '30pt'
+                    }, 700);
+                }, 100);
             }
         }
     })();
@@ -40,20 +50,18 @@ $(document).ready(function () {
 
     var currentDiv = null;
 
-    $(window).scroll(function(){
-        if($(document).scrollTop() > 0)
-            $('#head').data('size', 'small');
-        $('#author').fadeOut('slow')
-        $('#head').stop().animate({
-            height:'50pt'
-        },700);
-        var elem = document.elementFromPoint(1, $("#head").height());
-        if (!currentDiv || elem != currentDiv) {
-            
-        } else currentDiv = elem;
+    // QUIZ
+
+    $("#quizbutton").on("click", function (e) {
+        e.preventDefault();
+        $('#modal').fadeIn("slow");
     });
 
-    // QUIZ
+    $("#modal").on("click", function (e) {
+        if(e.target.id == "modal") {
+            $("#modal").hide();
+        }
+    });
 
     (function () {
 

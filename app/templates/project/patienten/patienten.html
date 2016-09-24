@@ -22,13 +22,13 @@
     </style>
     <script>
         AdobeEdge.loadComposition('/static/project/patienten/PatientenAfPeterSeeberg', 'patienten', {
-    scaleToFit: "none",
-    centerStage: "none",
-    minW: "0px",
-    maxW: "undefined",
-    width: "303px",
-    height: "400px"
-}, {"dom":{}}, {"dom":{}});
+            scaleToFit: "none",
+            centerStage: "none",
+            minW: "0px",
+            maxW: "undefined",
+            width: "303px",
+            height: "400px"
+        }, { "dom": {} }, { "dom": {} });
     </script>
     <!--Adobe Edge Runtime End-->
 </head>
@@ -39,12 +39,11 @@
         <svg class="heart" viewBox="0 0 32 29.6">
             <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
     c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-        </svg> 
-        <canvas width=250>
-        </canvas>
+        </svg>
+        <canvas width=250></canvas>
     </div>
     <section>
-        <nav id="head" class="analyseColor">
+        <nav id="head">
             <span id="title">Patienten</span>
             <ul>
                 <a href="#" data-toggle="#about"><li>Om forfatter</li></a>
@@ -54,12 +53,20 @@
             <span id="author">af Peter Seeberg</span>
         </nav>
         <div id="about" class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel sollicitudin quam. Curabitur quis elit id sapien ullamcorper sagittis efficitur non nunc. Vestibulum non turpis elementum, aliquam leo id, euismod purus. Quisque faucibus est ac sapien pulvinar, in tincidunt turpis faucibus. Nullam imperdiet eleifend commodo. Aenean ut auctor diam. Etiam ac sem felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam malesuada arcu et urna interdum fermentum. Aliquam erat volutpat. Ut magna lectus, rhoncus vitae urna sit amet, tincidunt aliquam lorem. Nunc ornare porta eros in mattis. Aliquam eget efficitur lacus. Pellentesque turpis lorem, pellentesque eu purus non, eleifend bibendum lectus.
-
-            Suspendisse quis ipsum semper, molestie leo nec, imperdiet velit. Integer scelerisque feugiat aliquet. Mauris finibus accumsan fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque feugiat non metus id congue. Nam mi sapien, elementum in dolor in, commodo tincidunt nulla. Donec bibendum, orci quis accumsan sodales, metus libero lacinia ipsum, nec rutrum dui arcu nec turpis.
-
-            Nulla dictum mattis metus, eget hendrerit sem volutpat at. Sed quam ipsum, dapibus ac congue eget, semper sit amet nisl. Morbi vitae feugiat purus. In aliquam posuere velit ac ultricies. Proin faucibus maximus justo eu sollicitudin. Phasellus convallis mi sit amet lorem porta auctor. Curabitur porta lectus sit amet arcu viverra fringilla. In est enim, egestas sed tincidunt vel, laoreet fringilla mauris. Aenean congue, mauris sit amet euismod aliquam, justo tellus fringilla enim, id dapibus leo felis at elit. Vestibulum porta pulvinar dolor non facilisis. Curabitur eu mi diam. Maecenas sit amet augue diam. Nullam elementum mi a lorem feugiat hendrerit. Aenean id aliquet nibh.
-        </div>
+            <div id="forfatter" class="panel">
+                <img id="peter" src="/static/project/patienten/peter.jpg" />
+                <p>
+                Peter Ejnar Lauritzen Seeberg var en dansk modernistisk forfatter, der levede i perioden 1925 - 1999. Peter Seeberg skrev primært romaner og noveller, og fik i sin tid beskrevet hans forfatterskab som "smalt og af spartansk karakter, med få motiver, hvis der er mere end det ene - egocentrisk i fundamenteringen - end viljen til at nå bund i det bundløse".
+                Med udgivelse af romanen Bipersonerne, der blev udgivet i år 1956, fulgte en blomstrende popularitet, samt modernismens gennembrud.
+                </p>
+                <p>
+                Peter Seeberg er født i Skrydstrup og blev student fra Katedralskolen i 1943, hvorfra han studerede arkæologi og folkemindeforskning.
+                I år 1951 blev Peter Seeberg magisterkonferens på Københavns universitet, hvor han fra 1960 til 1993 var museumsinspektør på Viborg Stiftsmuseum. Men Peter Seeberg havde altid en passion for at skrive, og skrev også ved siden af jobbet som en museumsinspektør. Peter Seeberg er groet på i en kristent familie, med en faderen som præst i indre mission, der også skrev. 
+                </p>
+            </div>
+            <div id="perioden" class="panel">
+                </div>
+           </div>
         <div id="analyse" class="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel sollicitudin quam. Curabitur quis elit id sapien ullamcorper sagittis efficitur non nunc. Vestibulum non turpis elementum, aliquam leo id, euismod purus. Quisque faucibus est ac sapien pulvinar, in tincidunt turpis faucibus. Nullam imperdiet eleifend commodo. Aenean ut auctor diam. Etiam ac sem felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam malesuada arcu et urna interdum fermentum. Aliquam erat volutpat. Ut magna lectus, rhoncus vitae urna sit amet, tincidunt aliquam lorem. Nunc ornare porta eros in mattis. Aliquam eget efficitur lacus. Pellentesque turpis lorem, pellentesque eu purus non, eleifend bibendum lectus.
 
@@ -68,12 +75,18 @@
             Nulla dictum mattis metus, eget hendrerit sem volutpat at. Sed quam ipsum, dapibus ac congue eget, semper sit amet nisl. Morbi vitae feugiat purus. In aliquam posuere velit ac ultricies. Proin faucibus maximus justo eu sollicitudin. Phasellus convallis mi sit amet lorem porta auctor. Curabitur porta lectus sit amet arcu viverra fringilla. In est enim, egestas sed tincidunt vel, laoreet fringilla mauris. Aenean congue, mauris sit amet euismod aliquam, justo tellus fringilla enim, id dapibus leo felis at elit. Vestibulum porta pulvinar dolor non facilisis. Curabitur eu mi diam. Maecenas sit amet augue diam. Nullam elementum mi a lorem feugiat hendrerit. Aenean id aliquet nibh.
 
         </div>
-        <div id="quizbox" class="content">
-            <h1>Dette er en quiz xDDDDDDDDD :3</h1>
-        <div id='quiz'></div>
-            <a href='#'><div class='button' id='next'>Næste</div></a>
-            <a href='#'><div class='button' id='prev'>Tilbage</div></a>
-            <a href='#'><div class='button' id='start'>Genstart</div></a>
+        <div id="quizbox">
+            <button id="quizbutton" class="button">Start Quiz</button>
+            <div id="modal">
+                <div id="quizmodal">
+
+                <h1>Dette er en quiz xDDDDDDDDD :3</h1>
+                <div id='quiz'></div>
+                <a href='#'><div class='button' id='next'>Næste</div></a>
+                <a href='#'><div class='button' id='prev'>Tilbage</div></a>
+                <a href='#'><div class='button' id='start'>Genstart</div></a>
+                </div>
+            </div>
         </div>
     </section>
 </body>
