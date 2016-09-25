@@ -5,13 +5,14 @@
     <meta content='width=device-width, initial-scale=1' name='viewport' />
     <title>Patienten</title>
     <link type="text/css" rel="stylesheet" href="/static/project/patienten/style.css" />
+    <link type="text/css" rel="stylesheet" href="/static/project/patienten/timelinestyle.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf-8" src="/static/project/patienten/misc.js"></script>
-    <script type="text/javascript" src=http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
 
     <!--Adobe Edge Runtime-->
     <script type="text/javascript" charset="utf-8" src="http://animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js"></script>
@@ -31,6 +32,9 @@
         }, { "dom": {} }, { "dom": {} });
     </script>
     <!--Adobe Edge Runtime End-->
+
+    <script type="text/javascript" charset="utf-8" src="/static/project/patienten/modernizer.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/project/patienten/misc.js"></script>
 </head>
 <body>
     <div id="load">
@@ -42,11 +46,12 @@
         </svg>
         <canvas width=250></canvas>
     </div>
-    <section>
+    <div id="main">
         <nav id="head">
             <span id="title">Patienten</span>
             <ul>
                 <a href="#" data-toggle="#about"><li>Om forfatter</li></a>
+                <a href="#" data-toggle="#perioden"><li>Om perioden</li></a>
                 <a href="#" data-toggle="#analyse"><li>Analysen</li></a>
                 <a href="#" data-toggle="#quizbox"><li>Quiz</li></a>
             </ul>
@@ -55,39 +60,147 @@
         <div id="about" class="content">
             <div id="forfatter" class="panel">
                 <img id="peter" src="/static/project/patienten/peter.jpg" />
-                <p>
-                Peter Ejnar Lauritzen Seeberg var en dansk modernistisk forfatter, der levede i perioden 1925 - 1999. Peter Seeberg skrev primært romaner og noveller, og fik i sin tid beskrevet hans forfatterskab som "smalt og af spartansk karakter, med få motiver, hvis der er mere end det ene - egocentrisk i fundamenteringen - end viljen til at nå bund i det bundløse".
-                Med udgivelse af romanen Bipersonerne, der blev udgivet i år 1956, fulgte en blomstrende popularitet, samt modernismens gennembrud.
-                </p>
-                <p>
-                Peter Seeberg er født i Skrydstrup og blev student fra Katedralskolen i 1943, hvorfra han studerede arkæologi og folkemindeforskning.
-                I år 1951 blev Peter Seeberg magisterkonferens på Københavns universitet, hvor han fra 1960 til 1993 var museumsinspektør på Viborg Stiftsmuseum. Men Peter Seeberg havde altid en passion for at skrive, og skrev også ved siden af jobbet som en museumsinspektør. Peter Seeberg er groet på i en kristent familie, med en faderen som præst i indre mission, der også skrev. 
-                </p>
-            </div>
-            <div id="perioden" class="panel">
+                <div>
+                    <p>
+                        Peter Ejnar Lauritzen Seeberg var en dansk modernistisk forfatter, der levede i perioden 1925 - 1999. Peter Seeberg skrev primært romaner og noveller, og fik i sin tid beskrevet hans forfatterskab som "smalt og af spartansk karakter, med få motiver, hvis der er mere end det ene - egocentrisk i fundamenteringen - end viljen til at nå bund i det bundløse".
+                        Med udgivelse af romanen Bipersonerne, der blev udgivet i år 1956, fulgte en blomstrende popularitet, samt modernismens gennembrud.
+                    </p>
+                    <p>
+                        Peter Seeberg er født i Skrydstrup og blev student fra Katedralskolen i 1943, hvorfra han studerede arkæologi og folkemindeforskning.
+                        I år 1951 blev Peter Seeberg magisterkonferens på Københavns universitet, hvor han fra 1960 til 1993 var museumsinspektør på Viborg Stiftsmuseum. Men Peter Seeberg havde altid en passion for at skrive, og skrev også ved siden af jobbet som en museumsinspektør. Peter Seeberg er groet på i en kristent familie, med en faderen som præst i indre mission, der også skrev.
+                    </p>
                 </div>
-           </div>
+            </div>
+        </div>
+        <div id="perioden" class="cd-horizontal-timeline content">
+            <div class="timeline">
+                <div class="events-wrapper">
+                    <div class="events">
+                        <ol>
+                            <li><a href="#0" data-date="16/01/2014" class="selected">Mordernismen</a></li>
+                            <li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
+                            <li><a href="#0" data-date="20/04/2014">20 Mar</a></li>
+                            <li><a href="#0" data-date="20/05/2014">20 May</a></li>
+                            <li><a href="#0" data-date="09/07/2014">09 Jul</a></li>
+                            <li><a href="#0" data-date="30/08/2014">30 Aug</a></li>
+                            <li><a href="#0" data-date="15/09/2014">15 Sep</a></li>
+                            <li><a href="#0" data-date="01/11/2014">01 Nov</a></li>
+                            <li><a href="#0" data-date="10/12/2014">10 Dec</a></li>
+                            <li><a href="#0" data-date="19/01/2015">29 Jan</a></li>
+                            <li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
+                        </ol>
+                        <span class="filling-line" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+                <ul class="cd-timeline-navigation">
+                    <li><a href="#0" class="prev inactive">Prev</a></li>
+                    <li><a href="#0" class="next">Next</a></li>
+                </ul>
+            </div>
+            <div class="events-content">
+                <ol>
+                    <li class="selected" data-date="16/01/2014">
+                        <h2>Mordernismen</h2>
+                        <p>
+                            Enden på 2. Verdenskrig var grunden til en stigning i velfærden. Det blev mere normalt at have flere penge og flere folk gik efter at få statussymboler, som biler, køleskabe, tv, sommerhuse osv.
+                            <br />
+                            Velfærden med disse ydre værdier skabte efter mange forfatteres mening en fremmedgørelse, fordi den blev opnået på bekostning af de indre værdier: følelser og medmenneskelighed. Mennesker blev reduceret til forbrugere.                        </p>
+                    </li>
+                    <li data-date="28/02/2014">
+                        <h2>Event title here</h2>
+                        <em>February 28th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="20/04/2014">
+                        <h2>Event title here</h2>
+                        <em>March 20th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="20/05/2014">
+                        <h2>Event title here</h2>
+                        <em>May 20th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="09/07/2014">
+                        <h2>Event title here</h2>
+                        <em>July 9th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="30/08/2014">
+                        <h2>Event title here</h2>
+                        <em>August 30th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="15/09/2014">
+                        <h2>Event title here</h2>
+                        <em>September 15th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="01/11/2014">
+                        <h2>Event title here</h2>
+                        <em>November 1st, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="10/12/2014">
+                        <h2>Event title here</h2>
+                        <em>December 10th, 2014</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="19/01/2015">
+                        <h2>Event title here</h2>
+                        <em>January 19th, 2015</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                    <li data-date="03/03/2015">
+                        <h2>Event title here</h2>
+                        <em>March 3rd, 2015</em>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
         <div id="analyse" class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel sollicitudin quam. Curabitur quis elit id sapien ullamcorper sagittis efficitur non nunc. Vestibulum non turpis elementum, aliquam leo id, euismod purus. Quisque faucibus est ac sapien pulvinar, in tincidunt turpis faucibus. Nullam imperdiet eleifend commodo. Aenean ut auctor diam. Etiam ac sem felis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam malesuada arcu et urna interdum fermentum. Aliquam erat volutpat. Ut magna lectus, rhoncus vitae urna sit amet, tincidunt aliquam lorem. Nunc ornare porta eros in mattis. Aliquam eget efficitur lacus. Pellentesque turpis lorem, pellentesque eu purus non, eleifend bibendum lectus.
-
-            Suspendisse quis ipsum semper, molestie leo nec, imperdiet velit. Integer scelerisque feugiat aliquet. Mauris finibus accumsan fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque feugiat non metus id congue. Nam mi sapien, elementum in dolor in, commodo tincidunt nulla. Donec bibendum, orci quis accumsan sodales, metus libero lacinia ipsum, nec rutrum dui arcu nec turpis.
-
-            Nulla dictum mattis metus, eget hendrerit sem volutpat at. Sed quam ipsum, dapibus ac congue eget, semper sit amet nisl. Morbi vitae feugiat purus. In aliquam posuere velit ac ultricies. Proin faucibus maximus justo eu sollicitudin. Phasellus convallis mi sit amet lorem porta auctor. Curabitur porta lectus sit amet arcu viverra fringilla. In est enim, egestas sed tincidunt vel, laoreet fringilla mauris. Aenean congue, mauris sit amet euismod aliquam, justo tellus fringilla enim, id dapibus leo felis at elit. Vestibulum porta pulvinar dolor non facilisis. Curabitur eu mi diam. Maecenas sit amet augue diam. Nullam elementum mi a lorem feugiat hendrerit. Aenean id aliquet nibh.
-
+            <button id="analysebutton" class="button">Start Analysen</button>
+            <div id="analyseContainer">
+                <section class="en">En</section>
+                <section class="to">Two</section>
+                <section class="tre">Tre</section>
+            </div>
         </div>
         <div id="quizbox">
             <button id="quizbutton" class="button">Start Quiz</button>
             <div id="modal">
                 <div id="quizmodal">
 
-                <h1>Dette er en quiz xDDDDDDDDD :3</h1>
-                <div id='quiz'></div>
-                <a href='#'><div class='button' id='next'>Næste</div></a>
-                <a href='#'><div class='button' id='prev'>Tilbage</div></a>
-                <a href='#'><div class='button' id='start'>Genstart</div></a>
+                    <h1>Dette er en quiz xDDDDDDDDD :3</h1>
+                    <div id='quiz'></div>
+                    <a href='#'><div class='button' id='next'>Næste</div></a>
+                    <a href='#'><div class='button' id='prev'>Tilbage</div></a>
+                    <a href='#'><div class='button' id='start'>Genstart</div></a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>
