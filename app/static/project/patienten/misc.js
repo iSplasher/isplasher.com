@@ -91,53 +91,67 @@ $(document).ready(function () {
         var questions = [{
             // husk index=0
 
-            question: "What is 2*5?",
-            choices: [2, 5, 10, 15, 20],
+            question: "Hvilken novellesamling var novellen ‘Pantienten’ en del af?",
+            choices: ["Radiator", "Eftersøgning", "Hospitalet"],
+            correctAnswer: 1
+        }, {
+            question: "I hvilket år blev Peter Seeberg født?",
+            choices: ["1894", "1913", "1925", "1941"],
             correctAnswer: 2
         }, {
-            question: "What is 3*6?",
-            choices: [3, 6, 9, 12, 18],
-            correctAnswer: 4
-        }, {
-            question: "What is 8*9?",
-            choices: [72, 99, 108, 134, 156],
+            question: "Hvilken kunstperiode skrev Peter Seeberg i?",
+            choices: ["Modernismen", "Ekspressionismen", "Naturalismen", "Romantikken", "Eksistentialisme"],
             correctAnswer: 0
         }, {
-            question: "What is 1*7?",
-            choices: [4, 5, 6, 7, 8],
+            question: "Hvilket job havde Peter Seeberg i 33 år, udover sit forfatterskab?",
+            choices: ["Skomager", "Præst", "Museumsinspektør", "Han havde intet andet job"],
+            correctAnswer: 2
+        }, {
+            question: "Hvilke tekst af Peter Seeberg bragte popularitet til hans forfatterskab?",
+            choices: ["Polterabend", "Patienten", "Bipersonerne"],
+            correctAnswer: 2
+        }, {
+            question: "Hvilket miljø befinder karakteren i novellen ‘Patienten’ sig i?",
+            choices: ["Hospital", "I sit hjem", "Hovedpersonen er død"],
+            correctAnswer: 0
+        }, {
+            question: "I hvilket år blev novellen ‘Patienten’ skrevet i?",
+            choices: ["1914", "1925", "1953", "1962"],
             correctAnswer: 3
         }, {
-            question: "What is 8*8?",
-            choices: [20, 30, 40, 50, 64],
-            correctAnswer: 4
+            question: "Hvor er Peter Seeberg født?",
+            choices: ["Skrydstrup", "Aarhus", "Odense", "Fredericia"],
+            correctAnswer: 0
+        }, {
+            question: "Hvordan havde Peter Seeberg det med religion?",
+            choices: ["Han var vokset op i en kristent familie", "Han var var ateist", "Han var strengt imod religion"],
+            correctAnswer: 0
+        }, {
+            question: "Hvilken forfatter gruppe tilhørte Peter Seeberg i 60’e rne?",
+            choices: ["Traditionalisterne der skrev prosa", "Traditionalisterne der skrev lyrik", "Eksperimentalisterne", "Folkeviserne"],
+            correctAnswer: 0
+        }, {
+            question: "Hvad skrev eksperimentalisterne især om? ",
+            choices: ["Om det enkelte menneskes virkelighed i en verden uden religiøst grundlag", "Om religion; om gud og kristendommen", "Om samfundet og deres politiske ideologier", "Om historie; især om 2. verdenskrig."],
+            correctAnswer: 0
         }];
-
-
-
-
-
-
 
         var questionCounter = 0; //Tracks question number
         var selections = []; //Array containing user choices
         var quiz = $('#quiz'); //Quiz div object
 
-        // Display initial question
         displayNext();
 
-        // Click handler for the 'next' button
         $('#next').on('click', function (e) {
             e.preventDefault();
 
-            // Suspend click listener during fade animation
             if (quiz.is(':animated')) {
                 return false;
             }
             choose();
 
-            // If no user selection, progress is stopped
             if (isNaN(selections[questionCounter])) {
-                alert('Haaaallooo! Du glemte vidst nok lige at vælge sådan en ting, man kalder for et svar!');
+                alert('Haaaallooo! Du glemte vidst nok lige at vælge et svar!');
             } else {
                 questionCounter++;
                 displayNext();
@@ -192,18 +206,17 @@ $(document).ready(function () {
                 item = $('<li>');
                 input = '<input type="radio" id="opt" name="answer" value=' + i + ' />';
                 input += '<label for="opt">' + questions[index].choices[i] + '</label>';
+                input += '<div class="check"><div class="inside"></div></div>'
                 item.append(input);
                 radioList.append(item);
             }
             return radioList;
         }
 
-        // Reads the user selection and pushes the value to an array
         function choose() {
             selections[questionCounter] = +$('input[name="answer"]:checked').val();
         }
 
-        // Displays next requested element
         function displayNext() {
             quiz.fadeOut(function () {
                 $('#question').remove();
@@ -242,8 +255,8 @@ $(document).ready(function () {
                 }
             }
 
-            score.append('Du fik ' + numCorrect + ' ud af' +
-                         questions.length + ' spørgsmål rigtigt! :D');
+            score.append('Du fik ' + numCorrect + ' ud af ' +
+                         questions.length + ' spørgsmål rigtige! :D');
             return score;
         }
     })();
@@ -252,7 +265,7 @@ $(document).ready(function () {
     // TIMELINE
 
     var timelines = $('.cd-horizontal-timeline'),
-		eventsMinDistance = 60;
+		eventsMinDistance = 250;
 
     (timelines.length > 0) && initTimeline(timelines);
 
@@ -273,7 +286,7 @@ $(document).ready(function () {
             //assign a left postion to the single events along the timeline
             setDatePosition(timelineComponents, eventsMinDistance);
             //assign a width to the timeline
-            var timelineTotWidth = setTimelineWidth(timelineComponents, eventsMinDistance);
+            var timelineTotWidth = setTimelineWidth(timelineComponents, eventsMinDistance-120);
             //the timeline has been initialize - show it
             timeline.addClass('loaded');
 
@@ -380,10 +393,10 @@ $(document).ready(function () {
     }
 
     function setDatePosition(timelineComponents, min) {
+        var interval = 20;
         for (i = 0; i < timelineComponents['timelineDates'].length; i++) {
-            var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
-		    	distanceNorm = Math.round(distance / timelineComponents['eventsMinLapse']) + 2;
-            timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm * min + 'px');
+            timelineComponents['timelineEvents'].eq(i).css('left', interval + 'px');
+            interval += min*1.2
         }
     }
 
