@@ -1,44 +1,19 @@
 $(document).ready(function () {
-    $("#load").fadeOut("slow");
-    //$("section").hide()
-    var ctx = document.querySelector("canvas").getContext("2d"),
-    dashLen = 100, dashOffset = dashLen, speed = 6,
-    txt = "Patienten", x = 0, i = 0;
+    //$("#load").fadeOut("slow");
+    $("#main").hide()
 
-    ctx.font = "50px Comic Sans MS, cursive, TSCu_Comic, sans-serif";
-    ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.globalAlpha = 2 / 3;
-    ctx.strokeStyle = ctx.fillStyle = "#ff0000 ";
 
-    (function loop() {
-        ctx.clearRect(x, 0, 60, 150);
-        ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]); // create a long dash mask
-        dashOffset -= speed;                                         // reduce dash length
-        ctx.strokeText(txt[i], x, 90);                               // stroke letter
-
-        if (dashOffset > 0) requestAnimationFrame(loop);             // animate
-        else {
-            ctx.fillText(txt[i], x, 90);                               // fill final letter
-            dashOffset = dashLen;                                      // prep next char
-            x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
-            ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());        // random y-delta
-            ctx.rotate(Math.random() * 0.005);                         // random rotation
-            if (i < txt.length) requestAnimationFrame(loop);
-            else {
-                //$("#load").delay(4000).fadeOut("slow");
-                //$("section").delay(3000).show();
-
-                setTimeout(function () {
-                    $('#author').fadeOut()
-                    $('#head').stop().animate({
-                        height: '80pt'
-                    }, 700);
-                    $('#about').stop().animate({
-                        marginTop: '50pt'
-                    }, 700);
-                }, 100);
-            }
-        }
-    })();
+    setTimeout(function () {
+        $("#load").delay(4000).fadeOut("slow");
+        $("#main").delay(4500).fadeIn("slow");
+        $('#author').delay(6500).fadeOut()
+        $('#head').delay(6500).stop().animate({
+            height: '80pt'
+        }, 700);
+        $('#about').stop().animate({
+            marginTop: '50pt'
+        }, 700);
+    }, 5000);
 
     $("a[data-toggle]").on("click", function (e) {
         e.preventDefault(); 
@@ -129,7 +104,7 @@ $(document).ready(function () {
         }, {
             question: "Hvilken forfatter gruppe tilhørte Peter Seeberg i 60’e rne?",
             choices: ["Traditionalisterne der skrev prosa", "Traditionalisterne der skrev lyrik", "Eksperimentalisterne", "Folkeviserne"],
-            correctAnswer: 0
+            correctAnswer: 2
         }, {
             question: "Hvad skrev eksperimentalisterne især om? ",
             choices: ["Om det enkelte menneskes virkelighed i en verden uden religiøst grundlag", "Om religion; om gud og kristendommen", "Om samfundet og deres politiske ideologier", "Om historie; især om 2. verdenskrig."],
