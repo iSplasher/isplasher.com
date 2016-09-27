@@ -86,7 +86,7 @@ $(document).ready(function () {
             choices: ["Polterabend", "Patienten", "Bipersonerne"],
             correctAnswer: 2
         }, {
-            question: "Hvilket miljø befinder karakteren i novellen ‘Patienten’ sig i?",
+            question: "Hvilket miljø befinder hovedpersonen i novellen ‘Patienten’ sig i?",
             choices: ["Hospital", "I sit hjem", "Hovedpersonen er død"],
             correctAnswer: 0
         }, {

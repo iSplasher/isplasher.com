@@ -35,7 +35,7 @@ nav {
     text-align: center;
     padding: 10px;
     height: 150pt;
-    z-index: 5;
+    z-index: 6;
 }
 
     nav #title {
@@ -245,16 +245,11 @@ p {
     z-index: 999999;
 }
 
-    #load canvas {
-        position: relative;
-        margin-top: 100pt;
-    }
-
     #load .patienten {
         position: absolute;
         left: 0;
         right: 0;
-        margin-top: 100pt;
+        margin-top: 2%;
         margin-right: auto;
         margin-left: auto;
     }
@@ -264,7 +259,7 @@ p {
     position: absolute;
     left: 0;
     right: 0;
-    margin-top: 50pt;
+    margin-top: 5%;
     margin-right: auto;
     margin-left: auto;
     width: 100px;
