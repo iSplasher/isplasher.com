@@ -97,6 +97,20 @@ p {
     float: left;
 }
 
+.analimg2 {
+    height: 300px;
+}
+
+.analimg {
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15pt;
+    margin-top: 15pt;
+    clear: right;
+    float: right;
+}
+
 .content {
     height: 100vh;
 }
@@ -149,6 +163,78 @@ p {
         outline: 0;
     }
 
+.letter {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 26px auto 0;
+    max-width: 550px;
+    min-height: 200px;
+    padding: 24px;
+    position: relative;
+    width: 80%;
+    text-align: left;
+}
+
+    .letter:before, .letter:after {
+        content: "";
+        height: 98%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .letter:before {
+        background: #fafafa;
+        box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        left: -5px;
+        top: 4px;
+        transform: rotate(-2.5deg);
+    }
+
+    .letter:after {
+        background: #f6f6f6;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        right: -3px;
+        top: 1px;
+        transform: rotate(1.4deg);
+    }
+
+    .letter span {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 9pt;
+        font-style: italic;
+        font-weight: bold;
+    }
+        .letter span:before {
+            content: '\00b6';
+            font-size: 11pt;
+            font-style: normal;
+        }
+
+    .letter em {
+        color: #E84A5F;
+    }
+        .letter em:after {
+            content: '\00ab';
+        }
+
+        .letter em:before {
+            content: '\00bb';
+        }
+
+    .letter p {
+        font-size: 12pt;
+        color: #1b1b1b;
+        margin: 2pt auto;
+    }
+
+        .letter p:before, .letter p:after {
+            content: '\00ba\00ba\00ba';
+            margin: 4pt auto;
+            display:block;
+            text-align: center;
+        }
+
 #analysebutton {
     width: 300pt;
     position: absolute;
@@ -161,7 +247,7 @@ p {
 #analyse {
     position: relative;
     background: #2A363B;
-    color: white;
+    color: #E84A5F;
 }
 
 #analyseContainer {
@@ -170,30 +256,56 @@ p {
     height: 100%;
     display: none;
     z-index: 4;
+    padding-top: 80pt;
 }
 
-    #analyseContainer section {
-        width: 100%;
-        height: 100%;
-        position: absolute;
+    #analyseContainer .deck-container {
+        background: #2A363B;
+        color: white;
     }
 
-        #analyseContainer section:nth-child(1) {
-            background-color: white;
+        #analyseContainer .deck-container .info {
+            color: #E84A5F;
         }
 
-        #analyseContainer section:nth-child(2) {
-            background-color: red;
+        #analyseContainer .deck-container section {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #2A363B;
+            color: white !important;
+            /*text-align: auto;*/
         }
 
-        #analyseContainer section:nth-child(3) {
-            background-color: yellow;
-        }
+            #analyseContainer .deck-container section .analcontent {
+                margin: auto;
+                width: 80%;
+            }
+
+                #analyseContainer .deck-container section .analcontent ul {
+                    font-size: 21pt;
+                }
+
+                    #analyseContainer .deck-container section .analcontent ul li {
+                        margin: 20pt 0;
+                    }
+
+            #analyseContainer .deck-container section h2 {
+                color: white;
+                text-decoration: none;
+                font-size: 36pt;
+                text-align: center;
+                margin-top: 5pt;
+            }
 
 #quizbox {
     text-align: center;
     padding: 50pt;
 }
+
+    #quizbox p {
+        color: #E84A5F;
+    }
 
 #modal {
     text-align: left;
@@ -229,9 +341,9 @@ p {
         font-size: 15px;
     }
 
-    #quizmodal ul label {
-        padding-left: 10pt;
-    }
+        #quizmodal ul label {
+            padding-left: 10pt;
+        }
 
 
 #load {

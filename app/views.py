@@ -1,4 +1,4 @@
-from flask import render_template, flash, request, url_for, redirect, abort, g
+from flask import render_template, flash, request, url_for, redirect, abort, g, jsonify
 from flask_login import login_user, logout_user, current_user, login_required
 from app import application, db, login_manager, bcrypt, models, forms, util
 from app.models import User
@@ -184,3 +184,70 @@ def new_project():
 @application.route("/patienten")
 def patienten():
     return render_template("project/patienten/patienten.html")
+
+# TEKNIK FAG
+
+@application.route("/goodmusic/pitch")
+def tekfag_pitch():
+    return redirect("https://youtu.be/lvYecgqzB2M")
+
+tekfag_data = False
+
+@application.route("/goodmusic/api/storeavalue", methods=["POST"])
+def tekfag_store():
+    tekfag_data = True
+    return jsonify({'data': 'ok'})
+
+@application.route("/goodmusic/api/getvalue", methods=["POST"])
+def tekfag_get():
+    if tekfag_data:
+        return jsonify(["VALUE", "data", "Coldplay - Clocks"])
+    else:
+        return jsonify(None)
+
+# WEBMAGASIN
+@application.route("/2017/webmagasin")
+def webmagasin():
+    fokus = []
+    for x in [8, 11, 4, 17]:
+        a = models.Artikel.query.get(x)
+        if a:
+            fokus.append(a)
+    return render_template("project/webmagasin/index.html",
+                           temaer=models.Tema.query.all(),
+                           fokus=fokus)
+
+@application.route("/2017/webmagasin/om")
+def webmagasinOm():
+    return render_template("project/webmagasin/om.html")
+
+@application.route("/2017/webmagasin/teknik")
+def webmagasinTeknik():
+    return render_template("project/webmagasin/tema.html",
+                           tema=models.Tema.query.filter(models.Tema.navn.ilike("teknik")).first())
+
+@application.route("/2017/webmagasin/biologi")
+def webmagasinBiologi():
+    return render_template("project/webmagasin/tema.html",
+                           tema=models.Tema.query.filter(models.Tema.navn.ilike("biologi & sundhed")).first())
+
+@application.route("/2017/webmagasin/kultur")
+def webmagasinKultur():
+    return render_template("project/webmagasin/tema.html",
+                           tema=models.Tema.query.filter(models.Tema.navn.ilike("kultur")).first())
+
+@application.route("/2017/webmagasin/design")
+def webmagasinDesign():
+    return render_template("project/webmagasin/tema.html",
+                           tema=models.Tema.query.filter(models.Tema.navn.ilike("design")).first())
+
+@application.route("/2017/webmagasin/artikel/<int:a_id>")
+def webmagasinArtikel(a_id=None):
+    a = models.Artikel.query.get(a_id) if a_id else None
+    l = []
+    if a:
+        l = a.tema.first().artikler
+    return render_template("project/webmagasin/artikel.html",
+                           artikel=a,
+                           mere=l)
+

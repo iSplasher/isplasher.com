@@ -134,8 +134,8 @@ Main Components
   transition: background-color 0.3s, border-color 0.3s;
 }
 .no-touch .cd-horizontal-timeline .events a:hover::after {
-  background-color: #7b9d6f;
-  border-color: #7b9d6f;
+  background-color: #E84A5F;
+  border-color: #E84A5F;
 }
 .cd-horizontal-timeline .events a.selected {
   pointer-events: none;
@@ -284,7 +284,6 @@ Main Components
 .cd-horizontal-timeline .events-content h2 {
   font-weight: bold;
   font-size: 2.6rem;
-  font-family: "Playfair Display", serif;
   font-weight: 700;
   line-height: 1.8;
 }

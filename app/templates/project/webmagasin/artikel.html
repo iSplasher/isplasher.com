@@ -1,0 +1,39 @@
+{% extends "project/webmagasin/base.html" %} {% block content %}
+
+{% if artikel %}
+<div class="section">
+    <div class="container row">
+        <div class="col s12 m7 artikel" >
+           {{ artikel.body|safe }}
+        </div>
+
+        <ul class="col m4 anbefaledeArtikler">
+            <div class="card-panel teal white">
+                <div class="anbefaledeArtikler">
+                    <h5>Læs også</h5>
+                </div>
+                {% for a in mere %}
+                {% if a.id != artikel.id %}
+                <li>
+                    <a href="/2017/webmagasin/artikel/{{ a.id }}">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <h6>{{ a.titel }}</h6>
+                        </div>
+                        <div class="card-image">
+                            <img src="{{ a.profil }}" style="max-height: 100px;width:auto;margin-left: 4px;">
+                        </div>
+                    </div>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+

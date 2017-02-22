@@ -136,3 +136,29 @@ def add_project(project_type, name, description, cover="/static/images/no-image.
     p = Project(name=name, type=project_type, cover=cover, description=description, timestamp=datetime.datetime.utcnow(),
         date_started=start_date, date_finished=finish_date)
     db.session.add(p)
+
+
+
+# WEBMAGASIN
+
+tema_artikler = db.Table('tema_artikler',
+    db.Column('tema_id', db.Integer, db.ForeignKey('tema.id')),
+    db.Column('artikel_id', db.Integer, db.ForeignKey('artikel.id'))
+)
+
+class Tema(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    navn = db.Column(db.String(64), index=True, unique=True)
+    artikler = db.relationship('Artikel', secondary=tema_artikler, backref=db.backref('tema', lazy='dynamic'))
+    farve = db.Column(db.String)
+    om = db.Column(db.String)
+
+class Artikel(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    titel = db.Column(db.String)
+    om = db.Column(db.String)
+    body = db.Column(db.String)
+    profil = db.Column(db.String)
+    forfatter = db.Column(db.String)
+    timestamp = db.Column(db.DateTime)
+    tema_id = db.Column(db.Integer, db.ForeignKey('tema.id'))

@@ -7,3 +7,4 @@ flask-wtf
 flask-session
 sqlalchemy-migrate
 markdown
+pyembed-markdown

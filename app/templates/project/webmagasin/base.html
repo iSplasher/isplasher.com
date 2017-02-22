@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>TECH MAG</title>
+    <link rel="icon" href="/static/project/webmagasin/logo16x16.png">
+
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/project/webmagasin/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/static/project/webmagasin/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/static/project/webmagasin/css/customCSS.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+<nav class="nav-extended">
+    <div class="white">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/2017/webmagasin" class="brand-logo logo"><img src="/static/project/webmagasin/logo.png"></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down section table-of-contents">
+                    <li class="upperNav"><a href="/2017/webmagasin/om"><p class="black-text">Om magasinet</p></a></li>
+                    <li class="upperNav"><a href="#contact"><p class="black-text">Kontakt</p></a></li>
+                    <li class="upperNav"><a href="https://www.facebook.com/TechMagAG/?fref=ts"><img class="facebooklogo" src="/static/project/webmagasin/blackWhite.png"></a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#">Om magasinet</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="navlinks" class="nav-wrapper color5">
+        <div class="container">
+            <ul>
+                <li class="{% if request.path=='/2017/webmagasin/teknik' %} activeNav3 {% else %} nav3 {% endif %} color1" ><a href="/2017/webmagasin/teknik">Teknik</a></li>
+                <li id="bigscreen" class="{% if request.path=='/2017/webmagasin/biologi' %} activeNav3 {% else %} nav3 {% endif %} color2"><a href="/2017/webmagasin/biologi">Biologi & Sundhed</a></li>
+                <li id="smallscreen" class="{% if request.path=='/2017/webmagasin/biologi' %} activeNav3 {% else %} nav3 {% endif %} color2"><a href="/2017/webmagasin/biologi">Biologi</a></li>
+                <li class="{% if request.path=='/2017/webmagasin/kultur' %} activeNav3 {% else %} nav3 {% endif %} color3"><a href="/2017/webmagasin/kultur">Kultur</a></li>
+                <li class="{% if request.path=='/2017/webmagasin/design' %} activeNav3 {% else %} nav3 {% endif %} color4"><a href="/2017/webmagasin/design">Design</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer id="contact" class="page-footer grey lighten-3">
+<div class="footer-copyright">
+    <div class="container row black-text">
+        <p class="col s1"><img src="/static/project/webmagasin/logo.png" width="100px"></p>
+        <p class="col s5 offset-s4">Kontakt Redaktionen: TECHMAG@gmail.com</p>
+        <a class="black-text right col s1" href="https://www.facebook.com/TechMagAG/?fref=ts"><img class="facebooklogo" src="/static/project/webmagasin/blackWhite.png"></a>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/static/project/webmagasin/js/materialize.js"></script>
+<script src="/static/project/webmagasin/js/app.js"></script>
+<script src="/static/project/webmagasin/js/custom.js"></script>
+<!-- scripts -->
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=690172121085142";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+

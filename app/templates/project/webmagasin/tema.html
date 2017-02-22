@@ -1,0 +1,38 @@
+{% extends "project/webmagasin/base.html" %} {% block content %}
+{% if tema %}
+<div class="section">
+    <div class="container row">
+        <div class="col s12 m15">
+            <h3 text-color="black">Om {{ tema.navn }}</h3>
+            <p>{{ tema.om }}</p>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container row">
+        {% for artikel in tema.artikler %}
+            <a href="/2017/webmagasin/artikel/{{ artikel.id }}">
+                    <div class="black-text col s12 m15 card-panel teal white thumbnail front clearfix">
+                        {% if artikel.profil %}
+                        <div class="thumb">
+                            <img src="{{ artikel.profil }}">
+                        </div>
+                        {% endif %}
+                        <div class="black-text">
+                            <h5>{{ artikel.titel }}</h5>
+                                <ul class="metaliste">
+                                    <li>Dato: {{ artikel.timestamp.strftime("%d, %b %Y") }}</li>
+                                    <li>Forfatter: {{ artikel.forfatter }}</li>  
+                                    <li class="{{ tema.farve }}"> {{ tema.navn }}</li>  
+                                </ul>
+                        {% if artikel.om %}
+                            <p>{{ artikel.om }}</p>
+                        {% endif %}
+                        </div>
+                    </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,16 +1,24 @@
 $(document).ready(function () {
     //$("#load").fadeOut("slow");
+    //$('#author').fadeOut()
+    //$('#head').stop().animate({
+    //    height: '80pt'
+    //}, 700);
+    //$('#about').stop().animate({
+    //    marginTop: '50pt'
+    //}, 700);
+
     $("#main").hide()
 
 
     setTimeout(function () {
         $("#load").delay(4000).fadeOut("slow");
-        $("#main").delay(4500).fadeIn("slow");
-        $('#author').delay(6500).fadeOut()
-        $('#head').delay(6500).stop().animate({
+        $("#main").delay(4600).fadeIn("slow");
+        $('#author').delay(8000).fadeOut()
+        $('#head').stop().delay(8000).animate({
             height: '80pt'
         }, 700);
-        $('#about').stop().animate({
+        $('#about').stop().delay(8000).animate({
             marginTop: '50pt'
         }, 700);
     }, 5000);
@@ -30,22 +38,9 @@ $(document).ready(function () {
 
     /// ANALYSE
 
-    //var controller = new ScrollMagic.Controller({ container: "#analyse" });
-
-    //var wipeAnimation = new TimelineMax()
-    //    .fromTo("section.en", 1, { x: "-100%" }, { x: "0%", ease: Linear.easeNone })
-    //    .fromTo("section.to", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone })
-    //    .fromTo("section.tre", 1, { x: "-100%" }, { x: "0%", ease: Linear.easeNone });
-
-    //new ScrollMagic.Scene({
-    //    triggerElement: "#analyseContainer",
-    //    triggerHook: "onLeave",
-    //    duration: "300%"
-    //    })
-    //    .setPin("#analyseContainer")
-    //    .setTween(wipeAnimation)
-    //    .addIndicators()
-    //    .addTo(controller);
+    $(function () {
+        $.deck('.slide');
+    });
 
 
     // QUIZ
@@ -86,7 +81,7 @@ $(document).ready(function () {
             choices: ["Polterabend", "Patienten", "Bipersonerne"],
             correctAnswer: 2
         }, {
-            question: "Hvilket miljø befinder hovedpersonen i novellen ‘Patienten’ sig i?",
+            question: "I hvilket miljø befinder hovedpersonen sig i størstedelen af novellen?",
             choices: ["Hospital", "I sit hjem", "Hovedpersonen er død"],
             correctAnswer: 0
         }, {
